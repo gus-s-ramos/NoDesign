@@ -1,0 +1,61 @@
+/* ScreenOne.css */
+.screen-one {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    transform-origin: top left;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 30%;
+    width: 25%;
+    text-align: start;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.mockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.screen-content {
+    margin-left: -50%;
+}
+
+.previewLoginFile{
+    margin-top: -12%;
+    margin-left: -2%;
+    width: 40%;
+}
+
+.mockupcellphone {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    left: 75%;
+    z-index: 5;
+}
+
+.button {
+  max-width: 80%;
+  font-size: 16px;
+  margin: 10px auto;
+}

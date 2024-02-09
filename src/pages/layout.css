@@ -1,0 +1,14 @@
+.layoutPreview {
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+    margin-top: 25%;
+}
+
+.AssetsContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 80vw;
+    overflow-y: scroll;
+}

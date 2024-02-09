@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
+import Navbar from './components/navbar';
+import Gamification from './pages/gamification';
+import Report from './pages/report';
+import Layout from "./pages/layout";
+import Signature from "./pages/signature";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/gamification" element={<Gamification />} />
+        <Route path="/report" element={<Report />} />
+        <Route path="/layout" element={<Layout />} />
+        <Route path="/signature" element={<Signature />} />
+      </Routes>
+    </Router>
   );
 }
 

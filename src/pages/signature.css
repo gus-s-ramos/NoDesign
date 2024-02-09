@@ -1,0 +1,35 @@
+.signature-container {
+  display: flex; /* Isso permite que as duas partes fiquem uma ao lado da outra */
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  justify-content: space-between;
+}
+
+.visualizacao-assinatura {
+  flex: 1; /* Isso faz com que esta parte ocupe metade da largura disponível */
+  padding: 20px; /* Adicione espaço interno conforme necessário */
+
+}
+
+.campos-para-assinatura {
+  flex: 1; /* Isso faz com que esta parte ocupe metade da largura disponível */
+  padding: 20px; /* Adicione espaço interno conforme necessário */
+
+}
+.montserrat-semibold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; /* Montserrat Semi-Bold */
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.lato-regular {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400; /* Lato Regular */
+}
+
+.vertical-bar {
+  width: 1px;
+  height: 100%; /* ou a altura desejada */
+  background-color: rgb(53, 53, 53); /* ou a cor desejada */
+}

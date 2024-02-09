@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Montserrat:wght@700&display=swap');
+
+p{
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+}
+
+body {
+    margin: 0;
+}
+
+
+.navbar {
+    width: 100%;
+    z-index: 1;
+    box-shadow: rgb(211, 211, 211) 2px 1px 2px;
+    border-radius: 10px;
+
+}
+
+.navButtons ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.navButtons li {
+  margin: 0 5px; 
+}
+
+.navButtons a {
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+}
+
+
+.itensnavbar {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0rem 3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.navTitle {
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+    box-sizing: border-box;
+}
+
+.navButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.navButtons a{
+    padding: 15px;
+    margin: 5px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 10px;
+   
+    
+}
+
+.navClient {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown {
+    outline: 0;
+    top: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown button {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
+    
+}
+
+.contCliente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10vw;
+}
+
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content.show {
+  display: block;
+}
