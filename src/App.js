@@ -5,6 +5,7 @@ import Gamification from './pages/gamification';
 import Report from './pages/report';
 import Layout from "./pages/layout";
 import Signature from "./pages/signature";
+import Login from "./pages/login";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/report" element={<Report />} />
         <Route path="/layout" element={<Layout />} />
         <Route path="/signature" element={<Signature />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

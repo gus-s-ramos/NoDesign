@@ -56,6 +56,7 @@ h5 {
   ;
   text-align: justify;
   padding: 10px;
+  margin-right: 25px;
 }
 
 .splash-image {
@@ -82,10 +83,15 @@ h5 {
   border-radius: 10px;
 }
 
+.previewImage{
+  width: 150px;
+  height: 57px; 
+  overflow: hidden;
+}
 
 .preview-image {
-  width: 210px;
-  height: 90px;
+  width: 100%;
+  height: auto;
   align-items: center;
   border-radius: 10px;
 
@@ -180,14 +186,13 @@ h5 {
 
   display: flex;
   align-items: center;
-  margin-top: -20px;
-  height: 46px;
-  width: 210px;
-
+  margin-top: -17px;
+  height: 40px;
+  width: 150px;
   background-color: white;
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   z-index: 2;
   text-align: start;
@@ -207,6 +212,8 @@ h5 {
   display: flex;
   height: 100vh;
   flex-direction: row;
+  overflow: hidden;
+  margin-left: 50px;
 }
 
 .largerInput {
@@ -215,7 +222,6 @@ h5 {
   border-radius: 10px;
   background-color: white;
   border: 1px solid #BFBFBF;
-  ;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   padding: 10px;
@@ -226,9 +232,9 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 20px;
   background-color: rgb(238, 238, 238);
-  justify-content: space-around;
+  justify-content: flex-start;
   border-radius: 20px;
 }
 
@@ -254,7 +260,7 @@ h5 {
 
 .previewContainer {
   display: flex;
-  width: 20vw;
+  width: 25vw;
   flex-direction: column;
   margin-top: 25%;
 }
@@ -271,6 +277,7 @@ h5 {
   margin: auto;
   justify-content: space-evenly;
   transform-origin: top left;
+  
 }
 
 .previews p {
@@ -281,8 +288,13 @@ h5 {
   display: flex;
   flex-direction: column;
   margin: 20px;
-  width: 80vw;
+  width: 70vw;
   overflow-y: scroll;
+  
+}
+
+.TituloPagina{
+  margin-left: 20px;
 }
 
 .AssetsContainer {
@@ -290,7 +302,7 @@ h5 {
   flex-direction: column;
   margin: 20px;
   width: 60vw;
-  
+
 }
 
 .logoSection {
@@ -306,13 +318,14 @@ h5 {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 16px;
+  margin-right: 20px;
 }
 
 .logoTitleContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 8px;
+
 }
 
 .TitleColorSelection {
@@ -353,22 +366,23 @@ h5 {
   align-items: flex-start;
   margin-top: 16px;
   flex-direction: column;
+  margin-right: 20px;
 
 }
 
+
+
 .ColorColorSection {
 
-  border-radius: 10px;
-
-  height: 40px;
-  width: 199px;
-  margin-top: -20px;
+  border-radius: 0px 0px 10px 10px;
+  height: 35px;
+  width: 138px;
+  margin-top: -250px;
   margin-left: -1px;
   z-index: 2;
   border-color: rgb(245, 245, 245);
   background-color: white;
   border: 1px solid #BFBFBF;
-  ;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   padding-left: 10px;
@@ -382,7 +396,7 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin-top: 10px;
+  margin: 20px;
 }
 
 .containerRules {
@@ -391,7 +405,7 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin-top: 10px;
+  margin: 20px;
 }
 
 .containerRulesOne {

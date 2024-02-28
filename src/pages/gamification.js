@@ -6,11 +6,12 @@ import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+
 function Gamification() {
   const [file, setFile] = useState('https://placehold.co/300x128');
   const [textColor, setPrimaryColor] = useState('#000');
   const [secundaryTextColor, setSecundaryColor] = useState('#a2a2a2');
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+  const [backgroundColor, setBackgroundColor] = useState('#f8f8f8');
   const [selectColor, selectedColor] = useState("#000000");
   const [text00, setText00] = useState('Pontuação');
   const [text01, setText01] = useState('O evento todo está gamificado! Isso significa que você pode ganhar pontos interagindo dentro do app e os primeiros do ranking vão ganhar prêmios especiais do evento');
@@ -132,7 +133,10 @@ function Gamification() {
     <div className="containerPai">
 
       <div className="EditableContainer">
-        <h1>Editar Regra Gamificação</h1>
+        <div className='TituloPagina'>
+        <h1>Criar Regra Gamificação</h1>
+        </div>
+
         <div className="containerColor">
 
           <div className="logoSection">
@@ -143,7 +147,7 @@ function Gamification() {
                 <h3>LOGO:</h3>
 
               </div>
-              <div>
+              <div className='previewImage'>
                 <img src={file} className="preview-image" />
               </div>
               <div>
@@ -169,8 +173,8 @@ function Gamification() {
             <div>
               <button
                 style={{
-                  width: "210px",
-                  height: "100px",
+                  width: "150px",
+                  height: "50px",
                   backgroundColor: textColor,
                   border: "none",
                   cursor: "pointer",
@@ -204,8 +208,8 @@ function Gamification() {
             <div>
               <button
                 style={{
-                  width: "210px",
-                  height: "100px",
+                  width: "150px",
+                  height: "50px",
                   backgroundColor: secundaryTextColor,
                   border: "none",
                   cursor: "pointer",
@@ -238,8 +242,8 @@ function Gamification() {
             <div>
               <button
                 style={{
-                  width: "210px",
-                  height: "100px",
+                  width: "150px",
+                  height: "50px",
                   backgroundColor: backgroundColor,
                   border: "none",
                   cursor: "pointer",
@@ -415,7 +419,7 @@ function Gamification() {
       </div>
       <div>
         <div className="previewContainer">
-<button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
+          <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
           <div className="previews" style={{ backgroundColor, }}>
 
             <div className="image-container" style={{ display: "flex", justifyContent: "center" }}>

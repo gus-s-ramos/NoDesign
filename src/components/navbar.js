@@ -49,13 +49,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="contCliente">
+        <div><p> Gustavo Ramos</p></div>
           <div className="navClient">
+          
             <div className="user-button">
+              
               <img
                 className="user-photo"
-                src="https://images-ext-2.discordapp.net/external/XjAgksJc9aAHBck5poey2HhHzhTKq0Z-ceE4N9T_Dr8/%3Fo%3D1%2522/https/gcdnb.pbrd.co/images/2SR3DGrpAxMY.jpg?width=503&height=671"
+                src="https://i.imgur.com/7J9JdOh.png"
                 alt="User"
               />
+
             </div>
           </div>
           <div className="dropdown">
