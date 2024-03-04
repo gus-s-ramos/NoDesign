@@ -203,7 +203,7 @@ function Layout() {
             <div>
               <button
                 style={{
-                  width: "210px",
+                  width: "200px",
                   height: "100px",
                   backgroundColor: primaryColor,
                   border: "none",
@@ -238,7 +238,7 @@ function Layout() {
             <div>
               <button
                 style={{
-                  width: "210px",
+                  width: "200px",
                   height: "100px",
                   backgroundColor: headerColor,
                   border: "none",
@@ -269,7 +269,7 @@ function Layout() {
             <div>
               <button
                 style={{
-                  width: "210px",
+                  width: "200px",
                   height: "100px",
                   backgroundColor: textColor,
                   border: "none",
@@ -300,7 +300,7 @@ function Layout() {
             <div>
               <button
                 style={{
-                  width: "210px",
+                  width: "200px",
                   height: "100px",
                   backgroundColor: secondaryColor,
                   border: "none",
@@ -354,9 +354,12 @@ function Layout() {
       </div>
       <div>
       </div>
-      <div>
-        <div className="layoutPreview">
+      <div className="layoutPreview">
+        <button className='prevScreenButton'>Prev</button>
+        <button className='nextScreenButton'>Next</button>
+        <div>
           <ScreenOne loginFile={loginFile} text00={text00} />
+
         </div>
 
       </div>

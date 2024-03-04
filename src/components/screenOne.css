@@ -4,10 +4,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    
+    border-radius: 24px;
     transform-origin: top left;
 }
-
+.loginContent{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px;
+    width: 14%;
+   
+}
+.splashContent{
+    padding: 0px 0px 20px;
+}
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -36,26 +51,56 @@
 
 }
 
-.screen-content {
-    margin-left: -50%;
-}
-
 .previewLoginFile{
-    margin-top: -12%;
-    margin-left: -2%;
-    width: 40%;
+    height: 100%;
+    width: 60%;
 }
 
-.mockupcellphone {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    left: 75%;
-    z-index: 5;
-}
 
-.button {
-  max-width: 80%;
+.loginButton {
+  max-width: 100%;
   font-size: 16px;
   margin: 10px auto;
+  width: 100%;
+  background-color: #821938;
+  color: white;
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  cursor: pointer;
+}
+
+.buttonAccount{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #a7a7a7; /* Definindo a cor do ícone */
+}
+
+input[type="text"],
+input[type="password"] {
+  padding-left: 30px; /* Adicionando espaço para o ícone */
+  width: 85%;
+  font-size: 16px;
+  line-height: 2.5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #0f0f0f; /* Mudando a cor da borda quando focado */
 }
