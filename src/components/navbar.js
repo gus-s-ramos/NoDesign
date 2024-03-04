@@ -49,11 +49,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="contCliente">
-        <div><p> Gustavo Ramos</p></div>
+          <div><p> Gustavo Ramos</p></div>
           <div className="navClient">
-          
+
             <div className="user-button">
-              
+
               <img
                 className="user-photo"
                 src="https://i.imgur.com/7J9JdOh.png"
@@ -65,8 +65,8 @@ const Navbar = () => {
           <div className="dropdown">
             <button onClick={handleDropdownToggle}>
               <Icon path={mdiArrowDownDropCircleOutline} size={1} />
-            </button>
-            {/* Adicione a classe para mostrar o dropdown */}
+            </button> {isDropdownOpen && (
+            
             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
               <ul>
                 <button>
@@ -76,11 +76,12 @@ const Navbar = () => {
                   <Icon path={mdiDoorOpen} size={1} /> Logout
                 </button>
               </ul>
-            </div>
+            </div>)}
           </div>
-        </div>
+        
       </div>
     </div>
+    </div >
   );
 };
 
