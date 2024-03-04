@@ -4,6 +4,8 @@
 h1 {
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
+  margin-right: 12px;
+  margin-bottom: 0px;
 }
 
 h2 {
@@ -25,6 +27,12 @@ h5 {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
 }
+.TitleColor{
+  margin-left: 12px;
+    margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}
 
 .PointsContainer {
   width: 100%;
@@ -34,8 +42,14 @@ h5 {
 }
 
 .editButton {
-  width: 20px;
-  height: 20px;
+display: flex;
+    width: 100%;
+    padding: 5px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
 }
 
 .RulePoint {
@@ -44,7 +58,7 @@ h5 {
   background-color: white;
   border: 1px solid #BFBFBF;
   width: 20%;
-  padding: 10px;
+  padding: 16px;
 }
 
 .RuleName {
@@ -54,8 +68,9 @@ h5 {
   background-color: white;
   border: 1px solid #BFBFBF;
   ;
+
   text-align: justify;
-  padding: 10px;
+  padding: 16px;
   margin-right: 25px;
 }
 
@@ -84,8 +99,8 @@ h5 {
 }
 
 .previewImage{
-  width: 150px;
-  height: 57px; 
+  width: 200px;
+  height: 78px; 
   overflow: hidden;
 }
 
@@ -186,9 +201,9 @@ h5 {
 
   display: flex;
   align-items: center;
-  margin-top: -17px;
+  margin-top: -13px;
   height: 40px;
-  width: 150px;
+  width: 200px;
   background-color: white;
   color: rgb(0, 0, 0);
   border: none;
@@ -231,9 +246,6 @@ h5 {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  margin: 20px;
-  background-color: rgb(238, 238, 238);
   justify-content: flex-start;
   border-radius: 20px;
 }
@@ -260,15 +272,15 @@ h5 {
 
 .previewContainer {
   display: flex;
-  width: 25vw;
+  width: 24vw;
   flex-direction: column;
-  margin-top: 25%;
+  margin-top: 10%;
 }
 
 .previews {
   background-color: #ffffff;
   padding: 70px;
-  transform: scale(0.3);
+  transform: scale(0.38);
   width: 1080px;
   height: 1920px;
   display: flex;
@@ -289,8 +301,9 @@ h5 {
   flex-direction: column;
   margin: 20px;
   width: 70vw;
-  overflow-y: scroll;
-  
+  overflow-y: auto; 
+  scrollbar-color: rgb(196, 196, 196) #f0f0f0;
+  scrollbar-width: thin;
 }
 
 .TituloPagina{
@@ -309,7 +322,6 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
 
 }
 
@@ -317,7 +329,6 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 16px;
   margin-right: 20px;
 }
 
@@ -376,7 +387,7 @@ h5 {
 
   border-radius: 0px 0px 10px 10px;
   height: 35px;
-  width: 138px;
+  width: 187px;
   margin-top: -250px;
   margin-left: -1px;
   z-index: 2;
@@ -391,21 +402,23 @@ h5 {
 
 .ContainerPoints {
 
-  background-color: #f5f5f5;
+  
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .containerRules {
-  background-color: #f5f5f5;
+  
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .containerRulesOne {
@@ -423,8 +436,8 @@ h5 {
 .ButtonAddInputs {
   display: flex;
   align-items: center;
-  height: 46px;
-  width: 210px;
+  height: 32px;
+  width: 100%;
   background-color: rgb(136, 1, 1);
   color: rgb(255, 255, 255);
   border: none;
@@ -443,7 +456,7 @@ h5 {
 .PreviewDownload {
   display: flex;
   align-items: center;
-  height: 46px;
+  height: 32px;
   width: 100%;
   background-color: rgb(136, 1, 1);
   color: rgb(255, 255, 255);
@@ -457,14 +470,16 @@ h5 {
   font-size: 12px;
   border: 1px solid #BFBFBF;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .EditedInput {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 25px;
   height: 30px;
-  width: 100%;
+  
   border-radius: 10px;
   border: 1px solid #BFBFBF;
+  margin-bottom: 10px;
 }

@@ -4,6 +4,7 @@ import './gamification.css';
 import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -67,7 +68,7 @@ function Gamification() {
   const [additionalInputs, setAdditionalInputs] = useState([]);
 
   const addAdditionalInputs = () => {
-    setAdditionalInputs([...additionalInputs, { text01: '', text: '' }]);
+    setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
   };
 
   const handleDownloadClick = () => {
@@ -134,139 +135,144 @@ function Gamification() {
 
       <div className="EditableContainer">
         <div className='TituloPagina'>
-        <h1>Criar Regra Gamificação</h1>
+          <h1>Criar Regra Gamificação</h1>
         </div>
+        <div className='TitleColor'>
+          <h1>Selecione as cores</h1>
 
-        <div className="containerColor">
 
-          <div className="logoSection">
+          <div className="containerColor">
 
-            <div className="logoPreviewContainer">
 
-              <div className="logoTitleContainer">
-                <h3>LOGO:</h3>
+            <div className="logoSection">
 
-              </div>
-              <div className='previewImage'>
-                <img src={file} className="preview-image" />
-              </div>
-              <div>
-                <div className="buttonContainer">
-                  <button className="customButton" onClick={() => inputFileRef.current.click()}>
-                    BUSCAR
-                  </button>
-                  <input
-                    ref={inputFileRef}
-                    className="inputFile"
-                    type="file"
-                    onChange={handleChange}
-                    accept="image/*"
-                  />
+              <div className="logoPreviewContainer">
+
+                <div className="logoTitleContainer">
+                  <h3>LOGO (300x128):</h3>
+
+                </div>
+                <div className='previewImage'>
+                  <img src={file} className="preview-image" />
+                </div>
+                <div>
+                  <div className="buttonContainer">
+                    <button className="customButton" onClick={() => inputFileRef.current.click()}>
+                      BUSCAR
+                    </button>
+                    <input
+                      ref={inputFileRef}
+                      className="inputFile"
+                      type="file"
+                      onChange={handleChange}
+                      accept="image/*"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="colorSection">
-            <div className='TitleColorSection'>
-              <h3>COR PRIMÁRIA</h3>
-            </div>
-            <div>
-              <button
-                style={{
-                  width: "150px",
-                  height: "50px",
-                  backgroundColor: textColor,
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "10px",
-                }}
-                onClick={() => handleButtonClick('primaryColor')}
-              />
-            </div>
-            <div >
-              <input className='ColorColorSection'
-                type="text"
-                value={textColor}
-                onChange={(e) => setPrimaryColor(e.target.value)}
-              />
-
-
-            </div>
-
-            {showPrimaryColorPicker && (
-              <div>
-                <ChromePicker color={selectedColor} onChange={(color) => handleColorChange(color, 'primaryColor')} />
+            <div className="colorSection">
+              <div className='TitleColorSection'>
+                <h3>COR PRIMÁRIA</h3>
               </div>
-            )}
-          </div>
-
-
-          <div className="colorSection">
-            <div className='TitleColorSection'>
-              <h3>COR SECUNDÁRIA:</h3>
-            </div>
-            <div>
-              <button
-                style={{
-                  width: "150px",
-                  height: "50px",
-                  backgroundColor: secundaryTextColor,
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "10px",
-                }}
-                onClick={() => handleButtonClick('secondaryColor')}
-              />
-            </div>
-            <div >
-              <input className='ColorColorSection'
-                type="text"
-                value={secundaryTextColor}
-                onChange={(e) => setSecundaryColor(e.target.value)}
-
-              />
-
-            </div>
-
-
-            {showSecondaryColorPicker && (
               <div>
-                <ChromePicker color={textColor} onChange={(color) => handleColorChange(color, 'secondaryColor')} />
+                <button
+                  style={{
+                    width: "200px",
+                    height: "75px",
+                    backgroundColor: textColor,
+                    border: "none",
+                    cursor: "pointer",
+                    borderRadius: "10px",
+                  }}
+                  onClick={() => handleButtonClick('primaryColor')}
+                />
               </div>
-            )}
-          </div>
-          <div className="colorSection">
-            <div className='TitleColorSection'>
-              <h3>COR DE FUNDO:</h3>
-            </div>
-            <div>
-              <button
-                style={{
-                  width: "150px",
-                  height: "50px",
-                  backgroundColor: backgroundColor,
-                  border: "none",
-                  cursor: "pointer",
-                  borderRadius: "10px",
-                }}
-                onClick={() => handleButtonClick('backgroundColor')}
-              />
-            </div>
-            <div >
-              <input className='ColorColorSection'
-                type="text"
-                value={backgroundColor}
-                onChange={(e) => setBackgroundColor(e.target.value)}
-
-              />
+              <div >
+                <input className='ColorColorSection'
+                  type="text"
+                  value={textColor}
+                  onChange={(e) => setPrimaryColor(e.target.value)}
+                />
 
 
+              </div>
+
+              {showPrimaryColorPicker && (
+                <div>
+                  <ChromePicker color={selectedColor} onChange={(color) => handleColorChange(color, 'primaryColor')} />
+                </div>
+              )}
             </div>
-            {showBackgroundColorPicker && (
+
+
+            <div className="colorSection">
+              <div className='TitleColorSection'>
+                <h3>COR SECUNDÁRIA:</h3>
+              </div>
               <div>
-                <ChromePicker color={backgroundColor} onChange={(color) => handleColorChange(color, 'backgroundColor')} />
+                <button
+                  style={{
+                    width: "200px",
+                    height: "75px",
+                    backgroundColor: secundaryTextColor,
+                    border: "none",
+                    cursor: "pointer",
+                    borderRadius: "10px",
+                  }}
+                  onClick={() => handleButtonClick('secondaryColor')}
+                />
               </div>
-            )}
+              <div >
+                <input className='ColorColorSection'
+                  type="text"
+                  value={secundaryTextColor}
+                  onChange={(e) => setSecundaryColor(e.target.value)}
+
+                />
+
+              </div>
+
+
+              {showSecondaryColorPicker && (
+                <div>
+                  <ChromePicker color={textColor} onChange={(color) => handleColorChange(color, 'secondaryColor')} />
+                </div>
+              )}
+            </div>
+            <div className="colorSection">
+              <div className='TitleColorSection'>
+                <h3>COR DE FUNDO:</h3>
+              </div>
+              <div>
+                <button
+                  style={{
+                    width: "200px",
+                    height: "75px",
+                    backgroundColor: backgroundColor,
+                    border: "none",
+                    cursor: "pointer",
+                    borderRadius: "10px",
+                  }}
+                  onClick={() => handleButtonClick('backgroundColor')}
+                />
+              </div>
+              <div >
+                <input className='ColorColorSection'
+                  type="text"
+                  value={backgroundColor}
+                  onChange={(e) => setBackgroundColor(e.target.value)}
+
+                />
+
+
+              </div>
+              {showBackgroundColorPicker && (
+                <div>
+                  <ChromePicker color={backgroundColor} onChange={(color) => handleColorChange(color, 'backgroundColor')} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -280,12 +286,12 @@ function Gamification() {
                     value={editedTitle}
                     onChange={(e) => setEditedTitle(e.target.value)}
                   />
-                  <button className='editButton' onClick={saveEditedTitle}  ><FontAwesomeIcon icon="fa-solid fa-floppy-disk" /></button>
+                  <button className='editButton' onClick={saveEditedTitle}  ><FontAwesomeIcon icon={faFloppyDisk} /></button>
                 </>
               ) : (
                 <>
                   <h1>{text11}</h1>
-                  <button className='editButton' onClick={startEditingTitle}><FontAwesomeIcon icon="fa-solid fa-pen-to-square" /></button>
+                  <button className='editButton' onClick={startEditingTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
                 </>
               )}
             </div>
@@ -307,12 +313,12 @@ function Gamification() {
                     value={editedScoreTitle}
                     onChange={(e) => setEditedScoreTitle(e.target.value)}
                   />
-                  <button className='editButton' onClick={saveEditedScoreTitle}><FontAwesomeIcon icon="fa-solid fa-floppy-disk" /></button>
+                  <button className='editButton' onClick={saveEditedScoreTitle}><FontAwesomeIcon icon={faFloppyDisk} /></button>
                 </>
               ) : (
                 <>
                   <h1>{editedScoreTitle}</h1>
-                  <button className='editButton' onClick={startEditingScoreTitle}><FontAwesomeIcon icon="fa-solid fa-floppy-disk" /></button>
+                  <button className='editButton' onClick={startEditingScoreTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
                 </>
               )}
             </div>
@@ -389,7 +395,7 @@ function Gamification() {
                 />
               </div>
             ))}
-            <button className='ButtonAddInputs' onClick={addAdditionalInputs}>ADICONAR NOVA REGRA</button>
+            <button className='ButtonAddInputs' onClick={addAdditionalInputs}>ADICIONAR NOVA REGRA</button>
           </div>
           <div className="containerRules">
             <div style={{ display: "flex", alignItems: "center" }} >
@@ -401,12 +407,12 @@ function Gamification() {
                     onChange={(e) => setEditedObservationTitle(e.target.value)}
                   />
 
-                  <button className='editButton' onClick={saveEditedObservationTitle}><FontAwesomeIcon icon="fa-solid fa-floppy-disk" /></button>
+                  <button className='editButton' onClick={saveEditedObservationTitle}><FontAwesomeIcon icon={faFloppyDisk} /></button>
                 </>
               ) : (
                 <>
                   <h1>{editedObservationTitle}</h1>
-                  <button className='editButton' onClick={startEditingObservationTitle}><FontAwesomeIcon icon="fa-solid fa-floppy-disk" /></button>
+                  <button className='editButton' onClick={startEditingObservationTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
                 </>
               )}</div>
             <textarea className='largerInput'
