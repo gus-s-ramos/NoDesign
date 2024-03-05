@@ -150,3 +150,12 @@ right: 0;
 .show {
   display: block;
 }
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        width: 100%;
+        z-index: 1;
+        border-radius: 0px 0px 70px 70px;
+        box-shadow: rgb(255, 0, 0) 2px 1px 2px;
+    }
+}

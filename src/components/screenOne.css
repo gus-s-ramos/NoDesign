@@ -89,9 +89,9 @@
   color: #a7a7a7; /* Definindo a cor do ícone */
 }
 
-input[type="text"],
+/*input[type="text"],
 input[type="password"] {
-  padding-left: 30px; /* Adicionando espaço para o ícone */
+  padding-left: 30px; 
   width: 85%;
   font-size: 16px;
   line-height: 2.5;
@@ -102,5 +102,5 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
   outline: none;
-  border-color: #0f0f0f; /* Mudando a cor da borda quando focado */
-}
+  border-color: #0f0f0f;
+}*/
