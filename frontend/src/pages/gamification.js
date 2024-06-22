@@ -9,7 +9,7 @@ import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 function Gamification() {
-  const [file, setFile] = useState('https://placehold.co/300x128');
+  const [file, setFile] = useState('https://www.yazo.com.br/wp-content/uploads/2021/04/cropped-lett_color.png');
   const [textColor, setPrimaryColor] = useState('#000');
   const [secundaryTextColor, setSecundaryColor] = useState('#a2a2a2');
   const [backgroundColor, setBackgroundColor] = useState('#f8f8f8');
@@ -73,7 +73,7 @@ function Gamification() {
 
   const handleDownloadClick = () => {
     const previewContainer = document.querySelector('.previews');
-    const scale = 2;
+    const scale = 4;
 
     const scaledWidth = previewContainer.offsetWidth * scale;
     const scaledHeight = previewContainer.offsetHeight * scale;
@@ -125,7 +125,7 @@ function Gamification() {
   };
 
   const saveEditedObservationTitle = () => {
-    setText00(editedObservationTitle);
+    setText12(editedObservationTitle);
     setEditingObservationTitle(false);
   };
 
@@ -139,91 +139,87 @@ function Gamification() {
         </div>
         <div className='TitleColor'>
           <h1>Selecione as cores</h1>
-
-
           <div className="containerColor">
-
-
             <div className="logoSection">
-
               <div className="logoPreviewContainer">
-
-                <div className="logoTitleContainer">
-                  <h3>LOGO (300x128):</h3>
-
-                </div>
-                <div className='previewImage'>
-                  <img src={file} className="preview-image" />
-                </div>
                 <div>
-                  <div className="buttonContainer">
-                    <button className="customButton" onClick={() => inputFileRef.current.click()}>
-                      BUSCAR
-                    </button>
-                    <input
-                      ref={inputFileRef}
-                      className="inputFile"
-                      type="file"
-                      onChange={handleChange}
-                      accept="image/*"
-                    />
+                  <div className="colorSection">
+                    <div className='previewImage'>
+                      <img src={file} className="preview-image" style={{ width: '50px', alignContent: 'center' }} />
+                    </div>
+                    <div className="logoTitleContainer">
+                      <h3>LOGO (300x128):</h3>
+                      <button className="customButton" onClick={() => inputFileRef.current.click()}>
+                        BUSCAR
+                      </button>
+                      <input
+                        ref={inputFileRef}
+                        className="inputFile"
+                        type="file"
+                        onChange={handleChange}
+                        accept="image/*"
+                      />
+                    </div>
+
                   </div>
                 </div>
               </div>
             </div>
             <div className="colorSection">
-              <div className='TitleColorSection'>
-                <h3>COR PRIMÁRIA</h3>
-              </div>
               <div>
                 <button
                   style={{
-                    width: "200px",
-                    height: "75px",
+                    width: "50px",
+                    height: "50px",
                     backgroundColor: textColor,
-                    border: "none",
                     cursor: "pointer",
                     borderRadius: "10px",
+                    marginRight: "15px",
+                    border: "none",
                   }}
                   onClick={() => handleButtonClick('primaryColor')}
                 />
+                {showPrimaryColorPicker && (
+                  <div>
+                    <ChromePicker color={selectedColor} onChange={(color) => handleColorChange(color, 'primaryColor')} />
+                  </div>
+                )}
               </div>
               <div >
+                <div className='TitleColorSection'>
+                  <h3>COR PRIMÁRIA</h3>
+                </div>
                 <input className='ColorColorSection'
                   type="text"
                   value={textColor}
                   onChange={(e) => setPrimaryColor(e.target.value)}
                 />
-
-
               </div>
-
-              {showPrimaryColorPicker && (
-                <div>
-                  <ChromePicker color={selectedColor} onChange={(color) => handleColorChange(color, 'primaryColor')} />
-                </div>
-              )}
             </div>
-
-
             <div className="colorSection">
-              <div className='TitleColorSection'>
-                <h3>COR SECUNDÁRIA:</h3>
-              </div>
               <div>
                 <button
                   style={{
-                    width: "200px",
-                    height: "75px",
+                    width: "50px",
+                    height: "50px",
                     backgroundColor: secundaryTextColor,
-                    border: "none",
                     cursor: "pointer",
                     borderRadius: "10px",
+                    marginRight: "15px",
+                    border: "none",
                   }}
                   onClick={() => handleButtonClick('secondaryColor')}
                 />
+                {showSecondaryColorPicker && (
+                  <div>
+                    <ChromePicker color={textColor} onChange={(color) => handleColorChange(color, 'secondaryColor')} />
+                  </div>
+                )}
               </div>
               <div >
+                <div className='TitleColorSection'>
+                  <h3>COR SECUNDÁRIA:</h3>
+                </div>
                 <input className='ColorColorSection'
                   type="text"
                   value={secundaryTextColor}
@@ -234,44 +230,40 @@ function Gamification() {
               </div>
 
 
-              {showSecondaryColorPicker && (
-                <div>
-                  <ChromePicker color={textColor} onChange={(color) => handleColorChange(color, 'secondaryColor')} />
-                </div>
-              )}
+
             </div>
             <div className="colorSection">
-              <div className='TitleColorSection'>
-                <h3>COR DE FUNDO:</h3>
-              </div>
               <div>
                 <button
                   style={{
-                    width: "200px",
-                    height: "75px",
+                    width: "50px",
+                    height: "50px",
                     backgroundColor: backgroundColor,
-                    border: "none",
                     cursor: "pointer",
                     borderRadius: "10px",
+                    marginRight: "15px",
+                    border: "none",
                   }}
                   onClick={() => handleButtonClick('backgroundColor')}
                 />
+                {showBackgroundColorPicker && (
+                  <div>
+                    <ChromePicker color={backgroundColor} onChange={(color) => handleColorChange(color, 'backgroundColor')} />
+                  </div>
+                )}
               </div>
-              <div >
-                <input className='ColorColorSection'
-                  type="text"
-                  value={backgroundColor}
-                  onChange={(e) => setBackgroundColor(e.target.value)}
-
-                />
-
-
-              </div>
-              {showBackgroundColorPicker && (
-                <div>
-                  <ChromePicker color={backgroundColor} onChange={(color) => handleColorChange(color, 'backgroundColor')} />
+              <div className='TitleColorSection'>
+                <h3>COR DE FUNDO:</h3>
+                <div >
+                  <input className='ColorColorSection'
+                    type="text"
+                    value={backgroundColor}
+                    onChange={(e) => setBackgroundColor(e.target.value)}
+                  />
                 </div>
-              )}
+
+              </div>
+
             </div>
           </div>
         </div>
@@ -286,12 +278,12 @@ function Gamification() {
                     value={editedTitle}
                     onChange={(e) => setEditedTitle(e.target.value)}
                   />
-                  <button className='editButton' onClick={saveEditedTitle}  ><FontAwesomeIcon icon={faFloppyDisk} /></button>
+                  <button className='editButton' onClick={saveEditedTitle}  ><FontAwesomeIcon icon={faFloppyDisk} color='white' /></button>
                 </>
               ) : (
                 <>
                   <h1>{text11}</h1>
-                  <button className='editButton' onClick={startEditingTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                  <button className='editButton' onClick={startEditingTitle}><FontAwesomeIcon icon={faPenToSquare} color='white' /></button>
                 </>
               )}
             </div>
@@ -313,12 +305,12 @@ function Gamification() {
                     value={editedScoreTitle}
                     onChange={(e) => setEditedScoreTitle(e.target.value)}
                   />
-                  <button className='editButton' onClick={saveEditedScoreTitle}><FontAwesomeIcon icon={faFloppyDisk} /></button>
+                  <button className='editButton' onClick={saveEditedScoreTitle}><FontAwesomeIcon icon={faFloppyDisk} color='white' /></button>
                 </>
               ) : (
                 <>
-                  <h1>{editedScoreTitle}</h1>
-                  <button className='editButton' onClick={startEditingScoreTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                  <h1>{editedScoreTitle} </h1>
+                  <button className='editButton' onClick={startEditingScoreTitle}><FontAwesomeIcon icon={faPenToSquare} color='white' /></button>
                 </>
               )}
             </div>
@@ -360,18 +352,7 @@ function Gamification() {
                 onChange={(e) => setText08(e.target.value)}
               />
             </div>
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text05}
-                onChange={(e) => setText05(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text09}
-                onChange={(e) => setText09(e.target.value)}
-              />
-            </div>
+
 
             {additionalInputs.map((input, index) => (
               <div className='PointsContainer' key={index} >
@@ -407,12 +388,12 @@ function Gamification() {
                     onChange={(e) => setEditedObservationTitle(e.target.value)}
                   />
 
-                  <button className='editButton' onClick={saveEditedObservationTitle}><FontAwesomeIcon icon={faFloppyDisk} /></button>
+                  <button className='editButton' onClick={saveEditedObservationTitle}><FontAwesomeIcon icon={faFloppyDisk} color='white' /></button>
                 </>
               ) : (
                 <>
                   <h1>{editedObservationTitle}</h1>
-                  <button className='editButton' onClick={startEditingObservationTitle}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                  <button className='editButton' onClick={startEditingObservationTitle}><FontAwesomeIcon icon={faPenToSquare} color='white' /></button>
                 </>
               )}</div>
             <textarea className='largerInput'
@@ -431,12 +412,14 @@ function Gamification() {
             <div className="image-container" style={{ display: "flex", justifyContent: "center" }}>
               <img src={file} className="preview-image01" />
             </div>
-            <div >
-              {editingTitle ? (
-                <h2 style={{ color: secundaryTextColor }}>{editedTitle}</h2>
-              ) : (
-                <h2 style={{ color: secundaryTextColor }}>{text11}</h2>
-              )}
+            <div>
+              <div>
+                {editingTitle ? (
+                  <h2 style={{ color: secundaryTextColor }}>{editedTitle}</h2>
+                ) : (
+                  <h2 style={{ color: secundaryTextColor }}>{text11}</h2>
+                )}
+              </div>
               <h4 style={{ color: textColor }}>{text01}</h4>
             </div>
             <div className='pontuacao' style={{ color: textColor }} >
@@ -459,11 +442,6 @@ function Gamification() {
                 <h4 style={{ color: textColor }}>{text04}</h4>
                 <span>&nbsp;</span>
                 <h4 style={{ color: secundaryTextColor }}>{text08}</h4>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text05}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text09}</h4>
               </div>
               {additionalInputs.map((input, index) => (
                 <div key={index} style={{ display: "flex", justifyContent: "space-between" }}>
@@ -489,7 +467,9 @@ function Gamification() {
               <img src={poweredby} style={{ width: "30%", height: "auto", }} />
             </div>
           </div>
+
         </div>
+
 
       </div>
     </div>

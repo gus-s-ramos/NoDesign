@@ -1,0 +1,152 @@
+.screen-three {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #a5a5a5;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    transform-origin: top left;
+    padding: 12px;
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    min-height: 580px;
+}
+
+.screenthree{
+    background-color: white;
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    min-height: 580px;
+    border-radius: 16px;
+}
+
+
+.mockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-content img {
+    width: 260px;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+.menuHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .icon-return,
+.header .icon-search,
+.header .icon-options {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.app-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.app-info .app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    margin-right: 0px;
+}
+
+.app-details h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.app-details p {
+    margin: 5px 0 0;
+    color: #888;
+}
+
+.app-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.app-stats-star {
+    display: flex;
+    align-items: center;
+}
+
+.app-stats .icon-star,
+.app-stats .icon-download {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.install-button {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.install-button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 85px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.install-button button:hover {
+    background-color: #45a049;
+}
+
+.screenshots {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.screenshots .screenshot img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.app-reviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-rating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

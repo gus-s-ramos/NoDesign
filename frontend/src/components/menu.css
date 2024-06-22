@@ -1,0 +1,34 @@
+/* menu.css */
+
+.menu {
+  width: 5vw; /* Ajuste conforme necessário */
+  background: linear-gradient(135deg, #000000, #000000);
+  height: 100vh; /* Para ocupar toda a altura da página */
+  padding-top: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.menu-item a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item.selected a {
+  border: 2px solid yellow;
+}
+
+.menu-item.selected svg {
+  fill: yellow;
+}

@@ -6,6 +6,8 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   margin-right: 12px;
   margin-bottom: 0px;
+  margin-top: 0px;
+  color: #ffffff;
 }
 
 h2 {
@@ -16,6 +18,7 @@ h2 {
 h3 {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
+  color: #ffffff;
 }
 
 h4 {
@@ -26,10 +29,10 @@ h4 {
 h5 {
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .TitleColor{
-  margin-left: 12px;
-    margin-left: 20px;
   margin-right: 20px;
   padding: 10px;
 }
@@ -43,7 +46,6 @@ h5 {
 
 .editButton {
 display: flex;
-    width: 100%;
     padding: 5px;
     text-align: left;
     border: none;
@@ -75,8 +77,8 @@ display: flex;
 }
 
 .splash-image {
-  width: 215px;
-  height: 445px;
+  width: 200px;
+  height: 430px;
   border-radius: 10px;
 }
 
@@ -93,20 +95,21 @@ display: flex;
 }
 
 .store-image {
-  width: 445px;
-  height: 445px;
+  width: 300px;
+  height: 100%;
   border-radius: 10px;
 }
 
 .previewImage{
-  width: 200px;
-  height: 78px; 
+  width: 50px;
   overflow: hidden;
+  background-color: #777777;
+  border-radius: 10px;
+  display: flex;
 }
 
-.preview-image {
-  width: 100%;
-  height: auto;
+.preview-image01 {
+  width: 300px;
   align-items: center;
   border-radius: 10px;
 
@@ -162,7 +165,7 @@ display: flex;
   margin-top: -20px;
   position: relative;
   height: 46px;
-  width: 215px;
+  width: 200px;
   background-color: white;
   color: rgb(0, 0, 0);
   border: none;
@@ -183,7 +186,7 @@ display: flex;
   margin-top: -20px;
   position: static;
   height: 46px;
-  width: 445px;
+  width: 300px;
   background-color: white;
   color: rgb(0, 0, 0);
   border: none;
@@ -201,13 +204,12 @@ display: flex;
 
   display: flex;
   align-items: center;
-  margin-top: -13px;
   height: 40px;
-  width: 200px;
+  width: 100px;
   background-color: white;
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 0px 0px 10px 10px;
+  border-radius:10px;
   cursor: pointer;
   z-index: 2;
   text-align: start;
@@ -228,25 +230,24 @@ display: flex;
   height: 100vh;
   flex-direction: row;
   overflow: hidden;
-  margin-left: 50px;
+  justify-content: center;
 }
 
 .largerInput {
   width: 100%;
-  height: 100px;
+  height: 70px;
   border-radius: 10px;
-  background-color: white;
-  border: 1px solid #BFBFBF;
+  background-color: #ffffff33;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
+  color: #ffffff;
+  border: none;
   padding: 10px;
 }
 
 .containerColor {
-  align-items: baseline;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   border-radius: 20px;
 }
 
@@ -260,7 +261,6 @@ display: flex;
 
 
 .containerRow {
-  flex: 40%;
   display: flex;
   flex-direction: column;
 
@@ -272,7 +272,7 @@ display: flex;
 
 .previewContainer {
   display: flex;
-  width: 24vw;
+  width: 20vw;
   flex-direction: column;
   margin-top: 10%;
 }
@@ -280,9 +280,9 @@ display: flex;
 .previews {
   background-color: #ffffff;
   padding: 70px;
-  transform: scale(0.38);
+  transform: scale(0.24);
   width: 1080px;
-  height: 1920px;
+  min-height: 1920px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -300,15 +300,12 @@ display: flex;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  width: 70vw;
+  width: 65vw;
   overflow-y: auto; 
   scrollbar-color: rgb(196, 196, 196) #f0f0f0;
   scrollbar-width: thin;
 }
 
-.TituloPagina{
-  margin-left: 20px;
-}
 
 .AssetsContainer {
   display: flex;
@@ -329,14 +326,13 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .logoTitleContainer {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
-
+  margin-left: 15px;
 }
 
 .TitleColorSelection {
@@ -374,10 +370,13 @@ display: flex;
 
 .colorSection {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 16px;
-  flex-direction: column;
-  margin-right: 20px;
+  flex-direction: row;
+  margin-right: 8px;
+  background-color: #ffffff33;
+  padding: 10px;
+  border-radius: 16px;
 
 }
 
@@ -385,10 +384,9 @@ display: flex;
 
 .ColorColorSection {
 
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
   height: 35px;
-  width: 187px;
-  margin-top: -250px;
+  width: 100px;
   margin-left: -1px;
   z-index: 2;
   border-color: rgb(245, 245, 245);
@@ -401,13 +399,10 @@ display: flex;
 }
 
 .ContainerPoints {
-
-  
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin-left: 20px;
   margin-right: 20px;
 }
 
@@ -417,8 +412,8 @@ display: flex;
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  margin-left: 20px;
   margin-right: 20px;
+  
 }
 
 .containerRulesOne {
@@ -447,7 +442,6 @@ display: flex;
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-size: 12px;
-  border: 1px solid #BFBFBF;
   justify-content: space-around;
   font-weight: bold;
 
@@ -468,7 +462,6 @@ display: flex;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 12px;
-  border: 1px solid #BFBFBF;
   justify-content: space-around;
   margin-bottom: 20px;
 }

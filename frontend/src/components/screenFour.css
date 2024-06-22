@@ -1,0 +1,68 @@
+.menuTimeline {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 16px 16px 0px 0px;
+    align-items: center;
+}
+
+.timeline-share{
+    display: flex;
+    margin-top: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.timeline-share p{
+    padding-left: 5px;
+}
+
+.logoTimelinesHeader {
+    width: 100px;  
+    height: auto;  
+}
+.screenfour{
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    min-height: 580px;
+    border-radius: 16px;
+    background-color: #f3f3f3;
+}
+
+.timelineName{
+    padding-left: 10px;
+}
+
+.app-post{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-title{
+    display: flex;
+    padding: 10px;
+}
+
+.post-description {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.post-description p{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.timeline-content{
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    min-height: 580px;
+    overflow: hidden; 
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 10px;
+}

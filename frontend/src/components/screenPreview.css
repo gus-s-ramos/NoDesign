@@ -1,0 +1,10 @@
+.layoutPreview {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    margin-top: 25px;
+    border-radius: 16px;
+    overflow: hidden;
+    align-items: center;
+
+}
