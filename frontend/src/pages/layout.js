@@ -7,14 +7,18 @@ import ScreenFour from '../components/screenFour';
 import ScreenPreview from '../components/screenPreview';
 import ScreenInfo from '../components/screenInfo';
 import ScreenRepresentation from '../components/screenRepresentation';
-import ColorPicker from '../components/colorpicker';
-import AssetUploader from '../components/assetsUpload';
+import ScreenOneStore from '../components/screensStore/screenOneStore';
+import ScreenTwoStore from '../components/screensStore/screenTwoStore';
+
+
 
 function Layout() {
   const [splash, setSplash] = useState('https://placehold.co/375x777');
   const [loginFile, setLoginFile] = useState('https://placehold.co/1900x1500');
   const [logoTimeline, setLogoTimeline] = useState('https://placehold.co/254x128');
   const [storeIcon, setStoreIcon] = useState('https://placehold.co/128x128');
+  const [bannerStoreIcon, setBannerStoreIcon] = useState('https://placehold.co/621x1344')
+  const [bannerStoreIcon01, setBannerStoreIcon01] = useState('https://placehold.co/621x1344')
 
   const [primaryColor, setPrimaryColor] = useState('#821938');
   const [secondaryColor, setSecondaryColor] = useState('#000');
@@ -28,14 +32,19 @@ function Layout() {
   const screens = [
     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
     <ScreenTwo splash={splash} />,
-    <ScreenThree storeIcon={storeIcon} text00={text00} />,
-    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} storeIcon={storeIcon} isLightMode={isLightMode} />
+    <ScreenThree storeIcon={storeIcon} headerColor={headerColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} />,
+    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode}  />,
+    <ScreenTwoStore headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />
   ];
+
+  const screensStore = [
+    <ScreenOneStore headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
+    <ScreenTwoStore headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />
+  ]
 
   return (
     <div>
       <div>
-
       </div>
       <div className="containerLayout">
         <div className='divSliderContent'>
@@ -45,14 +54,17 @@ function Layout() {
             handleScreenClick={setCurrentScreenIndex}
           />
         </div>
+        <div className='divScreenContent'>
 
-        <ScreenPreview
-          screens={screens}
-          currentScreenIndex={currentScreenIndex}
-          setCurrentScreenIndex={setCurrentScreenIndex}
-        />
+          <ScreenPreview
+            screens={screens}
+            screensStore={screensStore}
+            currentScreenIndex={currentScreenIndex}
+            setCurrentScreenIndex={setCurrentScreenIndex}
+          />
+        </div>
 
-        <div className='divSliderContent'>
+        <div className='divContent'>
           <ScreenInfo
             currentScreenIndex={currentScreenIndex}
             splash={splash}
@@ -67,6 +79,12 @@ function Layout() {
             setLogoTimeline={setLogoTimeline}
             storeIcon={storeIcon}
             setStoreIcon={setStoreIcon}
+            bannerStoreIcon={bannerStoreIcon}
+            setBannerStoreIcon={setBannerStoreIcon}
+            bannerStoreIcon01={bannerStoreIcon01}
+            setBannerStoreIcon01={setBannerStoreIcon01}
+            text00={text00}
+            setText00={setText00}
           />
         </div>
       </div>

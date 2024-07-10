@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const AssetUploader = ({ label, asset, setAsset }) => {
+const BannerLojaUpload = ({ label, asset, setAsset }) => {
   const inputFileRef = useRef(null);
 
   const handleChange = (e) => {
@@ -8,8 +8,10 @@ const AssetUploader = ({ label, asset, setAsset }) => {
     setAsset(URL.createObjectURL(selectedFile));
   };
 
+  
+
   return (
-    <div className="loginUploaderContainer">
+    <div className="bannerLojaUpload">
       <div>
       <h3>{label}</h3>
       <img src={asset} alt={label} onClick={() => inputFileRef.current.click()} className="assetPreview" />
@@ -26,4 +28,4 @@ const AssetUploader = ({ label, asset, setAsset }) => {
   );
 };
 
-export default AssetUploader;
+export default BannerLojaUpload;

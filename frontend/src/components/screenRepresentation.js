@@ -13,7 +13,7 @@ const ScreenRepresentation = ({ currentScreenIndex, handleScreenClick }) => {
           className={`screenRepresentation ${index === currentScreenIndex ? 'selectedRepresentation' : ''}`}
           onClick={() => handleScreenClick(index)}
         >
-          <Icon path={icon} size={1} color={index === currentScreenIndex ? '#ff0cc2' : '#ff0cc2'} />
+          <Icon path={icon} size={1} color={index === currentScreenIndex ? '#fff' : '#a50202'} />
         </div>
       ))}
     </div>

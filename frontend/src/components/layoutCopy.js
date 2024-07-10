@@ -6,6 +6,7 @@ import ScreenThree from '../components/screenThree';
 import ScreenFour from '../components/screenFour';
 import ColorPicker from '../components/colorpicker';
 import AssetUploader from '../components/assetsUpload';
+import LoginUploader from '../components/loginUploader'
 import ScreenPreview from '../components/screenPreview';
 import AppNameInput from '../components/appNameInput';
 import ModeSwitcher from '../components/modeSwitcher';
@@ -46,7 +47,7 @@ function Layout() {
         <h1>Assets</h1>
         <div className="containerColor">
           <AssetUploader imageUrl={splash} setImageUrl={setSplash} label="SPLASH" />
-          <AssetUploader imageUrl={loginFile} setImageUrl={setLoginFile} label="TELA LOGIN" />
+          <LoginUploader imageUrl={loginFile} setImageUrl={setLoginFile} label="TELA LOGIN" />
           <AssetUploader imageUrl={logoTimeline} setImageUrl={setLogoTimeline} label="LOGO TIMELINE" />
           <AssetUploader imageUrl={storeIcon} setImageUrl={setStoreIcon} label="ICONE DA LOJA" />
         </div>

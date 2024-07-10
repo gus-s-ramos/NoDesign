@@ -2,10 +2,13 @@ import React from 'react';
 import './screenThree.css';
 import Icon from '@mdi/react';
 import { mdiArrowLeft, mdiMagnify, mdiDotsVertical, mdiStar, mdiDownload, mdiAccountCircle } from '@mdi/js';
+import ScreenOneStore from './screensStore/screenOneStore';
+import ScreenTwoStore from './screensStore/screenTwoStore';
 
 
 
-function ScreenThree({ storeIcon, text00 }) {
+function ScreenThree({ headerColor, storeIcon, text00, bannerStoreIcon, primaryColor, logoTimeline }) {
+    
     return (
         <div className="screen-three">
             <div className="mockup">
@@ -22,7 +25,7 @@ function ScreenThree({ storeIcon, text00 }) {
                             <div className="app-info">
                                 <img src={storeIcon} alt="App Icon" className="app-icon" />
                                 <div className="app-details">
-                                    <h3 type="text" >{text00}</h3>
+                                    <h3 className='title-store' type="text" >{text00}</h3>
                                     <p>YAZO</p>
                                 </div>
                             </div>
@@ -54,14 +57,18 @@ function ScreenThree({ storeIcon, text00 }) {
                                 <button>Instalar</button>
                             </div>
                             <div className="screenshots">
-                                <div className="screenshot">
-                                    <img alt="Screenshot 1" />
+                                <div className="screen-one-container">
+                                    <div>
+                                        <ScreenOneStore headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                    </div>
+                                    <div>
+                                        <ScreenTwoStore headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                        
+                                    </div>
                                 </div>
                                 <div className="screenshot">
-                                    <img alt="Screenshot 2" />
                                 </div>
                                 <div className="screenshot">
-                                    <img alt="Screenshot 3" />
                                 </div>
                             </div>
                         </div>

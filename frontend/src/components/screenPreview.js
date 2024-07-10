@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ScreenPreview = ({ screens, currentScreenIndex, setCurrentScreenIndex }) => {
+const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentScreenIndex }) => {
 
   const handleNextClick = () => {
     const newIndex = (currentScreenIndex + 1) % screens.length;
@@ -27,7 +27,7 @@ const ScreenPreview = ({ screens, currentScreenIndex, setCurrentScreenIndex }) =
       <div className="screensContainer">
         <div
           className="sideScreen"
-          style={{ opacity: 0.5 }}
+          style={{ opacity: 0.3 }}
           onClick={() => setCurrentScreenIndex(getPrevScreenIndex())}
         >
           {screens[getPrevScreenIndex()]}
@@ -37,7 +37,7 @@ const ScreenPreview = ({ screens, currentScreenIndex, setCurrentScreenIndex }) =
         </div>
         <div
           className="sideScreen"
-          style={{ opacity: 0.5 }}
+          style={{ opacity: 0.3 }}
           onClick={() => setCurrentScreenIndex(getNextScreenIndex())}
         >
           {screens[getNextScreenIndex()]}

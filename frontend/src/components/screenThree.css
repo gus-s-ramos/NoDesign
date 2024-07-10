@@ -21,6 +21,7 @@
     max-height: 580px;
     min-height: 580px;
     border-radius: 16px;
+    overflow: hidden;
 }
 
 
@@ -59,16 +60,21 @@
 .app-info {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
+
 
 .app-info .app-icon {
     width: 80px;
     height: 80px;
     border-radius: 15px;
     margin-right: 0px;
+}
+
+.app-details{
+    margin-left: 10px;
 }
 
 .app-details h1 {
@@ -78,7 +84,8 @@
 
 .app-details p {
     margin: 5px 0 0;
-    color: #888;
+    color: #000;
+    font-size: 12px;
 }
 
 .app-stats {
@@ -129,6 +136,7 @@
     width: 100px;
     height: auto;
     border-radius: 10px;
+    padding-right: 5px;
 }
 
 .app-reviews{
@@ -149,4 +157,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.title-store{
+    color: #000;
+}
+
+.screen-one-container {
+    display: flex;
+    transform: scale(0.4); /* Ajuste a escala conforme necessário */
+    transform-origin: top left; /* Define a origem da transformação */
 }

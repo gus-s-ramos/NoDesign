@@ -1,8 +1,18 @@
+.menuNotch {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px 0px 25px;
+    border-radius: 15px 15px 0px 0px;
+    align-items: center;
+    font-size: 12px;
+    color: #f3f3f3;
+}
+
 .menuTimeline {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     align-items: center;
 }
 
@@ -17,6 +27,8 @@
 
 .timeline-share p{
     padding-left: 5px;
+    font-size: 12px;
+    opacity: 40%;
 }
 
 .logoTimelinesHeader {
@@ -36,6 +48,12 @@
     padding-left: 10px;
 }
 
+.timelineName1{
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-left: 10px;
+}
+
 .app-post{
     display: flex;
     justify-content: space-between;
@@ -43,26 +61,37 @@
 }
 .post-title{
     display: flex;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .post-description {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .post-description p{
     margin-top: 0px;
     margin-bottom: 5px;
+    font-size: 12px;
 }
 
 .timeline-content{
     max-width: 260px;
     min-width: 260px;
     max-height: 580px;
-    min-height: 580px;
     overflow: hidden; 
     width: 100%;
     border-radius: 0px 0px 10px 10px;
     margin-bottom: 10px;
+}
+
+.notchtimeline{
+    width: 80px; 
+    height: 20px; 
+    background-color: #000;
+    border-radius: 50px; 
+    position: relative;
 }

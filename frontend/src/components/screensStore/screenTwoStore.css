@@ -1,0 +1,80 @@
+.labelmenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.labelmenu01{
+    display: flex;
+    align-items: center;
+    
+}
+
+.buttonprimary{
+    border: none;
+    background-color: #f3f3f3;
+    border-bottom: 2px solid #ffdd00; /* Adiciona a borda inferior */
+    cursor: pointer; /* Adiciona um cursor de ponteiro ao passar o mouse */
+    padding: 10px;
+}
+
+.buttonsecundary{
+    border: none;
+    background-color: #f3f3f3;
+    cursor: pointer; /* Adiciona um cursor de ponteiro ao passar o mouse */
+    padding: 10px;
+}
+
+.userLabel{
+    display:flex ;
+    background-color: white;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.userLabel p{
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.userLabel01{
+    display:flex ;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBar {
+    position: relative;
+    width: 93%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 40px; /* Espaco suficiente para o ícone */
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #e3e3e3;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 220px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* O ícone não interferirá com os cliques no input */
+}
+
+.networkingButton{
+    padding-left: 8px;
+}

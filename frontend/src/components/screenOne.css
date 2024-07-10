@@ -11,6 +11,7 @@
     max-width: 260px;
     min-width: 260px;
     max-height: 580px;
+    overflow: hidden;
 }
 .loginContent{
     display: flex;
@@ -105,5 +106,9 @@
 }
 
 .termos-privacidade {
-    font-size: 10px;
+    font-size: 12px;
+}
+
+.buttonAccount p{
+    font-size: 12px;
 }

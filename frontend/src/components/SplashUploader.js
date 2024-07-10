@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const AssetUploader = ({ label, asset, setAsset }) => {
+const SplashUploader = ({ label, asset, setAsset }) => {
   const inputFileRef = useRef(null);
 
   const handleChange = (e) => {
@@ -26,4 +26,4 @@ const AssetUploader = ({ label, asset, setAsset }) => {
   );
 };
 
-export default AssetUploader;
+export default SplashUploader;

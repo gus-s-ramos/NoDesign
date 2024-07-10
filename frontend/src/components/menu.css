@@ -3,7 +3,7 @@
 .menu {
   width: 5vw; /* Ajuste conforme necessário */
   background: linear-gradient(135deg, #000000, #000000);
-  height: 100vh; /* Para ocupar toda a altura da página */
+  height: 90vh; /* Para ocupar toda a altura da página */
   padding-top: 20px;
 }
 
