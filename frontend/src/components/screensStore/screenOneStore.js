@@ -5,22 +5,22 @@ import './screenOneStore.css';
 
 
 
-function ScreenOneStore({ headerColor, logoTimeline, isLightMode }) {
+function ScreenOneStore({ headerColor, logoTimeline, isLightMode, secondaryColor }) {
     return (
         <div>
-            <div className="storePrint" style={{ backgroundColor: headerColor }}>
+            <div className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '63px', height: '32px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <p>Não perca nada do que irá rolar no evento!</p>
+                <h5>Não perca nada do<br></br> que irá rolar no evento!</h5>
                 <div>
-                    <div className="screenStore" style={{marginTop: '40px' }}>
+                    <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">
                             <div className="screenfour">
-                                <div className="menuNotch" style={{ backgroundColor: headerColor, }}>
-                                    <p>9:41</p>
+                                <div className="menuNotchStoreOne" style={{ backgroundColor: headerColor, }}>
+                                    <h6 className='hoursize'>9:41</h6>
                                     <div className="notchtimeline"></div>
                                     <div className="statusIcons">
                                         <Icon path={mdiSignal} size={0.5} className="icon-signal" />
@@ -41,7 +41,7 @@ function ScreenOneStore({ headerColor, logoTimeline, isLightMode }) {
                                 </div>
                                 <div className='timeline-share'>
                                     <div>
-                                        <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '8px' }}
+                                        <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }}
                                         />
                                     </div>
                                     <div>
@@ -51,21 +51,32 @@ function ScreenOneStore({ headerColor, logoTimeline, isLightMode }) {
                                 <div className='timeline-content' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                     <div className="app-post" style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                         <div className='post-title' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
-                                            <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '8px' }}
+                                            <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }}
                                             />
                                             <div className="app-details">
-                                                <p className='timelineName'>YAZO</p>
+                                                <h6 className='timelineName'>YAZO</h6>
                                                 <p className='timelineName1'>2 min</p>
                                             </div>
                                         </div>
-                                        <Icon path={mdiDotsVertical} size={0.6} className="icon-options" />
+                                        <Icon path={mdiDotsVertical} size={0.8} color={'grey'} className="icon-options" />
                                     </div>
-                                    <div className='post-description'>
-                                        <p>Teste de uma breve descrição para ser inserida dentro do aplicativo</p>
+                                    <div >
                                     </div>
                                     <div>
                                         <img src="https://markmesse.com.br/wp-content/uploads/2024/02/21.png" alt="App Icon" style={{ width: '260px', height: '250px', objectFit: 'cover' }}
                                         />
+                                    </div>
+                                    <div className='post-description'>
+                                        <div>
+                                            <p>
+                                                37 curtidas
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                30 comentários
+                                            </p>
+                                        </div>
                                     </div>
 
                                 </div>

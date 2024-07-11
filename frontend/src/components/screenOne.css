@@ -13,21 +13,35 @@
     max-height: 580px;
     overflow: hidden;
 }
-.loginContent{
+
+.screen-content p{
+    margin: 0px;
+    font-size: 12px;
+}
+
+.screen-one h5 {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0px 15px 0px;
+}
+
+.loginContent {
     display: flex;
     flex-direction: column;
     margin-top: -40px;
     border-radius: 20px;
-    padding: 20px;
-    width: 220px;
+    padding: 10px;
+    width: 240px;
     position: relative;
     z-index: 1;
-    height: 330px;
-   
+    height: 340px;
+
 }
-.splashContent{
+
+.splashContent {
     padding: 0px 0px 20px;
 }
+
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .phone-frame {
@@ -56,7 +70,7 @@
 
 }
 
-.previewLoginFile{
+.previewLoginFile {
     height: 100%;
     max-width: 260px;
     min-width: 260px;
@@ -66,49 +80,52 @@
 
 
 .loginButton {
-  color: white;
-  max-width: 100%;
-  font-size: 16px;
-  margin: 10px auto;
-  width: 100%;
-  border: none; 
-  border-radius: 5px; 
-  padding: 10px 20px; 
-  cursor: pointer;
+    color: white;
+    max-width: 100%;
+    font-size: 16px;
+    margin: 10px auto;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.buttonAccount{
+.buttonAccount {
     display: flex;
     justify-content: space-between;
     align-content: center;
 }
 
 .input-wrapper {
-  position: relative;
-  margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .icon {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  color: #a7a7a7; 
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    color: #838383;
 }
 
 .inputMockup {
-  padding-left: 30px; 
-  width: 85%;
-  font-size: 10px;
-  line-height: 2.5;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    padding-left: 40px;
+    width: 83%;
+    font-size: 10px;
+    line-height: 2.8;
+    border: none;
+    border-radius: 5px;
+    background-color: #dfdfdf;
+    font-size: 10px;
 }
 
 .termos-privacidade {
     font-size: 12px;
+    display: flex;
 }
 
-.buttonAccount p{
+.buttonAccount p {
     font-size: 12px;
 }

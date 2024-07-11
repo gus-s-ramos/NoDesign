@@ -6,6 +6,7 @@ import SplashUploader from '../components/SplashUploader';
 import TimelineUploader from '../components/timelineUploader';
 import BannerLojaUpload from '../components/bannerLojaUpload';
 import IconeLojaUploader from '../components/IconeLojaUploader';
+import './screenInfo.css';
 
 const ScreenInfo = ({
   currentScreenIndex,
@@ -21,8 +22,8 @@ const ScreenInfo = ({
   setLogoTimeline,
   storeIcon,
   setStoreIcon,
-  bannerStoreIcon,
-  setBannerStoreIcon,
+  secondaryColor,
+  setSecondaryColor,
   text00,
   setText00,
 }) => {
@@ -56,19 +57,20 @@ const ScreenInfo = ({
       case 2:
         return (
           <>
+            <div>
+              <ColorPicker
+                label="Cor banner"
+                color={secondaryColor}
+                setColor={setSecondaryColor}
+              />
+            </div>
             <IconeLojaUploader
               label="Ícone da Loja"
               asset={storeIcon}
               setAsset={setStoreIcon}
             />
-            <div>
-              <BannerLojaUpload
-                label="Banners da Loja"
-                asset={bannerStoreIcon}
-                setAsset={setBannerStoreIcon}
-              />
-            </div>
-            <div>
+
+            <div className='appNameInput'>
               <label htmlFor="appName">Nome do App</label>
               <input
                 id="appName"

@@ -8,6 +8,7 @@ import Signature from "./pages/signature";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
 import Menu from "./components/menu";
+import PassagemBastao from "./pages/passagemBastao";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function AppContent() {
             <Route path="/layout" element={<Layout />} />
             <Route path="/signature" element={<Signature />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/passagemBastao" element={<PassagemBastao />} />
           </Routes>
         </div>
       </div>

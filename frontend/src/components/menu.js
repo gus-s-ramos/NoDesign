@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
-import { mdiGamepadVariant, mdiChartLine, mdiMonitorCellphone, mdiSignatureImage } from '@mdi/js';
+import { mdiGamepadVariant, mdiChartLine, mdiMonitorCellphone, mdiSignatureImage, mdiBellCheckOutline } from '@mdi/js';
 import './menu.css';
 
 const Menu = () => {
@@ -11,6 +11,7 @@ const Menu = () => {
     { to: '/report', icon: mdiChartLine },
     { to: '/layout', icon: mdiMonitorCellphone },
     { to: '/signature', icon: mdiSignatureImage },
+    { to: '/passagemBastao', icon: mdiBellCheckOutline }
   ];
 
   const getLinkClass = (path) => {
