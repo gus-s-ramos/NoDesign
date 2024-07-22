@@ -3,9 +3,9 @@ import './Modal.css'; // Arquivo CSS para estilização do modal
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
+const ModalStoreIconSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     const [crop, setCrop] = useState({
-        aspect: 375 / 777,
+        aspect: 128 / 128,
     });
     const [completedCrop, setCompletedCrop] = useState(null);
     const imgRef = useRef(null);
@@ -66,7 +66,7 @@ const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                         crop={crop}
                         onChange={(newCrop) => setCrop(newCrop)}
                         onComplete={(c) => setCompletedCrop(c)}
-                        aspect={375 / 777}
+                        aspect={128 / 128}
                     >
                         <img ref={imgRef} src={imageSrc} alt="Imagem para cortar" />
                     </ReactCrop>
@@ -80,4 +80,4 @@ const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     );
 };
 
-export default ModalImageSelector;
+export default ModalStoreIconSelector;

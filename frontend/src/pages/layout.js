@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
-import pica from 'pica';
 import './layout.css';
 import ScreenOne from '../components/screenOne';
 import ScreenTwo from '../components/screenTwo';
@@ -11,67 +10,21 @@ import ScreenPreview from '../components/screenPreview';
 import ScreenInfo from '../components/screenInfo';
 import ScreenRepresentation from '../components/screenRepresentation';
 
-
-
-const resizeImage = async (imageUrl, maxWidth, maxHeight) => {
-  const img = new Image();
-  img.src = imageUrl;
-
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-
-  await new Promise(resolve => {
-    img.onload = () => {
-      let width = img.width;
-      let height = img.height;
-
-      if (width > height) {
-        if (width > maxWidth) {
-          height *= maxWidth / width;
-          width = maxWidth;
-        }
-      } else {
-        if (height > maxHeight) {
-          width *= maxHeight / height;
-          height = maxHeight;
-        }
-      }
-
-      canvas.width = width;
-      canvas.height = height;
-
-      ctx.drawImage(img, 0, 0, width, height);
-      resolve();
-    };
-  });
-
-  return await new Promise(resolve => {
-    canvas.toBlob(blob => {
-      resolve(blob);
-    }, 'image/png');
-  });
-};
-
-
 function Layout() {
   const [splash, setSplash] = useState('https://placehold.co/375x777');
   const [loginFile, setLoginFile] = useState('https://placehold.co/1900x1500');
   const [logoTimeline, setLogoTimeline] = useState('https://placehold.co/254x128');
   const [storeIcon, setStoreIcon] = useState('https://placehold.co/128x128');
-  const [bannerStoreIcon, setBannerStoreIcon] = useState('https://placehold.co/621x1344')
-  const [bannerStoreIcon01, setBannerStoreIcon01] = useState('https://placehold.co/621x1344')
-
+  const [bannerStoreIcon, setBannerStoreIcon] = useState('https://placehold.co/621x1344');
+  const [bannerStoreIcon01, setBannerStoreIcon01] = useState('https://placehold.co/621x1344');
   const [primaryColor, setPrimaryColor] = useState('#821938');
   const [secondaryColor, setSecondaryColor] = useState('#f1f1f1');
   const [headerColor, setHeaderColor] = useState('#ffa00c');
-  const [textColor, setTextColor] = useState('#ffffff');
   const [text00, setText00] = useState('NOME DO APLICATIVO');
-
   const [isLightMode, setIsLightMode] = useState(true);
   const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
 
   const screens = [
-
     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
     <ScreenTwo splash={splash} />,
     <ScreenThree storeIcon={storeIcon} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
@@ -101,28 +54,35 @@ function Layout() {
       { url: storeIcon, name: 'icon-60@2x.png', width: 120, height: 120, folder: iconsFolder },
       { url: storeIcon, name: 'icon-60@3x.png', width: 180, height: 180, folder: iconsFolder },
       { url: storeIcon, name: 'icon-1024.png', width: 1024, height: 1024, folder: iconsFolder },
-      { url: storeIcon, name: 'App-icon', width: 1024, height: 1024, folder: assetsFolder },
-      { url: storeIcon, name: 'icon_512', width: 512, height: 512, folder: assetsFolder },
-      { url: loginFile, name: 'Login@2x', width: 3800, height: 3000, folder: assetsFolder },
-      { url: logoTimeline, name: 'logo timeline', width: 260, height: 132, folder: assetsFolder },
-      { url: logoTimeline, name: 'splash@3x', width: 1125, height: 2331, folder: assetsFolder },
+      { url: storeIcon, name: 'App-icon.png', width: 1024, height: 1024, folder: assetsFolder },
+      { url: storeIcon, name: 'icon_512.png', width: 512, height: 512, folder: assetsFolder },
+      { url: loginFile, name: 'Login@2x.png', width: 3800, height: 3000, folder: assetsFolder },
+      { url: logoTimeline, name: 'logo timeline.png', width: 260, height: 132, folder: assetsFolder },
+      { url: splash, name: 'splash@3x.png', width: 1125, height: 2331, folder: assetsFolder },
     ];
 
-    // Download and add images to respective folders
-    const imagePromises = images.map(async (image) => {
-      const response = await fetch(image.url);
-      const blob = await response.blob();
-      // Resize image if necessary
-      const resizedBlob = await resizeImage(blob, image.width, image.height);
-      image.folder.file(image.name, resizedBlob);
-    });
+    try {
+      // Download and add images to respective folders
+      const imagePromises = images.map(async (image) => {
+        const response = await fetch(image.url);
+        if (!response.ok) throw new Error(`Failed to fetch image: ${response.statusText}`);
+        const blob = await response.blob();
+        // Resize image if necessary
+        const resizedBlob = await resizeImage(blob, image.width, image.height);
+        image.folder.file(image.name, resizedBlob);
+      });
 
-    await Promise.all(imagePromises);
+      await Promise.all(imagePromises);
+      console.log('All images processed.');
 
-    // Generate and save the ZIP file
-    const zipBlob = await zip.generateAsync({ type: 'blob' });
-    saveAs(zipBlob, 'Assets.zip');
+      // Generate and save the ZIP file
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
+      saveAs(zipBlob, 'Assets.zip');
+    } catch (error) {
+      console.error('Error generating ZIP:', error);
+    }
   };
+  
 
   const resizeImage = async (blob, width, height) => {
     return new Promise((resolve, reject) => {
@@ -143,13 +103,9 @@ function Layout() {
     });
   };
 
-
   return (
     <div>
-      <div>
-        <button onClick={downloadImagesAsZip}>Download Images as ZIP</button>
-
-      </div>
+      <button onClick={downloadImagesAsZip}>Download Images as ZIP</button>
       <div className="containerLayout">
         <div className='divSliderContent'>
           <ScreenRepresentation
@@ -159,14 +115,12 @@ function Layout() {
           />
         </div>
         <div className='divScreenContent'>
-
           <ScreenPreview
             screens={screens}
             currentScreenIndex={currentScreenIndex}
             setCurrentScreenIndex={setCurrentScreenIndex}
           />
         </div>
-
         <div className='divContent'>
           <ScreenInfo
             currentScreenIndex={currentScreenIndex}
@@ -192,9 +146,7 @@ function Layout() {
             setText00={setText00}
           />
         </div>
-
       </div>
-
     </div>
   );
 }

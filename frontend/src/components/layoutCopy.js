@@ -7,7 +7,7 @@ import ScreenFour from '../components/screenFour';
 import ColorPicker from '../components/colorpicker';
 import AssetUploader from '../components/assetsUpload';
 import LoginUploader from '../components/loginUploader'
-import ScreenPreview from '../components/screenPreview';
+import screenPreview from '../components/screenPreview';
 import AppNameInput from '../components/appNameInput';
 import ModeSwitcher from '../components/modeSwitcher';
 import LanguageSelector from '../components/languageSelector';

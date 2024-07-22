@@ -88,9 +88,15 @@
 }
 
 .assetPreview {
-  max-width: 100%;
-  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  max-width: 12vw;
+  min-width: 12vw;
+  border-radius: 8px;
+  margin-bottom: -10px;
 }
+
+
 
 .assetUploaderContainer img {
   max-width: 30%;
@@ -102,11 +108,11 @@
   display: flex;
 }
 
-.bannerLojaUpload{
+.bannerLojaUpload {
   display: flex;
 }
 
-.bannerLojaUpload img{
+.bannerLojaUpload img {
   cursor: pointer;
   display: flex;
   max-width: 5vw;
@@ -114,7 +120,7 @@
   margin-bottom: -10px;
 }
 
-.bannerLojaUpload button{
+.bannerLojaUpload button {
   border: none;
   border-radius: 0px 0px 10px 10px;
   max-width: 5vw;
@@ -124,7 +130,7 @@
 
 }
 
-.iconeLojaUploader{
+.iconeLojaUploader {
   margin-top: 16px;
   background-color: #ffffff33;
   padding: 10px;
@@ -133,7 +139,7 @@
   align-items: center;
 }
 
-.iconeLojaUploader button{
+.iconeLojaUploader button {
   border: none;
   border-radius: 0px 0px 10px 10px;
   max-width: 12vw;
@@ -150,7 +156,25 @@
   margin-bottom: -10px;
 }
 
+.buttonScreenInfo {
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+  max-width: 12vw;
+  height: 4vh;
+  width: 12vw;
+  cursor: pointer;
+}
+
 .loginUploaderContainer {
+  margin-top: 16px;
+  background-color: #ffffff33;
+  padding: 10px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.splashUploaderContainer {
   margin-top: 16px;
   background-color: #ffffff33;
   padding: 10px;
@@ -161,10 +185,13 @@
 
 
 
+
+
 .loginUploaderContainer img {
   cursor: pointer;
   display: flex;
   max-width: 12vw;
+  min-width: 12vw;
   border-radius: 8px;
   margin-bottom: -10px;
 }

@@ -42,7 +42,6 @@ const ScreenInfo = ({
               label="Imagem de Login"
               asset={loginFile}
               setAsset={setLoginFile}
-              style={{ width: '1000px', height: 'auto' }}
             />
           </>
         );

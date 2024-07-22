@@ -8,7 +8,7 @@ import './screenThreeStore.css';
 function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
 
     return (
-        <div>
+        <div >
             <div className="storePrint03" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}

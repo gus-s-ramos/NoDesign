@@ -1,11 +1,26 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import ModalLoginImageSelector from './ModalLogin';
+import './Modal.css';
 
 const LoginUploader = ({ label, asset, setAsset }) => {
   const inputFileRef = useRef(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleChange = (e) => {
     const selectedFile = e.target.files[0];
-    setAsset(URL.createObjectURL(selectedFile));
+    setSelectedImage(URL.createObjectURL(selectedFile)); // Armazena temporariamente a imagem selecionada
+    setModalOpen(true); // Abre o modal ao selecionar a imagem
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null); // Limpa a imagem selecionada ao fechar o modal sem salvar
+  };
+
+  const handleSaveImage = (imageSrc) => {
+    setAsset(imageSrc); // Salva a imagem no estado principal (asset) após confirmar no modal
+    setModalOpen(false); // Fecha o modal após salvar
+    setSelectedImage(null); // Limpa a imagem selecionada
   };
 
   return (
@@ -21,6 +36,7 @@ const LoginUploader = ({ label, asset, setAsset }) => {
         accept="image/*"
         style={{ display: 'none' }}
       />
+      <ModalLoginImageSelector isOpen={isModalOpen} onClose={closeModal} onSave={handleSaveImage} imageSrc={selectedImage} />
     </div>
     </div>
   );
