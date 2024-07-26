@@ -5,11 +5,10 @@ import './screenTwoStore.css';
 
 
 
-function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor }) {
+function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
     
     return (
-        <div >
-            <div className="storePrint" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-two-store-content" className="storePrint" style={{ backgroundColor: secondaryColor, }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
@@ -120,7 +119,7 @@ function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor }) {
                                             </div>
                                         </div>
                                         <div>
-                                            <button className='buttonNetworking01' style={{ backgroundColor: headerColor,}}>Adicionar</button>
+                                            <button className='buttonNetworking01' style={{ backgroundColor: headerColor}}>Adicionar</button>
                                         </div>
                                     </div>
                                     <div className="userLabel">
@@ -159,18 +158,13 @@ function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor }) {
                                             <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
                                         </div>
                                     </div>
-                                    
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
-export default ScreenTwoStore;
+export default ScreenTwoStoreDownload;

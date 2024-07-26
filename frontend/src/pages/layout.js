@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import html2canvas from 'html2canvas';
 import './layout.css';
 import ScreenOne from '../components/screenOne';
 import ScreenTwo from '../components/screenTwo';
@@ -9,6 +10,19 @@ import ScreenFour from '../components/screenFour';
 import ScreenPreview from '../components/screenPreview';
 import ScreenInfo from '../components/screenInfo';
 import ScreenRepresentation from '../components/screenRepresentation';
+import ScreenOneIphone65 from '../components/screensStoreDownload/screenIphone6,5/screenOneIphone65';
+import ScreenTwoIphone65 from '../components/screensStoreDownload/screenIphone6,5/screenTwoIphone65';
+import ScreenThreeIphone65 from '../components/screensStoreDownload/screenIphone6,5/screenThreeIphone65';
+import ScreenFourIphone65 from '../components/screensStoreDownload/screenIphone6,5/screenFourIphone65';
+import ScreenOneIphone55 from '../components/screensStoreDownload/screenIphone5,5/screenOneIphone55';
+import ScreenTwoIphone55 from '../components/screensStoreDownload/screenIphone5,5/screenTwoIphone55';
+import ScreenThreeIphone55 from '../components/screensStoreDownload/screenIphone5,5/screenThreeIphone55';
+import ScreenFourIphone55 from '../components/screensStoreDownload/screenIphone5,5/screenFourIphone55';
+import ScreenOneAndroid from '../components/screensStoreDownload/screenAndroid/screenOneAndroid';
+import ScreenTwoAndroid from '../components/screensStoreDownload/screenAndroid/screenTwoAndroid';
+import ScreenThreeAndroid from '../components/screensStoreDownload/screenAndroid/screenThreeAndroid';
+import ScreenFourAndroid from '../components/screensStoreDownload/screenAndroid/screenFourAndroid';
+
 
 function Layout() {
   const [splash, setSplash] = useState('https://placehold.co/375x777');
@@ -31,8 +45,9 @@ function Layout() {
     <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
   ];
 
-  const downloadImagesAsZip = async () => {
-    const zip = new JSZip();
+  const screensContainerRef = useRef(null);
+
+  const downloadImagesAsZip = async (zip) => {
 
     // Create folders
     const iconsFolder = zip.folder('AppIcon.appiconset');
@@ -59,6 +74,7 @@ function Layout() {
       { url: loginFile, name: 'Login@2x.png', width: 3800, height: 3000, folder: assetsFolder },
       { url: logoTimeline, name: 'logo timeline.png', width: 260, height: 132, folder: assetsFolder },
       { url: splash, name: 'splash@3x.png', width: 1125, height: 2331, folder: assetsFolder },
+
     ];
 
     try {
@@ -74,15 +90,10 @@ function Layout() {
 
       await Promise.all(imagePromises);
       console.log('All images processed.');
-
-      // Generate and save the ZIP file
-      const zipBlob = await zip.generateAsync({ type: 'blob' });
-      saveAs(zipBlob, 'Assets.zip');
     } catch (error) {
       console.error('Error generating ZIP:', error);
     }
   };
-  
 
   const resizeImage = async (blob, width, height) => {
     return new Promise((resolve, reject) => {
@@ -99,13 +110,98 @@ function Layout() {
           resolve(resizedBlob);
         }, 'image/png');
       };
-      img.onerror = reject;
+      img.onerror = (error) => {
+        URL.revokeObjectURL(img.src);
+        reject(error);
+      };
     });
   };
 
+  const downloadScreensAsImages = async (zip) => {
+    const screenIds = [
+      { id: 'screen-one-store-content', name: 'Android-1.png', width: 1242, height: 2208, folder: 'print_android' },
+      { id: 'screen-two-store-content', name: 'Android-2.png', width: 1242, height: 2208, folder: 'print_android' },
+      { id: 'screen-three-store-content', name: 'Android-3.png', width: 1242, height: 2208, folder: 'print_android' },
+      { id: 'screen-four-store-content', name: 'Android-4.png', width: 1242, height: 2208, folder: 'print_android' },
+      { id: 'screen-one-iphone-55', name: 'iPhone Small-1.png', width: 1242, height: 2208, folder: 'print_iphone/5,5' },
+      { id: 'screen-two-iphone-55', name: 'iPhone Small-2.png', width: 1242, height: 2208, folder: 'print_iphone/5,5' },
+      { id: 'screen-three-iphone-55', name: 'iPhone Small-3.png', width: 1242, height: 2208, folder: 'print_iphone/5,5' },
+      { id: 'screen-four-iphone-55', name: 'iPhone Small-4.png', width: 1242, height: 2208, folder: 'print_iphone/5,5' },
+      { id: 'screen-one-iphone-65', name: 'iPhone Large-1.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
+      { id: 'screen-two-iphone-65', name: 'iPhone Large-2.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
+      { id: 'screen-three-iphone-65', name: 'iPhone Large-3.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
+      { id: 'screen-four-iphone-65', name: 'iPhone Large-4.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
+    ];
+  
+    const container = screensContainerRef.current;
+  
+    if (!container) return;
+  
+    try {
+      // Make the container visible
+      container.style.display = 'block';
+  
+      const imagePromises = screenIds.map(async ({ id, name, width, height, folder }) => {
+        const element = document.getElementById(id);
+        if (!element) {
+          console.error(`Element with ID ${id} not found.`);
+          return;
+        }
+  
+        const canvas = await html2canvas(element, {
+          useCORS: true,
+          scale: 2, // Increase the scale to capture more details
+        });
+  
+        // Resize the canvas
+        const resizedCanvas = document.createElement('canvas');
+        resizedCanvas.width = width;
+        resizedCanvas.height = height;
+        const ctx = resizedCanvas.getContext('2d');
+        ctx.drawImage(canvas, 0, 0, width, height);
+  
+        // Convert resized canvas to blob
+        const blob = await new Promise((resolve, reject) => {
+          resizedCanvas.toBlob((blob) => {
+            if (blob) {
+              resolve(blob);
+            } else {
+              reject('Error generating the blob.');
+            }
+          }, 'image/png');
+        });
+  
+        // Add the blob to the ZIP file in the respective folder
+        const deviceFolder = zip.folder(`assets/prints/${folder}`);
+        deviceFolder.file(name, blob);
+      });
+  
+      // Wait for all image processing promises to complete
+      await Promise.all(imagePromises);
+    } catch (error) {
+      console.error('Error downloading images:', error);
+    } finally {
+      // Hide the container again
+      container.style.display = 'none';
+    }
+  };
+  
+
+
+  const handleDownload = async () => {
+    const zip = new JSZip();
+    await downloadImagesAsZip(zip);
+    await downloadScreensAsImages(zip);
+
+    // Generate and save the ZIP file
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    saveAs(zipBlob, 'Assets.zip');
+  };
+
+
   return (
     <div>
-      <button onClick={downloadImagesAsZip}>Download Images as ZIP</button>
+      <button onClick={handleDownload}>Download All Assets</button>
       <div className="containerLayout">
         <div className='divSliderContent'>
           <ScreenRepresentation
@@ -144,8 +240,70 @@ function Layout() {
             setBannerStoreIcon01={setBannerStoreIcon01}
             text00={text00}
             setText00={setText00}
+            isLightMode={isLightMode}
+            setIsLightMode={setIsLightMode}
           />
         </div>
+      </div>
+      <div
+        ref={screensContainerRef}
+        style={{ display: 'none' }}
+      >
+        
+        <div>
+          <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+        <div>
+          <ScreenTwoIphone65 splash={splash} headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenThreeIphone65 storeIcon={storeIcon}
+            secondaryColor={secondaryColor}
+            logoTimeline={logoTimeline}
+            bannerStoreIcon={bannerStoreIcon}
+            text00={text00}
+            headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenFourIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+
+        <div>
+          <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+        <div>
+          <ScreenTwoIphone55 splash={splash} headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenThreeIphone55 storeIcon={storeIcon}
+            secondaryColor={secondaryColor}
+            logoTimeline={logoTimeline}
+            bannerStoreIcon={bannerStoreIcon}
+            text00={text00}
+            headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenFourIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+
+        <div>
+          <ScreenOneAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+        <div>
+          <ScreenTwoAndroid splash={splash} headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenThreeAndroid storeIcon={storeIcon}
+            secondaryColor={secondaryColor}
+            logoTimeline={logoTimeline}
+            bannerStoreIcon={bannerStoreIcon}
+            text00={text00}
+            headerColor={headerColor} />
+        </div>
+        <div>
+          <ScreenFourAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+        </div>
+
       </div>
     </div>
   );

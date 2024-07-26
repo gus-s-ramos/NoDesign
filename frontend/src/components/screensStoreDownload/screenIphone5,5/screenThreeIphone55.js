@@ -1,15 +1,13 @@
 import React, { forwardRef } from 'react';
 import Icon from '@mdi/react';
 import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiMapMarker, mdiClockOutline, mdiSignal, mdiWifi, mdiBattery, mdiHeartOutline } from '@mdi/js';
-import './screenThreeStore.css';
 
 
 
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
-const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
+const ScreenThreeIphone55 = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
     return (
-        <div >
-            <div className="storePrint03" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-three-iphone-55" className="storePrint03" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
@@ -74,7 +72,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                                             <p>Trilha do conhecimento</p>
                                         </div>
                                         <img
-                                            src="../src/assets/1.jpg"
+                                            src="./assets/1.jpg"
                                             alt="Foto do Usuário"
                                             style={{ width: '20px', height: '20px', borderRadius: '50%' }}
                                         />
@@ -118,8 +116,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                     </div>
                 </div>
             </div>
-        </div>
     );
 })
 
-export default ScreenThreeStore;
+export default ScreenThreeIphone55;

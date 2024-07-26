@@ -1,0 +1,151 @@
+.labelmenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 8px;
+}
+
+.storePrint h5 {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.storePrint h6 {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+.storePrint h7 {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+
+
+.hoursize {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px 0px 0px 10px;
+}
+
+.storePrint p {
+    font-size: 10px;
+    font-family: 'lato';
+    font-weight: 600;
+    margin: 0px;
+    margin-left: 10px;
+    color: #a7a7a7;
+}
+
+.labelmenu01 {
+    display: flex;
+    align-items: center;
+
+}
+
+.buttonprimary {
+    border: none;
+    background-color: #f3f3f3;
+    border-bottom: 2px solid #ffdd00;
+    /* Adiciona a borda inferior */
+    cursor: pointer;
+    /* Adiciona um cursor de ponteiro ao passar o mouse */
+    padding: 10px;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.buttonsecundary {
+    border: none;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    /* Adiciona um cursor de ponteiro ao passar o mouse */
+    padding: 10px;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.buttonNetworking {
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 8px;
+    padding: 9px;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.buttonNetworking01 {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+
+.userLabel {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    margin: 0px 10px 10px 10px;
+    padding: 8px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.userLabel p {
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.userLabel01 {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBar {
+    position: relative;
+    width: 93%;
+    padding: 10px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    /* Espaco suficiente para o ícone */
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #e3e3e3;
+    font-size: 10px;
+}
+
+.searchIcon {
+    position: absolute;
+    right: 220px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    size: 10px;
+}
+
+.networkingButton {
+    padding-left: 8px;
+}

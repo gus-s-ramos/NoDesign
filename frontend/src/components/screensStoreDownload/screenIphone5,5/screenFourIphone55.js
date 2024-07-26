@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '@mdi/react';
 import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiHeartOutline } from '@mdi/js';
-import './screenFourStore.css';
+
 
 // Função para converter hexadecimal para rgba com opacidade
 const hexToRgba = (hex, alpha = 1) => {
@@ -12,12 +12,11 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
+function ScreenFourIphone55({ headerColor, logoTimeline, secondaryColor }) {
     const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
 
     return (
-        <div >
-            <div className="storePrint04" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-four-iphone-55" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
@@ -63,8 +62,7 @@ function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
-export default ScreenFourStore;
+export default ScreenFourIphone55;

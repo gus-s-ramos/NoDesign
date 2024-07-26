@@ -10,6 +10,7 @@ import ScreenFourStore from './screensStore/screenFourStore';
 
 
 function ScreenThree({ headerColor, storeIcon, text00, bannerStoreIcon, secondaryColor, logoTimeline }) {
+    
 
     return (
         <div className="screen-three">

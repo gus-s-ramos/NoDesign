@@ -1,12 +1,10 @@
 import React, { forwardRef } from 'react';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery } from '@mdi/js';
-import './screenOneStore.css';
 
-const ScreenOneStore = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
+const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
     return (
-        <div className='divScreenOneContent' >
-            <div  className="storePrint" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-one-store-content"   className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
@@ -92,8 +90,7 @@ const ScreenOneStore = forwardRef(({ headerColor, logoTimeline, isLightMode, sec
                     </div>
                 </div>
             </div>
-        </div>
     );
 });
 
-export default ScreenOneStore;
+export default ScreenOneStoreDownload;

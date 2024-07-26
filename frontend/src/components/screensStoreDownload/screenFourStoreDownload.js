@@ -12,12 +12,11 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
+function ScreenFourStoreDownload({ headerColor, logoTimeline, secondaryColor }) {
     const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
 
     return (
-        <div >
-            <div className="storePrint04" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-four-store-content" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
@@ -63,8 +62,7 @@ function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
-export default ScreenFourStore;
+export default ScreenFourStoreDownload;

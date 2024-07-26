@@ -319,3 +319,10 @@
 .mainScreen+.sideScreen {
   margin-left: -150px;
 }
+
+.screen-download-style{
+  max-width: 310.5px;
+  max-height: 672px;
+  min-height: 672px;
+  min-width: 310.5px;
+}
