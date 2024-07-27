@@ -26,6 +26,7 @@ const Navbar = () => {
             <img src="https://www.yazo.com.br/wp-content/uploads/2021/04/cropped-lett_color.png" alt="Logo" />
           </Link>
         </div>
+        {/*
         <div className="search-bar">
           <input type="text" placeholder="Search..." />
           <button type="submit">
@@ -40,6 +41,7 @@ const Navbar = () => {
             <Icon color='white' path={mdiChat} size={1} className="icon-white" />
           </button>
         </div>
+  
         <div className="user-profile">
           <div className="dropdown">
             <button onClick={handleDropdownToggle} aria-haspopup="true" aria-expanded={isDropdownOpen}>
@@ -65,7 +67,9 @@ const Navbar = () => {
           <Link to="/profile">
             <img className="user-photo" src="https://i.imgur.com/7J9JdOh.png" alt="User" />
           </Link>
+
         </div>
+        */}
       </div>
     </div>
   );

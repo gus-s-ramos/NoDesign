@@ -1,20 +1,21 @@
 import React, { forwardRef } from 'react';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery } from '@mdi/js';
+import './screenIphone65.css'
 
 const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
     return (
-            <div id="screen-one-iphone-65"   className="storePrint" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-one-iphone-65"   className="storeIphone" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5>Não perca nada do<br /> que irá rolar no evento!</h5>
                 <div>
-                    <div className="screenStore" style={{ marginTop: '40px' }}>
-                        <div className="timeline-content">
-                            <div className="screenfour">
+                    <div className="screenIphone" style={{ marginTop: '40px' }}>
+                        <div className="timelineContentBig">
+                            <div className="screenfourbig">
                                 <div className="menuNotchStoreOne" style={{ backgroundColor: headerColor }}>
                                     <h6 className='hoursize'>9:41</h6>
                                     <div className="notchtimeline"></div>

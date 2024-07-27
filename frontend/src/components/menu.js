@@ -8,10 +8,10 @@ const Menu = () => {
   const location = useLocation();
   const menuItems = [
     { to: '/gamification', icon: mdiGamepadVariant },
-    { to: '/report', icon: mdiChartLine },
+   // { to: '/report', icon: mdiChartLine },
     { to: '/layout', icon: mdiMonitorCellphone },
-    { to: '/signature', icon: mdiSignatureImage },
-    { to: '/passagemBastao', icon: mdiBellCheckOutline }
+   // { to: '/signature', icon: mdiSignatureImage },
+   // { to: '/passagemBastao', icon: mdiBellCheckOutline }
   ];
 
   const getLinkClass = (path) => {

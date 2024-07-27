@@ -22,9 +22,9 @@ const ScreenThreeIphone65 = React.forwardRef(({ headerColor, logoTimeline, secon
                                     <h6 className='hoursize'>9:41</h6>
                                     <div className="notchtimeline"></div>
                                     <div className="statusIcons">
-                                        <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                        <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                        <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                        <Icon path={mdiSignal} size={0.8} className="icon-signal" />
+                                        <Icon path={mdiWifi} size={0.8} className="icon-wifi" />
+                                        <Icon path={mdiBattery} size={0.8} className="icon-battery" />
                                     </div>
 
                                 </div>

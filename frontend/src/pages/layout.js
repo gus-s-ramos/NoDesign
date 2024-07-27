@@ -247,14 +247,14 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-        style={{ display: 'none' }}
+       // style={{ display: 'none' }}
       >
         
         <div>
-          <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor}/>
         </div>
         <div>
-          <ScreenTwoIphone65 splash={splash} headerColor={headerColor} />
+          <ScreenTwoIphone65 splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeIphone65 storeIcon={storeIcon}
@@ -265,14 +265,14 @@ function Layout() {
             headerColor={headerColor} />
         </div>
         <div>
-          <ScreenFourIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenFourIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline}  secondaryColor={secondaryColor}/>
         </div>
 
         <div>
-          <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline}  secondaryColor={secondaryColor}/>
         </div>
         <div>
-          <ScreenTwoIphone55 splash={splash} headerColor={headerColor} />
+          <ScreenTwoIphone55 splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeIphone55 storeIcon={storeIcon}
@@ -283,14 +283,14 @@ function Layout() {
             headerColor={headerColor} />
         </div>
         <div>
-          <ScreenFourIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenFourIphone55 loginFile={loginFile} headerColor={headerColor} secondaryColor={secondaryColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
 
         <div>
-          <ScreenOneAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenOneAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
         <div>
-          <ScreenTwoAndroid splash={splash} headerColor={headerColor} />
+          <ScreenTwoAndroid splash={splash} headerColor={headerColor} secondaryColor={secondaryColor}/>
         </div>
         <div>
           <ScreenThreeAndroid storeIcon={storeIcon}
@@ -301,7 +301,7 @@ function Layout() {
             headerColor={headerColor} />
         </div>
         <div>
-          <ScreenFourAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenFourAndroid loginFile={loginFile} headerColor={headerColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
 
       </div>
