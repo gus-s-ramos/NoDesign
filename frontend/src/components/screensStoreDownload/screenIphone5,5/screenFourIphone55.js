@@ -12,8 +12,8 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourIphone55({ headerColor, logoTimeline, secondaryColor }) {
-    const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
+function ScreenFourIphone55({primaryColor, logoTimeline, secondaryColor }) {
+    const headerColorWithOpacity = hexToRgba(primaryColor, 0.3);
 
     return (
             <div id="screen-four-iphone-55" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
@@ -44,7 +44,7 @@ function ScreenFourIphone55({ headerColor, logoTimeline, secondaryColor }) {
                                 </div>
                                 <div className='notificationLabel' style={{ backgroundColor: headerColorWithOpacity }}>
                                     <div className='notificationLabel01'>
-                                        <div className="icon-circle" style={{ backgroundColor: headerColor }}>
+                                        <div className="icon-circle" style={{ backgroundColor: primaryColor }}>
                                             <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
                                         <div>

@@ -34,21 +34,21 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                             </div>
                             <div className='timeline-share'>
                                 <div>
-                                    <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }}
+                                    <img src="/assets/1.jpg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px' }}
                                     />
                                 </div>
-                                <div>
+                                <div className="app-details">
                                     <p>Compartilhe uma ideia</p>
                                 </div>
                             </div>
                             <div className='timeline-content' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                 <div className="app-post" style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                     <div className='post-title' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
-                                        <img src="https://visitcuritiba.tur.br/wp-content/uploads/2022/11/yazo-300x300.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }}
+                                        <img src="/assets/1.jpg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px' }}
                                         />
                                         <div className="app-details">
-                                            <h6 className='timelineName'>YAZO</h6>
-                                            <p className='timelineName1'>2 min</p>
+                                            <h6 className='timelineName'>Claudio Ribeiro</h6>
+                                            <p className='timelineName1'>Há 2 min</p>
                                         </div>
                                     </div>
                                     <Icon path={mdiDotsVertical} size={0.8} color={'grey'} className="icon-options" />

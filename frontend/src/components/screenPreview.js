@@ -21,9 +21,8 @@ const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentSc
 
   return (
     <div className="layoutPreview">
-      <div className='prevScreenButton'>
-        <button>Baixar Layout</button>
-      </div>
+      
+    
       <div className='buttonDiv'>
         <button className='prevScreenButton' onClick={handlePrevClick}>Prev</button>
         <button className='nextScreenButton' onClick={handleNextClick}>Next</button>

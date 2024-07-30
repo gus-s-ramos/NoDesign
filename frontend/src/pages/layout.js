@@ -132,37 +132,33 @@ function Layout() {
       { id: 'screen-three-iphone-65', name: 'iPhone Large-3.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
       { id: 'screen-four-iphone-65', name: 'iPhone Large-4.png', width: 1242, height: 2688, folder: 'print_iphone/6,5' },
     ];
-  
+
     const container = screensContainerRef.current;
-  
+
     if (!container) return;
-  
+
     try {
       // Make the container visible
       container.style.display = 'block';
-  
+
+      await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay as needed
+
+
       const imagePromises = screenIds.map(async ({ id, name, width, height, folder }) => {
         const element = document.getElementById(id);
         if (!element) {
           console.error(`Element with ID ${id} not found.`);
           return;
         }
-  
+
         const canvas = await html2canvas(element, {
           useCORS: true,
-          scale: 2, // Increase the scale to capture more details
+          scale: 3, // Increase the scale to capture more details
         });
-  
-        // Resize the canvas
-        const resizedCanvas = document.createElement('canvas');
-        resizedCanvas.width = width;
-        resizedCanvas.height = height;
-        const ctx = resizedCanvas.getContext('2d');
-        ctx.drawImage(canvas, 0, 0, width, height);
-  
-        // Convert resized canvas to blob
+
+        // Convert the canvas directly to blob
         const blob = await new Promise((resolve, reject) => {
-          resizedCanvas.toBlob((blob) => {
+          canvas.toBlob((blob) => {
             if (blob) {
               resolve(blob);
             } else {
@@ -170,12 +166,12 @@ function Layout() {
             }
           }, 'image/png');
         });
-  
+
         // Add the blob to the ZIP file in the respective folder
         const deviceFolder = zip.folder(`assets/prints/${folder}`);
         deviceFolder.file(name, blob);
       });
-  
+
       // Wait for all image processing promises to complete
       await Promise.all(imagePromises);
     } catch (error) {
@@ -185,7 +181,7 @@ function Layout() {
       container.style.display = 'none';
     }
   };
-  
+
 
 
   const handleDownload = async () => {
@@ -201,7 +197,9 @@ function Layout() {
 
   return (
     <div>
-      <button onClick={handleDownload}>Download All Assets</button>
+      <div className='buttonDownloadAssets01' >
+        <button className='buttonDownloadAssets' onClick={handleDownload}>Download Assets</button>
+      </div>
       <div className="containerLayout">
         <div className='divSliderContent'>
           <ScreenRepresentation
@@ -247,32 +245,33 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-       // style={{ display: 'none' }}
+        // style={{ display: 'none' }}
       >
-        
+
         <div>
-          <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor}/>
+          <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenTwoIphone65 splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
+          <ScreenTwoIphone65 primaryColor ={primaryColor} splash={splash} headerColor={headerColor} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenThreeIphone65 storeIcon={storeIcon}
+          <ScreenThreeIphone65 primaryColor ={primaryColor} storeIcon={storeIcon}
             secondaryColor={secondaryColor}
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
             text00={text00}
-            headerColor={headerColor} />
+            headerColor={headerColor}
+            primaryColor={primaryColor} />
         </div>
         <div>
-          <ScreenFourIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline}  secondaryColor={secondaryColor}/>
+          <ScreenFourIphone65  loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
 
         <div>
-          <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline}  secondaryColor={secondaryColor}/>
+          <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenTwoIphone55 splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
+          <ScreenTwoIphone55 primaryColor={primaryColor} splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeIphone55 storeIcon={storeIcon}
@@ -280,7 +279,8 @@ function Layout() {
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
             text00={text00}
-            headerColor={headerColor} />
+            headerColor={headerColor}
+            primaryColor={primaryColor} />
         </div>
         <div>
           <ScreenFourIphone55 loginFile={loginFile} headerColor={headerColor} secondaryColor={secondaryColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
@@ -290,7 +290,7 @@ function Layout() {
           <ScreenOneAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
         <div>
-          <ScreenTwoAndroid splash={splash} headerColor={headerColor} secondaryColor={secondaryColor}/>
+          <ScreenTwoAndroid splash={splash} primaryColor={primaryColor} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeAndroid storeIcon={storeIcon}
@@ -298,10 +298,11 @@ function Layout() {
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
             text00={text00}
-            headerColor={headerColor} />
+            headerColor={headerColor}
+            primaryColor={primaryColor} />
         </div>
         <div>
-          <ScreenFourAndroid loginFile={loginFile} headerColor={headerColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenFourAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
 
       </div>

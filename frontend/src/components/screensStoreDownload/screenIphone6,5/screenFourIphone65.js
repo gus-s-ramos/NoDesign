@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '@mdi/react';
 import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiHeartOutline } from '@mdi/js';
+import './screenIphone65.css'
 
 
 // Função para converter hexadecimal para rgba com opacidade
@@ -12,28 +13,28 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourIphone65({ headerColor, logoTimeline, secondaryColor }) {
-    const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
+function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor }) {
+    const primaryColorWithOpacity = hexToRgba(primaryColor, 0.3);
 
     return (
-            <div id="screen-four-iphone-65" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-four-iphone-65" className="storeIphone" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5>Receba notificações <br></br> em tempo real!</h5>
                 <div>
-                    <div className="screenStore" style={{ marginTop: '40px' }}>
-                        <div className="timeline-content">
-                            <div className="screenfour">
-                                <div className="menuNotch" style={{ color: 'black' }}>
+                    <div className="screenIphone" style={{ marginTop: '40px' }}>
+                        <div className="timelineContentBig">
+                            <div className="screenfourbig">
+                                <div className="menuNotchStoreOne" style={{ color: 'black' }}>
                                     <h6 className='hoursize'>9:41</h6>
                                     <div className="notchtimeline"></div>
                                     <div className="statusIcons">
-                                        <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                        <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                        <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                        <Icon path={mdiSignal} size={0.6} className="icon-signal" />
+                                        <Icon path={mdiWifi} size={0.6} className="icon-wifi" />
+                                        <Icon path={mdiBattery} size={0.6} className="icon-battery" />
                                     </div>
                                 </div>
                                 <div className="labelmenu">
@@ -42,12 +43,12 @@ function ScreenFourIphone65({ headerColor, logoTimeline, secondaryColor }) {
                                     </div>
                                     <div className="labelmenu01"></div>
                                 </div>
-                                <div className='notificationLabel' style={{ backgroundColor: headerColorWithOpacity }}>
+                                <div className='notificationLabel' style={{ backgroundColor: primaryColorWithOpacity }}>
                                     <div className='notificationLabel01'>
-                                        <div className="icon-circle" style={{ backgroundColor: headerColor }}>
+                                        <div className="icon-circle-big" style={{ backgroundColor: primaryColor }}>
                                             <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
-                                        <div>
+                                        <div className='titleiphonebig'>
                                             <h7>Não se atrase</h7>
                                             <p>A palestra sobre o futuro da nação irá começar em breve.</p>
                                             <p>agora</p>

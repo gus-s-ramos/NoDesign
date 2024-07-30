@@ -5,7 +5,7 @@ import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiMapMar
 
 
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
-const ScreenThreeStoreDownload = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
+const ScreenThreeStoreDownload = React.forwardRef(({primaryColor, headerColor, logoTimeline, secondaryColor }, ref) => {
     return (
             <div id="screen-three-store-content" className="storePrint03" style={{ backgroundColor: secondaryColor }}>
                 <img
@@ -46,11 +46,11 @@ const ScreenThreeStoreDownload = React.forwardRef(({ headerColor, logoTimeline, 
                                     </div>
                                 </div>
                                 <div>
-                                    <button className='buttonschedule01' style={{ backgroundColor: headerColor, }}>Aba Geral</button>
+                                    <button className='buttonschedule01' style={{ backgroundColor: primaryColor, }}>Aba Geral</button>
 
                                 </div>
                                 <div>
-                                    <button className='buttonschedule' style={{ backgroundColor: headerColor }}>
+                                    <button className='buttonschedule' style={{ backgroundColor: primaryColor }}>
                                         <span className="largeText">11</span><br /><span className="smallText">Jan</span>
                                     </button>
                                 </div>

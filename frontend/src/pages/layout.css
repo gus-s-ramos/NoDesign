@@ -320,9 +320,24 @@
   margin-left: -150px;
 }
 
-.screen-download-style{
+.screen-download-style {
   max-width: 310.5px;
   max-height: 672px;
   min-height: 672px;
   min-width: 310.5px;
+}
+
+.buttonDownloadAssets {
+  background-color: #821938;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.buttonDownloadAssets01 {
+  display: flex;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
 }

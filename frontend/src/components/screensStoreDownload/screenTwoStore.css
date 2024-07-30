@@ -84,6 +84,7 @@
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    color: #fff;
 }
 
 .buttonNetworking01 {
@@ -93,8 +94,9 @@
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    color: #fff;
+    font-weight: 400; /* Valor ajustado de font-weight */
 }
-
 
 .userLabel {
     display: flex;

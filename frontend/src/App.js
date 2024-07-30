@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import Menu from "./components/menu";
 import PassagemBastao from "./pages/passagemBastao";
 
+
 function App() {
   return (
     <Router>

@@ -4,7 +4,7 @@ import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiSignal
 
 
 
-function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
+function ScreenTwoStoreDownload({primaryColor, secondaryColor, logoTimeline }) {
     
     return (
             <div id="screen-two-store-content" className="storePrint" style={{ backgroundColor: secondaryColor, }}>
@@ -58,7 +58,7 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Tales Henrique</h6>
                                                 <p>27 amigos em comum</p>
                                             </div>
@@ -76,7 +76,7 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Maria Fernanda</h6>
                                                 <p>5 amigos em comum</p>
                                             </div>
@@ -94,7 +94,7 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Fernanda Sofia</h6>
                                                 <p>8 amigos em comum</p>
                                             </div>
@@ -112,13 +112,13 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Eduardo Henrique</h6>
                                                 <p>0 amigos em comum</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <button className='buttonNetworking01' style={{ backgroundColor: headerColor}}>Adicionar</button>
+                                            <button className='buttonNetworking01' style={{ backgroundColor: primaryColor}}>Adicionar</button>
                                         </div>
                                     </div>
                                     <div className="userLabel">
@@ -130,7 +130,7 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Fabio Cabral</h6>
                                                 <p>0 amigos em comum</p>
                                             </div>
@@ -148,7 +148,7 @@ function ScreenTwoStoreDownload({ secondaryColor, logoTimeline, headerColor }) {
                                                     style={{ width: '30px', height: '30px', borderRadius: '8px' }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="app-details">
                                                 <h6>Pietra Canvan</h6>
                                                 <p>0 amigos em comum</p>
                                             </div>

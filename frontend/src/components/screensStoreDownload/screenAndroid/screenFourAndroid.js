@@ -11,8 +11,8 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourStoreDownload({ headerColor, logoTimeline, secondaryColor }) {
-    const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
+function ScreenFourStoreDownload({ primaryColor, logoTimeline, secondaryColor }) {
+    const headerColorWithOpacity = hexToRgba(primaryColor, 0.3);
 
     return (
             <div id="screen-four-store-content" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
@@ -43,7 +43,7 @@ function ScreenFourStoreDownload({ headerColor, logoTimeline, secondaryColor }) 
                                 </div>
                                 <div className='notificationLabel' style={{ backgroundColor: headerColorWithOpacity }}>
                                     <div className='notificationLabel01'>
-                                        <div className="icon-circle" style={{ backgroundColor: headerColor }}>
+                                        <div className="icon-circle" style={{ backgroundColor: primaryColor }}>
                                             <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
                                         <div>
