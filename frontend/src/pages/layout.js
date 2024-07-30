@@ -245,7 +245,7 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-        // style={{ display: 'none' }}
+       style={{ display: 'none' }}
       >
 
         <div>
@@ -260,8 +260,7 @@ function Layout() {
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
             text00={text00}
-            headerColor={headerColor}
-            primaryColor={primaryColor} />
+            headerColor={headerColor} />
         </div>
         <div>
           <ScreenFourIphone65  loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
