@@ -48,7 +48,7 @@ function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
                                         <div className="icon-circle" style={{ backgroundColor: headerColor }}>
                                             <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
-                                        <div>
+                                        <div className='app-details'>
                                             <h7>Não se atrase</h7>
                                             <p>A palestra sobre o futuro da nação irá começar em breve.</p>
                                             <p>agora</p>

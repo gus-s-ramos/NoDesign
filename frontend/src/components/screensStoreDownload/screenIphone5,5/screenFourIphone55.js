@@ -47,7 +47,7 @@ function ScreenFourIphone55({primaryColor, logoTimeline, secondaryColor }) {
                                         <div className="icon-circle" style={{ backgroundColor: primaryColor }}>
                                             <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
-                                        <div>
+                                        <div className='app-details'>
                                             <h7>Não se atrase</h7>
                                             <p>A palestra sobre o futuro da nação irá começar em breve.</p>
                                             <p>agora</p>
