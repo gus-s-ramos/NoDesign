@@ -58,7 +58,7 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
                                     <p>Teste de uma breve descrição para ser inserida dentro do aplicativo</p>
                                 </div>
                                 <div>
-                                    <img src="/assets/21.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
+                                    <img src="/assets/22.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
                                 </div>
                                 <div className='post-description'>
                                     <div>

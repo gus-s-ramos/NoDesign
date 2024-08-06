@@ -1,7 +1,7 @@
 import React from 'react';
 import './screenPreview.css';
 
-const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentScreenIndex }) => {
+const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentScreenIndex, handleDownload }) => {
 
   const handleNextClick = () => {
     const newIndex = (currentScreenIndex + 1) % screens.length;
@@ -21,6 +21,9 @@ const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentSc
 
   return (
     <div className="layoutPreview">
+      <div className='buttonDownloadAssets01' >
+        <button className='buttonDownloadAssets' onClick={handleDownload}>Download Assets</button>
+      </div>
       
     
       <div className='buttonDiv'>

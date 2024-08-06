@@ -56,7 +56,7 @@ const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightM
                                     <div>
                                     </div>
                                     <div>
-                                        <img src="/assets/21.png" alt="App Icon" style={{ width: '260px', height: '250px', objectFit: 'cover' }} />
+                                        <img src="/assets/23.png" alt="App Icon" style={{ width: '260px', height: '250px', objectFit: 'cover' }} />
                                     </div>
                                     <div className='post-description'>
                                         <div>

@@ -22,6 +22,8 @@ import ScreenOneAndroid from '../components/screensStoreDownload/screenAndroid/s
 import ScreenTwoAndroid from '../components/screensStoreDownload/screenAndroid/screenTwoAndroid';
 import ScreenThreeAndroid from '../components/screensStoreDownload/screenAndroid/screenThreeAndroid';
 import ScreenFourAndroid from '../components/screensStoreDownload/screenAndroid/screenFourAndroid';
+import LoadingScreen from './loadingScreen';
+
 
 
 function Layout() {
@@ -37,6 +39,8 @@ function Layout() {
   const [text00, setText00] = useState('NOME DO APLICATIVO');
   const [isLightMode, setIsLightMode] = useState(true);
   const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const screens = [
     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
@@ -185,13 +189,16 @@ function Layout() {
 
 
   const handleDownload = async () => {
+    setIsLoading(true);
     const zip = new JSZip();
     await downloadImagesAsZip(zip);
     await downloadScreensAsImages(zip);
+    await downloadSettingsAsText(zip);
 
     // Generate and save the ZIP file
     const zipBlob = await zip.generateAsync({ type: 'blob' });
     saveAs(zipBlob, 'Assets.zip');
+    setIsLoading(false);
   };
 
   const downloadSettingsAsText = () => {
@@ -201,7 +208,7 @@ function Layout() {
       Secondary Color: ${secondaryColor}
       Primary Color: ${primaryColor}
     `;
-  
+
     const blob = new Blob([settings], { type: 'text/plain' });
     saveAs(blob, 'settings.txt');
   };
@@ -209,11 +216,8 @@ function Layout() {
 
   return (
     <div>
-      <div className='buttonDownloadAssets01' >
-        <button className='buttonDownloadAssets' onClick={handleDownload}>Download Assets</button>
-        <button className='buttonDownloadSettings' onClick={downloadSettingsAsText}>Download Settings (Text)</button>
-
-      </div>
+      {isLoading && <LoadingScreen />}
+      
       <div className="containerLayout">
         <div className='divSliderContent'>
           <ScreenRepresentation
@@ -227,6 +231,7 @@ function Layout() {
             screens={screens}
             currentScreenIndex={currentScreenIndex}
             setCurrentScreenIndex={setCurrentScreenIndex}
+            handleDownload={handleDownload}
           />
         </div>
         <div className='divContent'>
@@ -259,17 +264,17 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-      // style={{ display: 'none' }}
+        style={{ display: 'none' }}
       >
 
         <div>
           <ScreenOneIphone65 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenTwoIphone65 primaryColor ={primaryColor} splash={splash} headerColor={headerColor} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
+          <ScreenTwoIphone65 primaryColor={primaryColor} splash={splash} headerColor={headerColor} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenThreeIphone65 primaryColor ={primaryColor} storeIcon={storeIcon}
+          <ScreenThreeIphone65 primaryColor={primaryColor} storeIcon={storeIcon}
             secondaryColor={secondaryColor}
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
@@ -277,7 +282,7 @@ function Layout() {
             headerColor={headerColor} />
         </div>
         <div>
-          <ScreenFourIphone65  loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
+          <ScreenFourIphone65 loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
 
         <div>
