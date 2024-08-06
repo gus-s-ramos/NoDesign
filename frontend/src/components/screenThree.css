@@ -88,6 +88,10 @@
     cursor: pointer;
 }
 
+.icon-options{
+    margin-right: 5px ;
+}
+
 .app-info {
     display: flex;
     align-items: center;

@@ -26,7 +26,7 @@ function ScreenFourStoreDownload({ primaryColor, logoTimeline, secondaryColor })
                     <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">
                             <div className="screenfour">
-                                <div className="menuNotch" style={{ color: 'black' }}>
+                                <div className="menuNotchStoreOne" style={{ color: 'black' }}>
                                     <h6 className='hoursize'>9:41</h6>
                                     <div className="notchtimeline"></div>
                                     <div className="statusIcons">

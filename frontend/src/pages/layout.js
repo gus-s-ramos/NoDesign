@@ -194,11 +194,25 @@ function Layout() {
     saveAs(zipBlob, 'Assets.zip');
   };
 
+  const downloadSettingsAsText = () => {
+    const settings = `
+      Text00: ${text00}
+      Header Color: ${headerColor}
+      Secondary Color: ${secondaryColor}
+      Primary Color: ${primaryColor}
+    `;
+  
+    const blob = new Blob([settings], { type: 'text/plain' });
+    saveAs(blob, 'settings.txt');
+  };
+
 
   return (
     <div>
       <div className='buttonDownloadAssets01' >
         <button className='buttonDownloadAssets' onClick={handleDownload}>Download Assets</button>
+        <button className='buttonDownloadSettings' onClick={downloadSettingsAsText}>Download Settings (Text)</button>
+
       </div>
       <div className="containerLayout">
         <div className='divSliderContent'>
@@ -245,7 +259,7 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-       style={{ display: 'none' }}
+      // style={{ display: 'none' }}
       >
 
         <div>

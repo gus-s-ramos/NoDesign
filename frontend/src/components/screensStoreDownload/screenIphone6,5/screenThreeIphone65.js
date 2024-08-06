@@ -41,10 +41,12 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                 </div>
 
                                 <div>
-                                    <div className="searchBar">
-                                        <Icon path={mdiMagnify} size={0.7} className="searchIconBig" />
-                                        <input type="text" placeholder="Pesquisar" className="searchInputBig" />
+                                <div className="searchBar">
+                                    <div type="text" className="searchInputBig">
+                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" />
+                                        <p>Pesquisar</p>
                                     </div>
+                                </div>
                                 </div>
                                 <div>
                                     <button className='buttonschedulebig' style={{ backgroundColor: primaryColor, }}>Aba Geral</button>
@@ -55,7 +57,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                         <span className="largeTextBig">11</span><br /><span className="smallTextBig">Jan</span>
                                     </button>
                                 </div>
-                                <div>
+                                <div className='scheduleHour'>
                                     <p>11:00</p>
                                     <div className='line'></div>
                                 </div>
@@ -79,12 +81,12 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                         />
                                     </div>
                                     <div>
-                                        <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                        <Icon path={mdiHeartOutline} size={0.6} className="icon-signal" />
 
                                     </div>
                                 </div>
 
-                                <div>
+                                <div className='scheduleHour'>
                                     <p>13:00</p>
                                     <div className='line'></div>
                                 </div>
@@ -108,7 +110,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                         />
                                     </div>
                                     <div>
-                                        <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                        <Icon path={mdiHeartOutline} size={0.6} className="icon-signal" />
 
                                     </div>
                                 </div>

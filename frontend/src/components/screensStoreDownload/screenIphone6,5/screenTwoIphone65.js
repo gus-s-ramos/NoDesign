@@ -5,7 +5,7 @@ import './screenIphone65.css'
 
 
 
-function ScreenTwoIphone65({primaryColor, secondaryColor, logoTimeline, headerColor }) {
+function ScreenTwoIphone65({ primaryColor, secondaryColor, logoTimeline, headerColor }) {
 
     return (
         <div id="screen-two-iphone-65" className="storeIphone" style={{ backgroundColor: secondaryColor, }}>
@@ -31,7 +31,7 @@ function ScreenTwoIphone65({primaryColor, secondaryColor, logoTimeline, headerCo
                             </div>
                             <div className="labelmenu">
                                 <div className="labelmenu01">
-                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiChevronLeft} size={0.6} className="icon-signal" />
                                     <h7>Área de networking</h7>
                                 </div>
                                 <div className="labelmenu01">
@@ -46,8 +46,10 @@ function ScreenTwoIphone65({primaryColor, secondaryColor, logoTimeline, headerCo
                             </div>
                             <div>
                                 <div className="searchBar">
-                                    <Icon path={mdiMagnify} size={0.7} className="searchIconBig" />
-                                    <input type="text" placeholder="Pesquisar" className="searchInputBig" />
+                                    <div type="text" className="searchInputBig">
+                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" />
+                                        <p>Pesquisar</p>
+                                    </div>
                                 </div>
 
                                 <div className="userLabel">
