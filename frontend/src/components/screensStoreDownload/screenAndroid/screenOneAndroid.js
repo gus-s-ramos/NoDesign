@@ -4,7 +4,7 @@ import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery } from '@mdi/j
 
 const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
     return (
-            <div id="screen-one-store-content"   className="storePrint" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-one-store-content"   className="storePrintDownload" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

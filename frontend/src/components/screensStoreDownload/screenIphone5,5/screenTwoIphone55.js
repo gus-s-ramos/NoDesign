@@ -7,7 +7,7 @@ import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiSignal
 function ScreenTwoIphone55({ primaryColor, secondaryColor, logoTimeline, headerColor }) {
 
     return (
-        <div id="screen-two-iphone-55" className="storePrint" style={{ backgroundColor: secondaryColor, }}>
+        <div id="screen-two-iphone-55" className="storePrintDownload" style={{ backgroundColor: secondaryColor, }}>
             <img
                 src={logoTimeline}
                 className="logoTimelinesHeader"

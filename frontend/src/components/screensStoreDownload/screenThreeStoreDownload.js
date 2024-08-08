@@ -8,7 +8,7 @@ import './screenThreeStore.css';
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
 const ScreenThreeStoreDownload = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
     return (
-            <div id="screen-three-store-content" className="storePrint03" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-three-store-content" className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

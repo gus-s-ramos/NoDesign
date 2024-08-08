@@ -203,7 +203,7 @@ function Layout() {
 
   const downloadSettingsAsText = () => {
     const settings = `
-      Text00: ${text00}
+      Nome App: ${text00}
       Header Color: ${headerColor}
       Secondary Color: ${secondaryColor}
       Primary Color: ${primaryColor}

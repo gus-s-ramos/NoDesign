@@ -7,7 +7,7 @@ import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiSignal
 function ScreenTwoStoreDownload({ primaryColor, secondaryColor, logoTimeline }) {
 
     return (
-        <div id="screen-two-store-content" className="storePrint" style={{ backgroundColor: secondaryColor, }}>
+        <div id="screen-two-store-content" className="storePrintDownload" style={{ backgroundColor: secondaryColor, }}>
             <img
                 src={logoTimeline}
                 className="logoTimelinesHeader"

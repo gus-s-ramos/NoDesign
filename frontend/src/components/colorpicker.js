@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChromePicker } from 'react-color';
 
 const ColorPicker = ({ color, setColor, label }) => {
   const [showColorPicker, setShowColorPicker] = useState(false);
+  const pickerRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (pickerRef.current && !pickerRef.current.contains(event.target)) {
+      setShowColorPicker(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="colorSection" style={{ position: 'relative' }}>
+    <div className="colorSection" style={{ position: 'relative' }} ref={pickerRef}>
       <button
         style={{
           width: "50px",
@@ -14,18 +28,19 @@ const ColorPicker = ({ color, setColor, label }) => {
           cursor: "pointer",
           borderRadius: "10px",
           marginRight: "10px",
+          border: "none",
         }}
         onClick={() => setShowColorPicker(!showColorPicker)}
       />
       {showColorPicker && (
-          <div style={{ position: 'absolute', top: '60px', left: '0' }}>
-            <ChromePicker
-              color={color}
-              onChange={(newColor) => setColor(newColor.hex)}
-              disableAlpha={true} // Opcional: desabilita o canal alpha se não for necessário
-            />
-          </div>
-        )}
+        <div style={{ position: 'absolute', top: '60px', left: '0' }}>
+          <ChromePicker
+            color={color}
+            onChange={(newColor) => setColor(newColor.hex)}
+            disableAlpha={true} // Opcional: desabilita o canal alpha se não for necessário
+          />
+        </div>
+      )}
 
       <div>
         <div className='TitleColorSection'>
@@ -38,12 +53,7 @@ const ColorPicker = ({ color, setColor, label }) => {
           onChange={(e) => setColor(e.target.value)}
         />
       </div>
-      <div>
-
-      </div>
     </div>
-
-
   );
 };
 

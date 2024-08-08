@@ -5,7 +5,7 @@ import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery } from '@mdi/j
 
 const ScreenOneIphone55= forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
     return (
-            <div id="screen-one-iphone-55"   className="storePrint" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-one-iphone-55"   className="storePrintDownload" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

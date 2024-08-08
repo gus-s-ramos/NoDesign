@@ -17,7 +17,7 @@ function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
 
     return (
         <div >
-            <div className="storePrint04" style={{ backgroundColor: secondaryColor }}>
+            <div className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

@@ -35,6 +35,7 @@ const IconeLojaUploader = ({ label, asset, setAsset }) => {
         <img
           src={asset}
           alt={label}
+          onClick={() => inputFileRef.current.click()}
           className="assetPreview"
         />
         <button onClick={() => inputFileRef.current.click()}>Buscar</button>

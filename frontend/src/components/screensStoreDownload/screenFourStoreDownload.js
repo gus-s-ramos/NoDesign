@@ -16,7 +16,7 @@ function ScreenFourStoreDownload({ headerColor, logoTimeline, secondaryColor }) 
     const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
 
     return (
-            <div id="screen-four-store-content" className="storePrint04" style={{ backgroundColor: secondaryColor }}>
+            <div id="screen-four-store-content" className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

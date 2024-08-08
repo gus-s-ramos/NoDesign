@@ -32,6 +32,7 @@ const SplashUploader = ({ label, asset, setAsset }) => {
         <img
           src={asset}
           alt={label}
+          onClick={() => inputFileRef.current.click()}
           className="assetPreview"
         />
         <button className="buttonScreenInfo" onClick={() => inputFileRef.current.click()}>Buscar</button>

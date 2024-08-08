@@ -9,7 +9,7 @@ import './screenThreeStore.css';
 const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
     return (
         <div >
-            <div className="storePrint03" style={{ backgroundColor: secondaryColor }}>
+            <div className="storePrint" style={{ backgroundColor: secondaryColor }}>
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"

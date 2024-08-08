@@ -49,7 +49,7 @@ const ModalTimelineLogoSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                 blob.name = 'cropped.jpg';
                 const fileUrl = window.URL.createObjectURL(blob);
                 resolve(fileUrl);
-            }, 'image/jpeg');
+            }, 'image/png');
         });
     };
 
