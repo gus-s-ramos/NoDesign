@@ -39,6 +39,16 @@ h4 {
   height: 30px;
 }
 
+.deleteButton{
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+.deleteButton svg{
+  color: #ffffff;
+}
+
 .editButton {
 display: flex;
     padding: 5px;

@@ -4,7 +4,7 @@ import './gamification.css';
 import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFloppyDisk, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faFloppyDisk, faPenToSquare, faTrashCan, } from '@fortawesome/free-solid-svg-icons';
 import ColorPicker from '../components/colorpicker';
 
 
