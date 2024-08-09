@@ -5,6 +5,8 @@ import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import ColorPicker from '../components/colorpicker';
+
 
 
 
@@ -165,105 +167,29 @@ function Gamification() {
                 </div>
               </div>
             </div>
-            <div className="colorSection">
-              <div>
-                <button
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: textColor,
-                    cursor: "pointer",
-                    borderRadius: "10px",
-                    marginRight: "15px",
-                    border: "none",
-                  }}
-                  onClick={() => handleButtonClick('primaryColor')}
-                />
-                {showPrimaryColorPicker && (
-                  <div>
-                    <ChromePicker color={selectedColor} onChange={(color) => handleColorChange(color, 'primaryColor')} />
-                  </div>
-                )}
-              </div>
-              <div >
-                <div className='TitleColorSection'>
-                  <h3>COR PRIMÁRIA</h3>
-                </div>
-                <input className='ColorColorSection'
-                  type="text"
-                  value={textColor}
-                  onChange={(e) => setPrimaryColor(e.target.value)}
-                />
-              </div>
+
+            <div>
+              <ColorPicker
+                label="COR PRIMÁRIA"
+                color={textColor}
+                setColor={setPrimaryColor}
+              />
             </div>
-            <div className="colorSection">
-              <div>
-                <button
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: secundaryTextColor,
-                    cursor: "pointer",
-                    borderRadius: "10px",
-                    marginRight: "15px",
-                    border: "none",
-                  }}
-                  onClick={() => handleButtonClick('secondaryColor')}
-                />
-                {showSecondaryColorPicker && (
-                  <div>
-                    <ChromePicker color={textColor} onChange={(color) => handleColorChange(color, 'secondaryColor')} />
-                  </div>
-                )}
-              </div>
-              <div >
-                <div className='TitleColorSection'>
-                  <h3>COR SECUNDÁRIA:</h3>
-                </div>
-                <input className='ColorColorSection'
-                  type="text"
-                  value={secundaryTextColor}
-                  onChange={(e) => setSecundaryColor(e.target.value)}
-
-                />
-
-              </div>
 
 
-
+            <div>
+              <ColorPicker
+                label="COR PRIMÁRIA"
+                color={secundaryTextColor}
+                setColor={setSecundaryColor}
+              />
             </div>
-            <div className="colorSection">
-              <div>
-                <button
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: backgroundColor,
-                    cursor: "pointer",
-                    borderRadius: "10px",
-                    marginRight: "15px",
-                    border: "none",
-                  }}
-                  onClick={() => handleButtonClick('backgroundColor')}
-                />
-                {showBackgroundColorPicker && (
-                  <div>
-                    <ChromePicker color={backgroundColor} onChange={(color) => handleColorChange(color, 'backgroundColor')} />
-                  </div>
-                )}
-              </div>
-              <div className='TitleColorSection'>
-                <h3>COR DE FUNDO:</h3>
-                <div >
-                  <input className='ColorColorSection'
-                    type="text"
-                    value={backgroundColor}
-                    onChange={(e) => setBackgroundColor(e.target.value)}
-                  />
-                </div>
-
-              </div>
-
+            <div>
+              <ColorPicker
+                label="COR PRIMÁRIA"
+                color={backgroundColor}
+                setColor={setBackgroundColor}
+              />
             </div>
           </div>
         </div>
