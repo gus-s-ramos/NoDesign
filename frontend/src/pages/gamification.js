@@ -4,7 +4,7 @@ import './gamification.css';
 import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFloppyDisk, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faFloppyDisk, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import ColorPicker from '../components/colorpicker';
 
 
@@ -30,37 +30,6 @@ function Gamification() {
   const [text11, setText11] = useState('Regra de Gamificação');
   const [text12, setText12] = useState('Observações');
 
-  const [showPrimaryColorPicker, setShowPrimaryColorPicker] = useState(false);
-  const [showSecondaryColorPicker, setShowSecondaryColorPicker] = useState(false);
-  const [showBackgroundColorPicker, setShowBackgroundColorPicker] = useState(false);
-
-
-  const handleColorChange = (color, buttonType) => {
-    selectedColor(color.hex);
-    if (buttonType === 'primaryColor') {
-      setPrimaryColor(color.hex);
-    } else if (buttonType === 'secondaryColor') {
-      setSecundaryColor(color.hex);
-    } else if (buttonType === 'backgroundColor') {
-      setBackgroundColor(color.hex);
-    }
-  };
-
-  const handleButtonClick = (buttonType) => {
-    if (buttonType === 'primaryColor') {
-      setShowPrimaryColorPicker(!showPrimaryColorPicker);
-      setShowSecondaryColorPicker(false);
-      setShowBackgroundColorPicker(false);
-    } else if (buttonType === 'secondaryColor') {
-      setShowSecondaryColorPicker(!showSecondaryColorPicker);
-      setShowPrimaryColorPicker(false);
-      setShowBackgroundColorPicker(false);
-    } else if (buttonType === 'backgroundColor') {
-      setShowBackgroundColorPicker(!showBackgroundColorPicker);
-      setShowPrimaryColorPicker(false);
-      setShowSecondaryColorPicker(false);
-    }
-  };
 
   function handleChange(e) {
     const selectedFile = e.target.files[0];
@@ -72,6 +41,12 @@ function Gamification() {
   const addAdditionalInputs = () => {
     setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
   };
+
+    const deleteInput = (index) => {
+    const updatedInputs = additionalInputs.filter((_, i) => i !== index);
+    setAdditionalInputs(updatedInputs);
+  };
+
 
   const handleDownloadClick = () => {
     const previewContainer = document.querySelector('.previews');
@@ -300,6 +275,9 @@ function Gamification() {
                     setAdditionalInputs(updatedInputs);
                   }}
                 />
+                <button className='deleteButton' onClick={() => deleteInput(index)}>
+                  <FontAwesomeIcon icon={faTrashCan} color='red' />
+                </button>
               </div>
             ))}
             <button className='ButtonAddInputs' onClick={addAdditionalInputs}>ADICIONAR NOVA REGRA</button>
