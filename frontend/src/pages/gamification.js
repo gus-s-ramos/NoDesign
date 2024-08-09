@@ -31,18 +31,25 @@ function Gamification() {
   const [text12, setText12] = useState('Observações');
 
 
+  
+
   function handleChange(e) {
     const selectedFile = e.target.files[0];
     setFile(URL.createObjectURL(selectedFile));
   }
 
-  const [additionalInputs, setAdditionalInputs] = useState([]);
+  const [additionalInputs, setAdditionalInputs] = useState([
+    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
+    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
+    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
+  ]);
+  
 
   const addAdditionalInputs = () => {
     setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
   };
 
-    const deleteInput = (index) => {
+  const deleteInput = (index) => {
     const updatedInputs = additionalInputs.filter((_, i) => i !== index);
     setAdditionalInputs(updatedInputs);
   };
@@ -215,44 +222,7 @@ function Gamification() {
                 </>
               )}
             </div>
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text02}
-                onChange={(e) => setText02(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text06}
-                onChange={(e) => setText06(e.target.value)}
-              />
-            </div>
 
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text03}
-                onChange={(e) => setText03(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text07}
-                onChange={(e) => setText07(e.target.value)}
-              />
-            </div>
-
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text04}
-                onChange={(e) => setText04(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text08}
-                onChange={(e) => setText08(e.target.value)}
-              />
-            </div>
 
 
             {additionalInputs.map((input, index) => (
@@ -332,21 +302,7 @@ function Gamification() {
               ) : (
                 <h2 style={{ color: secundaryTextColor }}>{text00}</h2>
               )}
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text02}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text06}</h4>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text03}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text07}</h4>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text04}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text08}</h4>
-              </div>
+              
               {additionalInputs.map((input, index) => (
                 <div key={index} style={{ display: "flex", justifyContent: "space-between" }}>
                   <h4 style={{ color: textColor }}>{input.text01}</h4>
