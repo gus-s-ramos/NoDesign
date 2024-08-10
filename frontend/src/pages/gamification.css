@@ -67,6 +67,7 @@ display: flex;
   width: 20%;
   padding: 16px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .RuleName {
@@ -78,6 +79,7 @@ display: flex;
   text-align: justify;
   padding: 16px;
   margin-right: 25px;
+  text-transform: uppercase;
 }
 
 .splash-image {
@@ -479,6 +481,11 @@ display: flex;
   border-radius: 10px;
   border: 1px solid #BFBFBF;
   margin-bottom: 10px;
+}
+
+input::placeholder {
+  color: #ffffff; /* Altere para a cor desejada */
+  opacity: 1; /* Mantém a opacidade total */
 }
 
 @media screen and (max-width: 1080px) {

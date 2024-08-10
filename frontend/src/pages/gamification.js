@@ -18,14 +18,6 @@ function Gamification() {
   const [selectColor, selectedColor] = useState("#000000");
   const [text00, setText00] = useState('Pontuação');
   const [text01, setText01] = useState('O evento todo está gamificado! Isso significa que você pode ganhar pontos interagindo dentro do app e os primeiros do ranking vão ganhar prêmios especiais do evento');
-  const [text02, setText02] = useState('NOME DA REGRA');
-  const [text03, setText03] = useState('NOME DA REGRA');
-  const [text04, setText04] = useState('NOME DA REGRA');
-  const [text05, setText05] = useState('NOME DA REGRA');
-  const [text06, setText06] = useState('QNT PTS');
-  const [text07, setText07] = useState('QNT PTS');
-  const [text08, setText08] = useState('QNT PTS');
-  const [text09, setText09] = useState('QNT PTS');
   const [text10, setText10] = useState('Teremos ações extraordinárias com pontuações extras como, por exemplo, QRCodes, notificações, games na timeline e nos quizzes. Fique atento para não perder nada.As atividades são sujeitas a moderação do time, por isso atividades como spamming e criação de contas fakes não serão permitidas, podendo acarretar no bloqueio de postagens na timeline e contas fakes serão apagadas.Os prêmios serão divulgados durante o dia na timeline do evento. Não fique de fora!');
   const [text11, setText11] = useState('Regra de Gamificação');
   const [text12, setText12] = useState('Observações');
@@ -39,9 +31,9 @@ function Gamification() {
   }
 
   const [additionalInputs, setAdditionalInputs] = useState([
-    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
-    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
-    { text01: 'NOME DA REGRA', text: 'QNT PTS' },
+    { text01: '', text: '' },
+    { text01: '', text: '' },
+    { text01: '', text: '' },
   ]);
 
   const moveInputUp = (index) => {
@@ -68,7 +60,7 @@ const moveInputDown = (index) => {
   
 
   const addAdditionalInputs = () => {
-    setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
+    setAdditionalInputs([...additionalInputs, { text01: '', text: '' }]);
   };
 
   
@@ -171,7 +163,7 @@ const moveInputDown = (index) => {
 
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR DA FONTE"
                 color={textColor}
                 setColor={setPrimaryColor}
               />
@@ -180,14 +172,14 @@ const moveInputDown = (index) => {
 
             <div>
               <ColorPicker
-                label="COR SECUNDÁRIA"
+                label="COR DO TÍTULO"
                 color={secundaryTextColor}
                 setColor={setSecundaryColor}
               />
             </div>
             <div>
               <ColorPicker
-                label="COR FUNDO"
+                label="COR DO FUNDO"
                 color={backgroundColor}
                 setColor={setBackgroundColor}
               />
@@ -241,14 +233,12 @@ const moveInputDown = (index) => {
                 </>
               )}
             </div>
-
-
-
             {additionalInputs.map((input, index) => (
               <div className='PointsContainer' key={index} >
                 <input className='RuleName'
                   type="text"
                   value={input.text01}
+                  placeholder={input.text01 === '' ? "NOME DA REGRA" : ''}
                   onChange={(e) => {
                     const updatedInputs = [...additionalInputs];
                     updatedInputs[index].text01 = e.target.value;
@@ -258,6 +248,7 @@ const moveInputDown = (index) => {
                 <input className='RulePoint'
                   type="text"
                   value={input.text}
+                  placeholder={input.text === '' ? "QNT PTS" : ''}
                   onChange={(e) => {
                     const updatedInputs = [...additionalInputs];
                     updatedInputs[index].text = e.target.value;
@@ -330,9 +321,9 @@ const moveInputDown = (index) => {
               
               {additionalInputs.map((input, index) => (
                 <div key={index} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                  <h4 style={{ color: textColor, marginRight: '30px'}}>{input.text01}</h4>
+                  <h4 style={{ color: textColor, marginRight: '30px'}}>{input.text01 || "NOME DA REGRA"}</h4>
                   <span>&nbsp;</span>
-                  <h4 style={{ color: secundaryTextColor }}>{input.text}</h4>
+                  <h4 style={{ color: secundaryTextColor }}>{input.text || "QNT PTS"}</h4>
                 </div>
               ))}
             </div>
