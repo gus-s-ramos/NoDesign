@@ -4,7 +4,7 @@ import './gamification.css';
 import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFloppyDisk, faPenToSquare, faTrashCan, } from '@fortawesome/free-solid-svg-icons';
+import { faFloppyDisk, faPenToSquare, faTrashCan, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import ColorPicker from '../components/colorpicker';
 
 
@@ -43,16 +43,35 @@ function Gamification() {
     { text01: 'NOME DA REGRA', text: 'QNT PTS' },
     { text01: 'NOME DA REGRA', text: 'QNT PTS' },
   ]);
+
+  const moveInputUp = (index) => {
+    if (index > 0) {
+        const newInputs = [...additionalInputs];
+        [newInputs[index - 1], newInputs[index]] = [newInputs[index], newInputs[index - 1]];
+        setAdditionalInputs(newInputs);
+    }
+};
+
+const moveInputDown = (index) => {
+    if (index < additionalInputs.length - 1) {
+        const newInputs = [...additionalInputs];
+        [newInputs[index + 1], newInputs[index]] = [newInputs[index], newInputs[index + 1]];
+        setAdditionalInputs(newInputs);
+    }
+};
+
+  const deleteInput = (index) => {
+    const updatedInputs = additionalInputs.filter((_, i) => i !== index);
+    setAdditionalInputs(updatedInputs);
+  };
+  
   
 
   const addAdditionalInputs = () => {
     setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
   };
 
-  const deleteInput = (index) => {
-    const updatedInputs = additionalInputs.filter((_, i) => i !== index);
-    setAdditionalInputs(updatedInputs);
-  };
+  
 
 
   const handleDownloadClick = () => {
@@ -245,8 +264,14 @@ function Gamification() {
                     setAdditionalInputs(updatedInputs);
                   }}
                 />
+                <button className='deleteButton' onClick={() => moveInputUp(index)}>
+                  <FontAwesomeIcon icon={faArrowUp} />
+                </button>
+                <button className='deleteButton' onClick={() => moveInputDown(index)}>
+                  <FontAwesomeIcon icon={faArrowDown} />
+                </button>
                 <button className='deleteButton' onClick={() => deleteInput(index)}>
-                  <FontAwesomeIcon icon={faTrashCan} color='red' />
+                  <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </div>
             ))}
