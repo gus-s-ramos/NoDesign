@@ -27,8 +27,8 @@ const ScreenPreview = ({ screens, screensStore, currentScreenIndex, setCurrentSc
       
     
       <div className='buttonDiv'>
-        <button className='prevScreenButton' onClick={handlePrevClick}>Prev</button>
-        <button className='nextScreenButton' onClick={handleNextClick}>Next</button>
+        <button className='prevScreenButton' onClick={handlePrevClick}>Anterior</button>
+        <button className='nextScreenButton' onClick={handleNextClick}>Próximo</button>
       </div>
       <div className="screensContainer">
         <div

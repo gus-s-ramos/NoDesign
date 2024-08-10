@@ -28,7 +28,7 @@ const LoginUploader = ({ label, asset, setAsset }) => {
       <div>
       <h3>{label}</h3>
       <img src={asset} alt={label} onClick={() => inputFileRef.current.click()} className="assetPreview" />
-      <button onClick={() => inputFileRef.current.click()}>Buscar</button>
+      <button className='buttonScreenInfo' onClick={() => inputFileRef.current.click()}>Buscar</button>
       <input
         ref={inputFileRef}
         type="file"

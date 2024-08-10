@@ -34,6 +34,7 @@
     padding: 0px 10px 10px 10px;
     border-radius: 0px 0px 0px 0px;
     align-items: center;
+    border: 2px solid rgb(255, 160, 12);
 }
 
 .timeline-share {

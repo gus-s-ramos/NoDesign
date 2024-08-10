@@ -53,7 +53,7 @@ const ScreenInfo = ({
             setAsset={setSplash}
           />
         );
-      case 2:
+      case 3:
         return (
           <>
             <div>
@@ -63,12 +63,6 @@ const ScreenInfo = ({
                 setColor={setSecondaryColor}
               />
             </div>
-            <IconeLojaUploader
-              label="Ícone da Loja"
-              asset={storeIcon}
-              setAsset={setStoreIcon}
-            />
-
             <div className='appNameInput'>
               <label htmlFor="appName">Nome do App</label>
               <input
@@ -79,9 +73,16 @@ const ScreenInfo = ({
                 maxLength={25}
               />
             </div>
+            <IconeLojaUploader
+              label="Ícone da Loja"
+              asset={storeIcon}
+              setAsset={setStoreIcon}
+            />
+
+            
           </>
         );
-      case 3:
+      case 2:
         return (
           <>
             <ColorPicker

@@ -139,22 +139,9 @@
   align-items: center;
 }
 
-.iconeLojaUploader button {
-  border: none;
-  border-radius: 0px 0px 10px 10px;
-  max-width: 12vw;
-  height: 4vh;
-  width: 12vw;
-  cursor: pointer;
-}
 
-.iconeLojaUploader img {
-  cursor: pointer;
-  display: flex;
-  width: 12vw;
-  border-radius: 8px;
-  margin-bottom: -10px;
-}
+
+
 
 .buttonScreenInfo {
   border: none;
@@ -196,14 +183,7 @@
   margin-bottom: -10px;
 }
 
-.loginUploaderContainer button {
-  border: none;
-  border-radius: 0px 0px 10px 10px;
-  max-width: 12vw;
-  height: 4vh;
-  width: 12vw;
-  cursor: pointer;
-}
+
 
 .SplashUploader {
   width: 15vw;
@@ -247,7 +227,7 @@
 .nextScreenButton,
 .prevScreenButton {
   z-index: 2;
-  width: 50px;
+  width: 70px;
   height: 32px;
   color: white;
   background-color: #821938;
@@ -328,9 +308,9 @@
 }
 
 .buttonDownloadAssets {
-  background-color: #821938;
-  color: #fff;
-  border: none;
+  background-color: #ffffff;
+  color: #821938;
+  border: 1px solid #821938 ;
   padding: 10px;
   border-radius: 8px;
 }

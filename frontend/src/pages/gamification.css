@@ -62,20 +62,19 @@ display: flex;
 .RulePoint {
   border-radius: 10px;
   text-align: center;
-  background-color: white;
-  border: 1px solid #BFBFBF;
+  background-color: #ffffff33;
+  border: none;
   width: 20%;
   padding: 16px;
+  color: #ffffff;
 }
 
 .RuleName {
   width: 100%;
   border-radius: 10px;
-  border-color: #f5f5f5;
-  background-color: white;
-  border: 1px solid #BFBFBF;
-  ;
-
+  background-color: #ffffff33;
+  color: #ffffff;
+  border: none;
   text-align: justify;
   padding: 16px;
   margin-right: 25px;

@@ -161,14 +161,14 @@ function Gamification() {
 
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR SECUNDÁRIA"
                 color={secundaryTextColor}
                 setColor={setSecundaryColor}
               />
             </div>
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR FUNDO"
                 color={backgroundColor}
                 setColor={setBackgroundColor}
               />
@@ -283,7 +283,7 @@ function Gamification() {
           <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
           <div className="previews" style={{ backgroundColor, }}>
 
-            <div className="image-container" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px"}}>
               <img src={file} className="preview-image01" />
             </div>
             <div>
@@ -304,8 +304,8 @@ function Gamification() {
               )}
               
               {additionalInputs.map((input, index) => (
-                <div key={index} style={{ display: "flex", justifyContent: "space-between" }}>
-                  <h4 style={{ color: textColor }}>{input.text01}</h4>
+                <div key={index} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
+                  <h4 style={{ color: textColor, marginRight: '30px'}}>{input.text01}</h4>
                   <span>&nbsp;</span>
                   <h4 style={{ color: secundaryTextColor }}>{input.text}</h4>
                 </div>
@@ -323,7 +323,7 @@ function Gamification() {
                 <h4 style={{ color: textColor }}>{text10}</h4>
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px" }}>
               <img src={poweredby} style={{ width: "30%", height: "auto", }} />
             </div>
           </div>
