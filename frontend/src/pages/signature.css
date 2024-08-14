@@ -1,35 +1,57 @@
 .signature-container {
-  display: flex; /* Isso permite que as duas partes fiquem uma ao lado da outra */
-  width: 100%; /* Ocupa toda a largura disponível */
-  height: 100vh; /* Ocupa toda a altura da tela */
-  justify-content: space-between;
+  display: flex;
+  /* Isso permite que as duas partes fiquem uma ao lado da outra */
+  width: 100%;
+  /* Ocupa toda a largura disponível */
+  height: 91vh;
 }
 
 .visualizacao-assinatura {
-  flex: 1; /* Isso faz com que esta parte ocupe metade da largura disponível */
-  padding: 20px; /* Adicione espaço interno conforme necessário */
+  padding: 20px;
+  /* Adicione espaço interno conforme necessário */
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+}
 
+.assinatura-preview {
+  padding: 20px;
+}
+
+.campos-para-assinatura input {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.35);
+  border: none;
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  border-radius: 8px;
+  width: 100%;
 }
 
 .campos-para-assinatura {
-  flex: 1; /* Isso faz com que esta parte ocupe metade da largura disponível */
-  padding: 20px; /* Adicione espaço interno conforme necessário */
+  padding: 20px;
+  /* Adicione espaço interno conforme necessário */
 
 }
+
 .montserrat-semibold {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600; /* Montserrat Semi-Bold */
+  font-weight: 600;
+  /* Montserrat Semi-Bold */
   font-size: 20px;
   margin-bottom: 0px;
 }
 
 .lato-regular {
   font-family: 'Lato', sans-serif;
-  font-weight: 400; /* Lato Regular */
+  font-weight: 400;
+  /* Lato Regular */
 }
 
 .vertical-bar {
   width: 1px;
-  height: 100%; /* ou a altura desejada */
-  background-color: rgb(53, 53, 53); /* ou a cor desejada */
+  height: 100%;
+  /* ou a altura desejada */
+  background-color: rgb(53, 53, 53);
+  /* ou a cor desejada */
 }

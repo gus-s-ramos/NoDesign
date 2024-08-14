@@ -164,7 +164,7 @@ function Signature() {
                 <input type="text" placeholder={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
 
-            <div  >
+            <div className='assinatura-preview' >
                 <h1>Visualização Assinatura</h1>
                 <div className="visualizacao-assinatura">
                     <div  style={cardStyle}>
@@ -199,8 +199,8 @@ function Signature() {
                     </div>
                 </div>
                 <div>
-                    <button> Baixar JPEG</button>
-                    <button onClick={handleGenerateHTML}>Gerar HTML</button>
+                    <button className='modal-button'> Baixar JPEG</button>
+                    <button className='modal-button' onClick={handleGenerateHTML}>Gerar HTML</button>
                 </div>
 
 
