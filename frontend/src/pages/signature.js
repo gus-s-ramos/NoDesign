@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Cropper from 'react-easy-crop';
 import Modal from 'react-modal';
-import Icon from '@mdi/react';
-import { mdiLinkedin, mdiInstagram, mdiFacebook, mdiPhone, mdiEmail, mdiWeb } from '@mdi/js';
 import './signature.css';
 import { getCroppedImg } from './utils';
 import { saveAs } from 'file-saver';
@@ -10,6 +8,47 @@ import { saveAs } from 'file-saver';
 Modal.setAppElement('#root');
 
 function Signature() {
+
+    const cardStyle = {
+        borderSpacing: '16px',
+        display: 'flex',
+    };
+
+    const fotoStyle = {
+        width: '100px',
+        height: '100px'
+    };
+
+    const imgStyle = {
+        width: '100%',
+        borderRadius: '8px',
+    };
+
+    const tdStyle = {
+        width: '2px',
+        backgroundColor: '#ffa00c',
+        marginLeft: '16px',
+        marginRight: '16px'
+    };
+
+    const infoStyle = {
+        lineHeight: '2px',
+        color: '#000000',
+        textDecoration: 'none',
+    };
+
+    const h3Style = {
+        color: '#ffa00c',
+    };
+
+    const linkStyle = {
+        lineHeight: '2px',
+        color: '#000000',
+        textDecoration: 'none',
+    };
+
+
+
     const [nome, setNome] = useState("Nome");
     const [sobrenome, setSobrenome] = useState("Sobrenome");
     const [cargo, setCargo] = useState("Cargo");
@@ -56,19 +95,40 @@ function Signature() {
     };
 
     const handleGenerateHTML = () => {
-        const visualizacaoAssinatura = document.querySelector('.visualizacao-assinatura');
-        if (visualizacaoAssinatura) {
-            const html = visualizacaoAssinatura.innerHTML;
-            const blob = new Blob([html], { type: 'text/html' });
-            saveAs(blob, 'assinatura.html');
-        }
+         const html = `
+        <!DOCTYPE html>
+        <html lang="en" dir="ltr">
+          <head>
+            <meta charset="utf-8">
+            <title>Assinatura</title>
+          </head>
+          <body>
+            <table style="border-spacing: 16px">
+              <tr>
+                <td style="width:100px"><img style="width:100%; border-radius:8px" src="${imagemCortada ? URL.createObjectURL(imagemCortada) : ''}" alt="foto"></td>
+                <td style="background: #ffa00c; width:1px;"></td>
+                <td style="line-height: 2px; color:#000000; text-decoration: none;">
+                  <h3 style="color:#ffa00c">${nome} ${sobrenome}</h3>
+                  <h4>${cargo} | Yazo</h4>
+                  <p><a style="line-height: 2px; color:#000000; text-decoration: none;" href="mailto:${email}">${email}</a></p>
+                  <p><a style="line-height: 2px; color:#000000; text-decoration: none;" href="tel:${telefone}">${telefone}</a></p>
+                  <p><a style="line-height: 2px; color:#000000; text-decoration: none;" href="https://www.yazo.com.br">yazo.com.br</a></p>
+                </td>
+              </tr>
+            </table>
+          </body>
+        </html>
+        `;
+        const blob = new Blob([html], { type: 'text/html' });
+        saveAs(blob, 'assinatura.html');
     };
 
     return (
         <div className="signature-container">
             <div className="campos-para-assinatura">
-                <h1>Anexos</h1>
+                <h1>Criar assinatura de email</h1>
                 <div>
+                    <h1>Anexos</h1>
                     <input type="file" onChange={handleImagemChange} accept="image/*" />
                     <Modal isOpen={modalAberto} onRequestClose={handleCancelar}>
                         {imagemOriginal && (
@@ -100,66 +160,41 @@ function Signature() {
                     <input type="text" placeholder={telefone} onChange={(e) => setTelefone(e.target.value)} />
                 </div>
 
-                <h1>Redes Sociais</h1>
-                <input type="text" placeholder="LINKEDIN" />
-                <input type="text" placeholder="FACEBOOK" />
-                <input type="text" placeholder="INSTAGRAM" />
-                <h1>Outros Dados</h1>
+
                 <input type="text" placeholder={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
 
-            <div className="visualizacao-assinatura" >
+            <div  >
                 <h1>Visualização Assinatura</h1>
-                <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#f3f3f3', padding: '20px' }}>
-                    <div>
-                        <div className="foto" style={{ width: '100px' }}>
+                <div className="visualizacao-assinatura">
+                    <div  style={cardStyle}>
+                        <div style={fotoStyle}>
                             <img
-                                style={{ width: '100%', borderRadius: '0px', boxShadow: '10px 10px 0px 0px #821938' }}
+                                style={{ width: '100%', borderRadius: '8px' }}
                                 src={imagemCortada ? URL.createObjectURL(imagemCortada) : ''}
                                 alt="foto"
                             />
                         </div>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', width: '50%', flexDirection: 'column', textAlign: 'right', marginLeft: '20px' }}>
-                        <div style={{ display: 'flex' }}>
-                            <p className="montserrat-semibold" style={{ marginRight: '10px', lineHeight: '2px' }}>{nome}</p>
-                            <p className="montserrat-semibold" style={{ marginRight: '10px', lineHeight: '2px' }}>{sobrenome}</p>
+                        <div style={tdStyle}>
                         </div>
-                        <div style={{ display: 'flex', lineHeight: '2px' }}>
-                            <p className="lato-regular" style={{ color: '#6e6e6e' }}>{cargo} | Yazo</p>
-                        </div>
-                        <div>
-                            <a href="https://www.linkedin.com/company/yazotecnologia " target="_blank" rel="noopener noreferrer">
-                                <Icon path={mdiLinkedin} size={1} style={{ marginRight: '10px', color: '#821938', lineHeight: '2px' }} />
-                            </a>
-                            <a href="https://www.instagram.com/yazoapp/" target="_blank" rel="noopener noreferrer">
-                                <Icon path={mdiInstagram} size={1} style={{ marginRight: '10px', color: '#821938', lineHeight: '2px' }} />
-                            </a>
-                            <a href="https://www.facebook.com/yazoapp " target="_blank" rel="noopener noreferrer">
-                                <Icon path={mdiFacebook} size={1} style={{ color: '#821938', lineHeight: '2px' }} />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div style={{ marginLeft: '15px', marginRight: '15px' }}>
-                        <div className="vertical-bar"></div>
-                    </div>
-
-                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'column' }}>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <Icon path={mdiPhone} size={1} style={{ marginRight: '10px', color: '#821938' }} />
-                                <p style={{ margin: '0', lineHeight: '2px' }}><a style={{ textDecoration: 'none', lineHeight: '2px' }} href="phone:43996530860">{telefone}</a></p>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <Icon path={mdiEmail} size={1} style={{ marginRight: '10px', color: '#821938' }} />
-                                <p style={{ margin: '0', lineHeight: '2px' }}><a style={{ textDecoration: 'none' }} href="mailto:mariana.camilo@yazo.com.br">{email}</a></p>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <Icon path={mdiWeb} size={1} style={{ marginRight: '10px', color: '#821938' }} />
-                                <p style={{ margin: '0', lineHeight: '2px' }}><a style={{ textDecoration: 'none' }} href="https://www.yazo.com.br">www.yazo.com.br</a></p>
-                            </div>
+                        <div style={infoStyle}>
+                            <h3 style={h3Style}>{nome} {sobrenome}</h3>
+                            <h3>{cargo} | Yazo</h3>
+                            <p>
+                                <a style={linkStyle} href={`mailto:${email}`}>
+                                    {email}
+                                </a>
+                            </p>
+                            <p>
+                                <a style={linkStyle} href={`tel:${telefone}`}>
+                                    {telefone}
+                                </a>
+                            </p>
+                            <p>
+                                <a style={linkStyle} href="https://www.yazo.com.br">
+                                    yazo.com.br
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -167,7 +202,10 @@ function Signature() {
                     <button> Baixar JPEG</button>
                     <button onClick={handleGenerateHTML}>Gerar HTML</button>
                 </div>
+
+
             </div>
+
         </div>
     );
 }
