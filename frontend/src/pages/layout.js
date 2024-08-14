@@ -45,8 +45,9 @@ function Layout() {
   const screens = [
     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
     <ScreenTwo splash={splash} />,
-    <ScreenThree storeIcon={storeIcon} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
     <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
+    <ScreenThree storeIcon={storeIcon} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
+    
   ];
 
   const screensContainerRef = useRef(null);
@@ -289,7 +290,7 @@ function Layout() {
           <ScreenOneIphone55 loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenTwoIphone55 primaryColor={primaryColor} splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
+          <ScreenTwoIphone55 primaryColor={primaryColor} logoTimeline={logoTimeline} splash={splash} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeIphone55 storeIcon={storeIcon}
@@ -308,7 +309,7 @@ function Layout() {
           <ScreenOneAndroid loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
         <div>
-          <ScreenTwoAndroid splash={splash} primaryColor={primaryColor} headerColor={headerColor} secondaryColor={secondaryColor} />
+          <ScreenTwoAndroid splash={splash} logoTimeline={logoTimeline} primaryColor={primaryColor} headerColor={headerColor} secondaryColor={secondaryColor} />
         </div>
         <div>
           <ScreenThreeAndroid storeIcon={storeIcon}

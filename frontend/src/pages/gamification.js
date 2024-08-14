@@ -4,7 +4,7 @@ import './gamification.css';
 import html2canvas from 'html2canvas';
 import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFloppyDisk, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faFloppyDisk, faPenToSquare, faTrashCan, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import ColorPicker from '../components/colorpicker';
 
 
@@ -18,34 +18,52 @@ function Gamification() {
   const [selectColor, selectedColor] = useState("#000000");
   const [text00, setText00] = useState('Pontuação');
   const [text01, setText01] = useState('O evento todo está gamificado! Isso significa que você pode ganhar pontos interagindo dentro do app e os primeiros do ranking vão ganhar prêmios especiais do evento');
-  const [text02, setText02] = useState('NOME DA REGRA');
-  const [text03, setText03] = useState('NOME DA REGRA');
-  const [text04, setText04] = useState('NOME DA REGRA');
-  const [text05, setText05] = useState('NOME DA REGRA');
-  const [text06, setText06] = useState('QNT PTS');
-  const [text07, setText07] = useState('QNT PTS');
-  const [text08, setText08] = useState('QNT PTS');
-  const [text09, setText09] = useState('QNT PTS');
   const [text10, setText10] = useState('Teremos ações extraordinárias com pontuações extras como, por exemplo, QRCodes, notificações, games na timeline e nos quizzes. Fique atento para não perder nada.As atividades são sujeitas a moderação do time, por isso atividades como spamming e criação de contas fakes não serão permitidas, podendo acarretar no bloqueio de postagens na timeline e contas fakes serão apagadas.Os prêmios serão divulgados durante o dia na timeline do evento. Não fique de fora!');
   const [text11, setText11] = useState('Regra de Gamificação');
   const [text12, setText12] = useState('Observações');
 
+
+  
 
   function handleChange(e) {
     const selectedFile = e.target.files[0];
     setFile(URL.createObjectURL(selectedFile));
   }
 
-  const [additionalInputs, setAdditionalInputs] = useState([]);
+  const [additionalInputs, setAdditionalInputs] = useState([
+    { text01: '', text: '' },
+    { text01: '', text: '' },
+    { text01: '', text: '' },
+  ]);
 
-  const addAdditionalInputs = () => {
-    setAdditionalInputs([...additionalInputs, { text01: 'NOME DA REGRA', text: 'QNT PTS' }]);
-  };
+  const moveInputUp = (index) => {
+    if (index > 0) {
+        const newInputs = [...additionalInputs];
+        [newInputs[index - 1], newInputs[index]] = [newInputs[index], newInputs[index - 1]];
+        setAdditionalInputs(newInputs);
+    }
+};
 
-    const deleteInput = (index) => {
+const moveInputDown = (index) => {
+    if (index < additionalInputs.length - 1) {
+        const newInputs = [...additionalInputs];
+        [newInputs[index + 1], newInputs[index]] = [newInputs[index], newInputs[index + 1]];
+        setAdditionalInputs(newInputs);
+    }
+};
+
+  const deleteInput = (index) => {
     const updatedInputs = additionalInputs.filter((_, i) => i !== index);
     setAdditionalInputs(updatedInputs);
   };
+  
+  
+
+  const addAdditionalInputs = () => {
+    setAdditionalInputs([...additionalInputs, { text01: '', text: '' }]);
+  };
+
+  
 
 
   const handleDownloadClick = () => {
@@ -145,7 +163,7 @@ function Gamification() {
 
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR DA FONTE"
                 color={textColor}
                 setColor={setPrimaryColor}
               />
@@ -154,14 +172,14 @@ function Gamification() {
 
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR DO TÍTULO"
                 color={secundaryTextColor}
                 setColor={setSecundaryColor}
               />
             </div>
             <div>
               <ColorPicker
-                label="COR PRIMÁRIA"
+                label="COR DO FUNDO"
                 color={backgroundColor}
                 setColor={setBackgroundColor}
               />
@@ -215,51 +233,12 @@ function Gamification() {
                 </>
               )}
             </div>
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text02}
-                onChange={(e) => setText02(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text06}
-                onChange={(e) => setText06(e.target.value)}
-              />
-            </div>
-
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text03}
-                onChange={(e) => setText03(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text07}
-                onChange={(e) => setText07(e.target.value)}
-              />
-            </div>
-
-            <div className='PointsContainer'>
-              <input className='RuleName'
-                type="text"
-                value={text04}
-                onChange={(e) => setText04(e.target.value)}
-              />
-              <input className='RulePoint'
-                type="text"
-                value={text08}
-                onChange={(e) => setText08(e.target.value)}
-              />
-            </div>
-
-
             {additionalInputs.map((input, index) => (
               <div className='PointsContainer' key={index} >
                 <input className='RuleName'
                   type="text"
                   value={input.text01}
+                  placeholder={input.text01 === '' ? "NOME DA REGRA" : ''}
                   onChange={(e) => {
                     const updatedInputs = [...additionalInputs];
                     updatedInputs[index].text01 = e.target.value;
@@ -269,14 +248,21 @@ function Gamification() {
                 <input className='RulePoint'
                   type="text"
                   value={input.text}
+                  placeholder={input.text === '' ? "QNT PTS" : ''}
                   onChange={(e) => {
                     const updatedInputs = [...additionalInputs];
                     updatedInputs[index].text = e.target.value;
                     setAdditionalInputs(updatedInputs);
                   }}
                 />
+                <button className='deleteButton' onClick={() => moveInputUp(index)}>
+                  <FontAwesomeIcon icon={faArrowUp} />
+                </button>
+                <button className='deleteButton' onClick={() => moveInputDown(index)}>
+                  <FontAwesomeIcon icon={faArrowDown} />
+                </button>
                 <button className='deleteButton' onClick={() => deleteInput(index)}>
-                  <FontAwesomeIcon icon={faTrashCan} color='red' />
+                  <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </div>
             ))}
@@ -313,7 +299,7 @@ function Gamification() {
           <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
           <div className="previews" style={{ backgroundColor, }}>
 
-            <div className="image-container" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px"}}>
               <img src={file} className="preview-image01" />
             </div>
             <div>
@@ -332,26 +318,12 @@ function Gamification() {
               ) : (
                 <h2 style={{ color: secundaryTextColor }}>{text00}</h2>
               )}
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text02}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text06}</h4>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text03}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text07}</h4>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text04}</h4>
-                <span>&nbsp;</span>
-                <h4 style={{ color: secundaryTextColor }}>{text08}</h4>
-              </div>
+              
               {additionalInputs.map((input, index) => (
-                <div key={index} style={{ display: "flex", justifyContent: "space-between" }}>
-                  <h4 style={{ color: textColor }}>{input.text01}</h4>
+                <div key={index} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
+                  <h4 style={{ color: textColor, marginRight: '30px'}}>{input.text01 || "NOME DA REGRA"}</h4>
                   <span>&nbsp;</span>
-                  <h4 style={{ color: secundaryTextColor }}>{input.text}</h4>
+                  <h4 style={{ color: secundaryTextColor }}>{input.text || "QNT PTS"}</h4>
                 </div>
               ))}
             </div>
@@ -367,7 +339,7 @@ function Gamification() {
                 <h4 style={{ color: textColor }}>{text10}</h4>
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px" }}>
               <img src={poweredby} style={{ width: "30%", height: "auto", }} />
             </div>
           </div>

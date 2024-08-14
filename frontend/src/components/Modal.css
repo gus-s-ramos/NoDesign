@@ -122,6 +122,18 @@ border-top: 1px solid #757575;
     
 }
 
+.modal-button-cancel {
+    background-color: rgb(255, 255, 255);
+    color: rgb(112, 0, 15);
+    border: 1px solid rgb(112, 0, 15); /* Define a borda com a cor desejada */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
 .modal-image {
     max-width: 400px;
 }

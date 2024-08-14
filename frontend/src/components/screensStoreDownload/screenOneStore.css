@@ -63,3 +63,11 @@
     margin-left: 10px;
     color: #a7a7a7;
 }
+
+.storePrintDownload h5{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}

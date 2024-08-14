@@ -73,7 +73,7 @@ const ModalTimelineLogoSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                 </div>
                 <div className="modal-buttons">
                     <button className="modal-button" onClick={handleSave}>Salvar</button>
-                    <button className="modal-button" onClick={onClose}>Cancelar</button>
+                    <button className="modal-button-cancel" onClick={onClose}>Cancelar</button>
                 </div>
             </div>
         </div>

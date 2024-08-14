@@ -40,6 +40,7 @@ function AppContent() {
             <Route path="/signature" element={<Signature />} />
             <Route path="/login" element={<Login />} />
             <Route path="/passagemBastao" element={<PassagemBastao />} />
+            <Route path="/profile" element={<Profile/>} />
           </Routes>
 
         </div>

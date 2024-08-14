@@ -1,0 +1,70 @@
+.profileDash {
+    gap: 20px;
+    padding: 20px;
+  }
+
+.profileDash input{
+    border: none;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.319);
+}
+  
+  .profileHeader, .personalInfo, .contactInfo, .socialLinks, .history {
+    background-color: #f9f9f92c;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .profileHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .profileImage img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileImage img {
+    width: 100px; /* Defina o tamanho desejado */
+    height: 100px; /* Deve ser igual à largura */
+    border-radius: 50%; /* Faz a imagem ser redonda */
+    object-fit: cover; /* Cobre o conteúdo da imagem, ajustando ao tamanho */
+    border: 2px solid #ccc; /* Opcional: adiciona uma borda */
+  }
+  
+  .profileImage input {
+    margin-top: 10px;
+  }
+  
+  label {
+    margin-top: 10px;
+    display: block;
+  }
+  
+
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .actions button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .actions button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+  }
+  

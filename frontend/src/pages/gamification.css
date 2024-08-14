@@ -39,6 +39,16 @@ h4 {
   height: 30px;
 }
 
+.deleteButton{
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+.deleteButton svg{
+  color: #ffffff;
+}
+
 .editButton {
 display: flex;
     padding: 5px;
@@ -52,23 +62,24 @@ display: flex;
 .RulePoint {
   border-radius: 10px;
   text-align: center;
-  background-color: white;
-  border: 1px solid #BFBFBF;
+  background-color: #ffffff33;
+  border: none;
   width: 20%;
   padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .RuleName {
   width: 100%;
   border-radius: 10px;
-  border-color: #f5f5f5;
-  background-color: white;
-  border: 1px solid #BFBFBF;
-  ;
-
+  background-color: #ffffff33;
+  color: #ffffff;
+  border: none;
   text-align: justify;
   padding: 16px;
   margin-right: 25px;
+  text-transform: uppercase;
 }
 
 .splash-image {
@@ -470,6 +481,11 @@ display: flex;
   border-radius: 10px;
   border: 1px solid #BFBFBF;
   margin-bottom: 10px;
+}
+
+input::placeholder {
+  color: #ffffff; /* Altere para a cor desejada */
+  opacity: 1; /* Mantém a opacidade total */
 }
 
 @media screen and (max-width: 1080px) {
