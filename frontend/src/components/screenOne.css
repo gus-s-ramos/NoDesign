@@ -117,8 +117,13 @@
     line-height: 2.8;
     border: none;
     border-radius: 5px;
-    background-color: #dfdfdf;
+    background-color: #f2f2f2;
     font-size: 10px;
+}
+
+.inputMockup::placeholder{
+    color: black;
+    opacity: 30%;
 }
 
 .termos-privacidade {

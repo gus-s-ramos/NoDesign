@@ -22,9 +22,6 @@ function Gamification() {
   const [text11, setText11] = useState('Regra de Gamificação');
   const [text12, setText12] = useState('Observações');
 
-
-  
-
   function handleChange(e) {
     const selectedFile = e.target.files[0];
     setFile(URL.createObjectURL(selectedFile));
@@ -299,7 +296,7 @@ const moveInputDown = (index) => {
           <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
           <div className="previews" style={{ backgroundColor, }}>
 
-            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px"}}>
+            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "30px", marginTop: "30px"}}>
               <img src={file} className="preview-image01" />
             </div>
             <div>
@@ -310,7 +307,7 @@ const moveInputDown = (index) => {
                   <h2 style={{ color: secundaryTextColor }}>{text11}</h2>
                 )}
               </div>
-              <h4 style={{ color: textColor }}>{text01}</h4>
+              <h5 style={{ color: textColor }}>{text01}</h5>
             </div>
             <div className='pontuacao' style={{ color: textColor }} >
               {editedScoreTitle ? (
@@ -336,10 +333,10 @@ const moveInputDown = (index) => {
               )}
 
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <h4 style={{ color: textColor }}>{text10}</h4>
+                <h5 style={{ color: textColor }}>{text10}</h5>
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "center", marginBottom: "50px", marginTop: "50px" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "30px", marginTop: "30px" }}>
               <img src={poweredby} style={{ width: "30%", height: "auto", }} />
             </div>
           </div>

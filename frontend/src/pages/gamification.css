@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 12px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -24,7 +24,18 @@ h3 {
 
 h4 {
   font-family: 'Lato', sans-serif;
-  font-size: 25px;
+  font-size: 8px;
+}
+
+h5{ 
+  font-family: 'Lato', sans-serif;
+  font-size: 8px;
+}
+
+.previews h4{
+  font-family: 'Lato', sans-serif;
+  font-size: 8px;
+  text-transform: uppercase;
 }
 
 .TitleColor{
@@ -108,17 +119,14 @@ display: flex;
 
 .previewImage{
   width: 50px;
-  overflow: hidden;
   background-color: #777777;
   border-radius: 10px;
   display: flex;
 }
 
 .preview-image01 {
-  width: 300px;
+  width: 80px;
   align-items: center;
-  border-radius: 10px;
-
 }
 
 
@@ -233,9 +241,8 @@ display: flex;
 
 .containerPai {
   display: flex;
-  height: 100vh;
+  height: 90vh;
   flex-direction: row;
-  overflow: hidden;
   justify-content: center;
 }
 
@@ -285,10 +292,9 @@ display: flex;
 
 .previews {
   background-color: #ffffff;
-  padding: 70px;
-  transform: scale(0.24);
-  width: 1080px;
-  min-height: 1920px;
+  padding: 20px;
+  min-width: 270px;
+  min-height: 480px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -307,7 +313,6 @@ display: flex;
   flex-direction: column;
   margin: 20px;
   width: 65vw;
-  overflow-y: auto; 
   scrollbar-color: rgb(196, 196, 196) #f0f0f0;
   scrollbar-width: thin;
 }
