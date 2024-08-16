@@ -22,7 +22,8 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                                 </div>
 
                             </div>
-                            <div className="menuTimeline" style={{ backgroundColor: headerColor, }}>
+                            <div className="menuTimeline" style={{ backgroundColor: headerColor, border: `2px solid ${headerColor}` }}>
+
                                 <img
                                     src={logoTimeline}
                                     className="logoTimelinesHeader"
