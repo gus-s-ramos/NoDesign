@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Profile from "./pages/profile";
 import Menu from "./components/menu";
 import PassagemBastao from "./pages/passagemBastao";
+import AssinaturaModal from "./pages/assinaturaModal";
 
 
 function App() {
@@ -41,6 +42,7 @@ function AppContent() {
             <Route path="/login" element={<Login />} />
             <Route path="/passagemBastao" element={<PassagemBastao />} />
             <Route path="/profile" element={<Profile/>} />
+            <Route path="/assinaturaModal" element={<AssinaturaModal/>}/>
           </Routes>
 
         </div>

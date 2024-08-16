@@ -1,57 +1,62 @@
-.signature-container {
+.assinaturaContainer {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.headerAssinatura {
   display: flex;
-  /* Isso permite que as duas partes fiquem uma ao lado da outra */
-  width: 100%;
-  /* Ocupa toda a largura disponível */
-  height: 91vh;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.visualizacao-assinatura {
-  padding: 20px;
-  /* Adicione espaço interno conforme necessário */
-  background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 12px;
-}
-
-.assinatura-preview {
-  padding: 20px;
-}
-
-.campos-para-assinatura input {
-  color: rgb(255, 255, 255);
-  background-color: rgba(255, 255, 255, 0.35);
+.header-buttons button {
+  background-color: #ffffff; /* Cor dos botões conforme a imagem */
+  color: #8e0000;
   border: none;
-  padding: 8px;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  border-radius: 8px;
-  width: 100%;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.campos-para-assinatura {
+.header-buttons button:hover {
+  background-color: #a40000;
+  color: #ffffff;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.category-items {
+  display: flex;
+  gap: 10px;
+}
+
+.item {
+  background-color: #ffffff35; /* Ajuste para refletir o fundo do item */
+  border-radius: 10px;
   padding: 20px;
-  /* Adicione espaço interno conforme necessário */
-
+  text-align: center;
+  flex: 1;
 }
 
-.montserrat-semibold {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  /* Montserrat Semi-Bold */
-  font-size: 20px;
-  margin-bottom: 0px;
+.item button {
+  background-color: #ffffff;
+  color: #8e0000;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.lato-regular {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /* Lato Regular */
-}
-
-.vertical-bar {
-  width: 1px;
-  height: 100%;
-  /* ou a altura desejada */
-  background-color: rgb(53, 53, 53);
-  /* ou a cor desejada */
+.item button:hover {
+  background-color: #5b5b5b;
 }
