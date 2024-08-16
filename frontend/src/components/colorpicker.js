@@ -29,11 +29,12 @@ const ColorPicker = ({ color, setColor, label }) => {
           borderRadius: "10px",
           marginRight: "10px",
           border: "none",
+          
         }}
         onClick={() => setShowColorPicker(!showColorPicker)}
       />
       {showColorPicker && (
-        <div style={{ position: 'absolute', top: '60px', left: '0' }}>
+        <div style={{ position: 'absolute', top: '100px', left: '0' }}>
           <ChromePicker
             color={color}
             onChange={(newColor) => setColor(newColor.hex)}

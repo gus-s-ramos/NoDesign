@@ -7,6 +7,7 @@ import TimelineUploader from '../components/timelineUploader';
 import BannerLojaUpload from '../components/bannerLojaUpload';
 import IconeLojaUploader from '../components/IconeLojaUploader';
 import './screenInfo.css';
+import ColorSelector from './colorselector';
 
 const ScreenInfo = ({
   currentScreenIndex,
@@ -26,6 +27,8 @@ const ScreenInfo = ({
   setSecondaryColor,
   text00,
   setText00,
+  textColor,
+  setTextColor
 }) => {
 
   const renderInfoContent = () => {
@@ -61,6 +64,13 @@ const ScreenInfo = ({
                 label="Cor banner"
                 color={secondaryColor}
                 setColor={setSecondaryColor}
+              />
+            </div>
+            <div>
+              <ColorSelector
+                
+                color={textColor}
+                setColor={setTextColor}
               />
             </div>
             <div className='appNameInput'>

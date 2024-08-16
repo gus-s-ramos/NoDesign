@@ -5,7 +5,7 @@ import { mdiMagnify, mdiDotsVertical, mdiChevronLeft, mdiTuneVertical, mdiMapMar
 
 
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
-const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, headerColor, logoTimeline, secondaryColor }, ref) => {
+const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, logoTimeline, secondaryColor }, ref) => {
     return (
         <div id="screen-three-store-content" className="storePrint03" style={{ backgroundColor: secondaryColor }}>
             <img
@@ -13,7 +13,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, headerColor, 
                 className="logoTimelinesHeader"
                 style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
             />
-            <h5>Acesse a programação <br></br> completa pelo app!</h5>
+            <h5 style={{ color: textColor}}>Acesse a programação <br></br> completa pelo app!</h5>
             <div>
                 <div className="screenStore" style={{ marginTop: '40px' }}>
                     <div className="timeline-content">

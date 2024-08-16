@@ -12,7 +12,7 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
+function ScreenFourStore({ headerColor, logoTimeline, secondaryColor, textColor }) {
     const headerColorWithOpacity = hexToRgba(headerColor, 0.3);
 
     return (
@@ -23,7 +23,7 @@ function ScreenFourStore({ headerColor, logoTimeline, secondaryColor }) {
                     className="logoTimelinesHeader"
                     style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Receba notificações <br></br> em tempo real!</h5>
+                <h5 style={{ color: textColor}}>Receba notificações <br></br> em tempo real!</h5>
                 <div>
                     <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">

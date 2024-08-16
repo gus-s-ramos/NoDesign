@@ -3,7 +3,7 @@ import Icon from '@mdi/react';
 import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiThumbUpOutline, mdiMessageOutline, mdiShareOutline } from '@mdi/js';
 import './screenIphone65.css'
 
-const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
+const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor, textColor }) => {
     return (
         <div id="screen-one-iphone-65" className="storeIphone" style={{ backgroundColor: secondaryColor }}>
             <img
@@ -11,7 +11,7 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
                 className="logoTimelinesHeader"
                 style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
             />
-            <h5>Não perca nada do<br /> que irá rolar no evento!</h5>
+            <h5 style={{ color: textColor}}>Não perca nada do<br /> que irá rolar no evento!</h5>
             <div>
                 <div className="screenIphone" style={{ marginTop: '40px', boxShadow: '20px 10px 20px rgba(0, 0, 0, 0.305)' }}>
                     <div className="timelineContentBig">

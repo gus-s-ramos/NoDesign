@@ -13,7 +13,7 @@ const hexToRgba = (hex, alpha = 1) => {
     return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor }) {
+function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor, textColor }) {
     const primaryColorWithOpacity = hexToRgba(primaryColor, 0.3);
 
     return (
@@ -23,7 +23,7 @@ function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor }) {
                     className="logoTimelinesHeader"
                     style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Receba notificações <br></br> em tempo real!</h5>
+                <h5 style={{ color: textColor}}>Receba notificações <br></br> em tempo real!</h5>
                 <div>
                     <div className="screenIphone" style={{ marginTop: '40px' }}>
                         <div className="timelineContentBig">

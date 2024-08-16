@@ -9,7 +9,7 @@ import ScreenFourStore from './screensStore/screenFourStore';
 
 
 
-function ScreenThree({ headerColor, storeIcon, text00, bannerStoreIcon, secondaryColor, logoTimeline }) {
+function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimeline, textColor }) {
     
 
     return (
@@ -72,16 +72,16 @@ function ScreenThree({ headerColor, storeIcon, text00, bannerStoreIcon, secondar
                             <div className="screenshots">
                                 <div className="screen-one-container">
                                     <div className="screen-store">
-                                        <ScreenOneStore secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                        <ScreenOneStore textColor={textColor} secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
                                     </div>
                                     <div className="screen-store">
-                                        <ScreenTwoStore secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                        <ScreenTwoStore textColor={textColor} secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
                                     </div>
                                     <div className="screen-store">
-                                        <ScreenThreeStore secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                        <ScreenThreeStore textColor={textColor} secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
                                     </div>
                                     <div className="screen-store">
-                                        <ScreenFourStore secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
+                                        <ScreenFourStore textColor={textColor} secondaryColor={secondaryColor} headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={true} />
                                     </div>
                                 </div>
 

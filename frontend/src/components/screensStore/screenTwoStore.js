@@ -5,7 +5,7 @@ import './screenTwoStore.css';
 
 
 
-function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor }) {
+function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor, textColor}) {
     
     return (
         <div >
@@ -15,7 +15,7 @@ function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor }) {
                     className="logoTimelinesHeader"
                     style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Tenha contato com os <br></br> outros participantes!</h5>
+                <h5 style={{ color: textColor}}>Tenha contato com os <br></br> outros participantes!</h5>
                 <div>
                     <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">

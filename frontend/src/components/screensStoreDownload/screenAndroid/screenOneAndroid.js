@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import Icon from '@mdi/react';
 import { mdiPlus, mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery } from '@mdi/js';
 
-const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor }) => {
+const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightMode, secondaryColor, textColor }) => {
     return (
             <div id="screen-one-store-content"   className="storePrintDownload" style={{ backgroundColor: secondaryColor }}>
                 <img
@@ -10,7 +10,7 @@ const ScreenOneStoreDownload = forwardRef(({ headerColor, logoTimeline, isLightM
                     className="logoTimelinesHeader"
                     style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Não perca nada do<br /> que irá rolar no evento!</h5>
+                <h5 style={{ color: textColor}} >Não perca nada do<br /> que irá rolar no evento!</h5>
                 <div>
                     <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">

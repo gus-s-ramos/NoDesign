@@ -5,7 +5,7 @@ import './screenIphone65.css'
 
 
 
-function ScreenTwoIphone65({ primaryColor, secondaryColor, logoTimeline, headerColor }) {
+function ScreenTwoIphone65({ primaryColor, secondaryColor, logoTimeline, headerColor, textColor }) {
 
     return (
         <div id="screen-two-iphone-65" className="storeIphone" style={{ backgroundColor: secondaryColor, }}>
@@ -14,7 +14,7 @@ function ScreenTwoIphone65({ primaryColor, secondaryColor, logoTimeline, headerC
                 className="logoTimelinesHeader"
                 style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
             />
-            <h5>Tenha contato com os <br></br> outros participantes!</h5>
+            <h5 style={{ color: textColor}}>Tenha contato com os <br></br> outros participantes!</h5>
             <div>
                 <div className="screenIphone" style={{ marginTop: '40px' }}>
                     <div className="timelineContentBig">

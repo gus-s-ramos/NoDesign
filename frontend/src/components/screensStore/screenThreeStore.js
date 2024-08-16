@@ -6,7 +6,7 @@ import './screenThreeStore.css';
 
 
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
-const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondaryColor }, ref) => {
+const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondaryColor,textColor }, ref) => {
     return (
         <div >
             <div className="storePrint" style={{ backgroundColor: secondaryColor }}>
@@ -15,7 +15,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                     className="logoTimelinesHeader"
                     style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Acesse a programação <br></br> completa pelo app!</h5>
+                <h5 style={{ color: textColor}}>Acesse a programação <br></br> completa pelo app!</h5>
                 <div>
                     <div className="screenStore" style={{ marginTop: '40px' }}>
                         <div className="timeline-content">

@@ -6,7 +6,7 @@ import './screenIphone65.css'
 
 
 // function ScreenThreeStore({ headerColor, logoTimeline, secondaryColor }) {
-const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, secondaryColor }, ref) => {
+const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, secondaryColor, textColor }, ref) => {
     return (
             <div id="screen-three-iphone-65" className="storeIphone" style={{ backgroundColor: secondaryColor }}>
                 <img
@@ -14,7 +14,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                     className="logoTimelinesHeader"
                     style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
-                <h5>Acesse a programação <br></br> completa pelo app!</h5>
+                <h5 style={{ color: textColor}}>Acesse a programação <br></br> completa pelo app!</h5>
                 <div>
                     <div className="screenIphone" style={{ marginTop: '40px' }}>
                         <div className="timelineContentBig">
