@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '@mdi/react';
-import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiHeartOutline } from '@mdi/js';
+import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiAccessPoint } from '@mdi/js';
 import './screenIphone65.css'
 
 
@@ -46,10 +46,10 @@ function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor, textCol
                                 <div className='notificationLabel' style={{ backgroundColor: primaryColorWithOpacity }}>
                                     <div className='notificationLabel01'>
                                         <div className="icon-circle-big" style={{ backgroundColor: primaryColor }}>
-                                            <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
+                                            <Icon path={mdiAccessPoint} style={{ color: 'white' }} size={0.8} className="icon-signal" />
                                         </div>
                                         <div className='titleiphonebig'>
-                                            <h7>Não se atrase</h7>
+                                            <h7>Não se atrase!</h7>
                                             <p>A palestra sobre o futuro da nação irá começar em breve.</p>
                                             <p>agora</p>
                                         </div>

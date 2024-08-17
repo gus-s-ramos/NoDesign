@@ -9,7 +9,7 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
             <img
                 src={logoTimeline}
                 className="logoTimelinesHeader"
-                style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
             />
             <h5 style={{ color: textColor}}>Não perca nada do<br /> que irá rolar no evento!</h5>
             <div>
@@ -37,7 +37,7 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
                             </div>
                             <div className='timeline-share'>
                                 <div>
-                                    <img src="/assets/1.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }} />
+                                    <img src="/assets/foto01.jpeg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }} />
                                 </div>
                                 <div className="app-details">
                                     <p>Compartilhe uma ideia</p>
@@ -46,19 +46,16 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
                             <div className='timeline-content-big' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
                                 <div className="app-post" style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
                                     <div className='post-title' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
-                                        <img src="/assets/1.jpg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }} />
+                                        <img src="/assets/foto02.jpeg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }} />
                                         <div className="app-details">
-                                            <h6 className='timelineName'>Diego Shimidth</h6>
-                                            <p className='timelineName1'>2 min</p>
+                                            <h6 className='timelineName'>Emanuel Batista</h6>
+                                            <p className='timelineName1'>Há 30 min</p>
                                         </div>
                                     </div>
                                     <Icon path={mdiDotsVertical} size={0.8} color={'grey'} className="icon-options" />
                                 </div>
-                                <div className='post-description'>
-                                    <p>Teste de uma breve descrição para ser inserida dentro do aplicativo</p>
-                                </div>
                                 <div>
-                                    <img src="/assets/22.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
+                                    <img src="/assets/foto09.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
                                 </div>
                                 <div className='post-description'>
                                     <div>
@@ -84,23 +81,42 @@ const ScreenOneIphone65 = forwardRef(({ headerColor, logoTimeline, isLightMode, 
                                     </div>
                                 </div>
                             </div>
-
                             <div className='timeline-content-big' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
                                 <div className="app-post" style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
                                     <div className='post-title' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff' }}>
-                                        <img src="/assets/yazo-300x300.jpg" alt="App Icon" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '8px' }} />
+                                        <img src="/assets/foto02.jpeg" alt="App Icon" style={{ width: '35px', height: '35px', objectFit: 'cover', borderRadius: '8px' }} />
                                         <div className="app-details">
-                                            <h6>YAZO</h6>
-                                            <p className='timelineName1'>2 min</p>
+                                            <h6 className='timelineName'>Emanuel Batista</h6>
+                                            <p className='timelineName1'>Há 30 min</p>
                                         </div>
                                     </div>
-                                    <Icon path={mdiDotsVertical} size={0.6} className="icon-options" />
-                                </div>
-                                <div className='post-description'>
-                                    <p>Teste de uma breve descrição para ser inserida dentro do aplicativo</p>
+                                    <Icon path={mdiDotsVertical} size={1} color={'grey'} className="icon-options" />
                                 </div>
                                 <div>
-                                    <img src="/assets/21.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
+                                    <img src="/assets/foto09.png" alt="App Icon" style={{ width: '320px', height: '250px', objectFit: 'cover' }} />
+                                </div>
+                                <div className='post-description'>
+                                    <div>
+                                        <p>37 curtidas</p>
+                                    </div>
+                                    <div>
+                                        <p>30 comentários</p>
+                                    </div>
+                                </div>
+                                <div className='linetimeline'></div>
+                                <div className='reactionPubli'>
+                                    <div className='reactionPubliIcon'>
+                                        <Icon path={mdiThumbUpOutline} size={0.8} color={'grey'} className="icon-options" />
+                                        <p>Curtir</p>
+                                    </div>
+                                    <div className='reactionPubliIcon'>
+                                        <Icon path={mdiMessageOutline} size={0.8} color={'grey'} className="icon-options" />
+                                        <p>Comentar</p>
+                                    </div>
+                                    <div className='reactionPubliIcon'>
+                                        <Icon path={mdiShareOutline} size={0.8} color={'grey'} className="icon-options" />
+                                        <p>Compartilhar</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

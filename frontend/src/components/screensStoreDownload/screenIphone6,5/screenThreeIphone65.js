@@ -63,7 +63,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                 </div>
                                 <div className='scheduleLabel'>
                                     <div className='scheduleLabel01'>
-                                        <div>
+                                        <div className='textschedule'>
                                             <h8>Palestra sobre o futuro da nação</h8>
                                         </div>
                                         <div className='textschedule'>
@@ -75,9 +75,9 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                             <p>Trilha do conhecimento</p>
                                         </div>
                                         <img
-                                            src="./assets/1.jpg"
+                                            src="./assets/foto02.jpeg"
                                             alt="Foto do Usuário"
-                                            style={{ width: '30px', height: '30px', borderRadius: '50%' }}
+                                            style={{ width: '25px', height: '25px', borderRadius: '50%' }}
                                         />
                                     </div>
                                     <div>
@@ -92,7 +92,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                 </div>
                                 <div className='scheduleLabel'>
                                     <div className='scheduleLabel01'>
-                                        <div>
+                                        <div className='textschedule'>
                                             <h8>Liderança transformadora: Como inspirar e motivar equipes</h8>
                                         </div>
                                         <div className='textschedule'>
@@ -104,9 +104,9 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                                             <p>Trilha do conhecimento</p>
                                         </div>
                                         <img
-                                            src="/assets/4.jpg"
+                                            src="/assets/foto03.jpeg"
                                             alt="Foto do Usuário"
-                                            style={{ width: '30px', height: '30px', borderRadius: '50%' }}
+                                            style={{ width: '25px', height: '25px', borderRadius: '50%' }}
                                         />
                                     </div>
                                     <div>

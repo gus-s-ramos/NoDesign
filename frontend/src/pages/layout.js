@@ -268,7 +268,7 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-        style={{ display: 'none' }}
+        //style={{ display: 'none' }}
       >
 
         <div>
