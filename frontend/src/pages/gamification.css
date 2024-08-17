@@ -294,6 +294,7 @@ display: flex;
   background-color: #ffffff;
   padding: 20px;
   min-width: 270px;
+  max-width: 270px;
   min-height: 480px;
   display: flex;
   flex-direction: column;

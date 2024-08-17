@@ -34,7 +34,7 @@ const ColorPicker = ({ color, setColor, label }) => {
         onClick={() => setShowColorPicker(!showColorPicker)}
       />
       {showColorPicker && (
-        <div style={{ position: 'absolute', top: '100px', left: '0' }}>
+        <div style={{ position: 'absolute', top: '100px', left: '0', zIndex: '1' }}>
           <ChromePicker
             color={color}
             onChange={(newColor) => setColor(newColor.hex)}
