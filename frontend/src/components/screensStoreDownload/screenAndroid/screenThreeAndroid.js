@@ -74,7 +74,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
                                         <p>Trilha do conhecimento</p>
                                     </div>
                                     <img
-                                        src="./assets/1.jpg"
+                                        src="./assets/foto02.jpeg"
                                         alt="Foto do Usuário"
                                         style={{ width: '20px', height: '20px', borderRadius: '50%' }}
                                     />
@@ -103,7 +103,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
                                         <p>Trilha do conhecimento</p>
                                     </div>
                                     <img
-                                        src="/assets/4.jpg"
+                                        src="/assets/foto03.jpeg"
                                         alt="Foto do Usuário"
                                         style={{ width: '20px', height: '20px', borderRadius: '50%' }}
                                     />

@@ -55,32 +55,50 @@ function ScreenTwoIphone55({ primaryColor, secondaryColor, logoTimeline, headerC
                                     <div className="userLabel01">
                                         <div>
                                             <img
-                                                src="/assets/1.jpg"
+                                                src="/assets/foto03.jpeg"
                                                 alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
                                             />
                                         </div>
-                                        <div className="app-details">
+                                        <div className='app-details'>
                                             <h6>Tales Henrique</h6>
                                             <p>27 amigos em comum</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
+                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" />
                                     </div>
                                 </div>
                                 <div className="userLabel">
                                     <div className="userLabel01">
                                         <div>
                                             <img
-                                                src="/assets/95.jpg"
+                                                src="/assets/foto04.jpeg"
                                                 alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
                                             />
                                         </div>
-                                        <div className="app-details">
-                                            <h6>Maria Fernanda</h6>
-                                            <p>5 amigos em comum</p>
+                                        <div className='app-details'>
+                                            <h6>Sandra Dias</h6>
+                                            <p>9 amigos em comum</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button className='buttonNetworking01' style={{ backgroundColor: primaryColor }}>Adicionar</button>
+                                    </div>
+                                </div>
+                                <div className="userLabel">
+                                    <div className="userLabel01">
+                                        <div >
+                                            <img
+                                                src="/assets/foto05.jpeg"
+                                                alt="Foto do Usuário"
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
+                                            />
+                                        </div>
+                                        <div className='app-details'>
+                                            <h6>Rodrigo Silva</h6>
+                                            <p>30 amigos em comum</p>
                                         </div>
                                     </div>
                                     <div>
@@ -91,72 +109,54 @@ function ScreenTwoIphone55({ primaryColor, secondaryColor, logoTimeline, headerC
                                     <div className="userLabel01">
                                         <div>
                                             <img
-                                                src="/assets/5 (1).jpg"
+                                                src="/assets/foto06.jpeg"
                                                 alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
                                             />
                                         </div>
-                                        <div className="app-details">
-                                            <h6>Fernanda Sofia</h6>
-                                            <p>8 amigos em comum</p>
+                                        <div className='app-details'>
+                                            <h6>Mônica Mathias</h6>
+                                            <p>15 amigos em comum</p>
                                         </div>
                                     </div>
                                     <div>
-                                        <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
+                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" />
                                     </div>
                                 </div>
                                 <div className="userLabel">
                                     <div className="userLabel01">
                                         <div>
                                             <img
-                                                src="/assets/5.jpg"
+                                                src="/assets/foto11.jpeg"
                                                 alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
                                             />
                                         </div>
-                                        <div className="app-details">
-                                            <h6>Eduardo Henrique</h6>
-                                            <p>0 amigos em comum</p>
+                                        <div className='app-details'>
+                                            <h6>Rogério Antunes</h6>
+                                            <p>30 amigos em comum</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    <button className='buttonNetworking'>Cancelar</button>
+                                    </div>
+                                </div>
+                                <div className="userLabel">
+                                    <div className="userLabel01">
+                                        <div>
+                                            <img
+                                                src="/assets/foto10.jpeg"
+                                                alt="Foto do Usuário"
+                                                style={{ width: '30px', height: '30px', borderRadius: '6px' }}
+                                            />
+                                        </div>
+                                        <div className='app-details'>
+                                            <h6>Vanessa Machado</h6>
+                                            <p>9 amigos em comum</p>
                                         </div>
                                     </div>
                                     <div>
                                         <button className='buttonNetworking01' style={{ backgroundColor: primaryColor }}>Adicionar</button>
-                                    </div>
-                                </div>
-                                <div className="userLabel">
-                                    <div className="userLabel01">
-                                        <div>
-                                            <img
-                                                src="/assets/9.jpg"
-                                                alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
-                                            />
-                                        </div>
-                                        <div className="app-details">
-                                            <h6>Fabio Cabral</h6>
-                                            <p>0 amigos em comum</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
-                                    </div>
-                                </div>
-                                <div className="userLabel">
-                                    <div className="userLabel01">
-                                        <div>
-                                            <img
-                                                src="/assets/9.jpg"
-                                                alt="Foto do Usuário"
-                                                style={{ width: '30px', height: '30px', borderRadius: '8px' }}
-                                            />
-                                        </div>
-                                        <div className="app-details">
-                                            <h6>Pietra Canvan</h6>
-                                            <p>0 amigos em comum</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
                                     </div>
                                 </div>
                             </div>

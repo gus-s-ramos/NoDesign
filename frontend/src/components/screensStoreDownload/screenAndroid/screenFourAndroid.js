@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '@mdi/react';
-import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiHeartOutline } from '@mdi/js';
+import { mdiDotsVertical, mdiSignal, mdiWifi, mdiBattery, mdiAccessPoint } from '@mdi/js';
 
 // Função para converter hexadecimal para rgba com opacidade
 const hexToRgba = (hex, alpha = 1) => {
@@ -44,7 +44,7 @@ function ScreenFourStoreDownload({ primaryColor, logoTimeline, secondaryColor, t
                                 <div className='notificationLabel' style={{ backgroundColor: headerColorWithOpacity }}>
                                     <div className='notificationLabel01'>
                                         <div className="icon-circle" style={{ backgroundColor: primaryColor }}>
-                                            <Icon path={mdiHeartOutline} style={{ color: 'white' }} size={0.5} className="icon-signal" />
+                                            <Icon path={mdiAccessPoint} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
                                         <div className='app-details'>
                                             <h7>Não se atrase</h7>
