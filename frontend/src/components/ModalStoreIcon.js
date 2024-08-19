@@ -5,6 +5,11 @@ import 'react-image-crop/dist/ReactCrop.css';
 
 const ModalStoreIconSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     const [crop, setCrop] = useState({
+        unit: '%', // Valores relativos em porcentagem
+        x: 10, // Posição horizontal inicial do recorte
+        y: 10, // Posição vertical inicial do recorte
+        width: 15, // Largura inicial do recorte
+        height: 15, // Altura inicial do recorte
         aspect: 128 / 128,
     });
     const [completedCrop, setCompletedCrop] = useState(null);

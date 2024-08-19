@@ -11,7 +11,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
             <img
                 src={logoTimeline}
                 className="logoTimelinesHeader"
-                style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
             />
             <h5 style={{ color: textColor}}>Acesse a programação <br></br> completa pelo app!</h5>
             <div>

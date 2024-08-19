@@ -5,6 +5,11 @@ import 'react-image-crop/dist/ReactCrop.css';
 
 const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     const [crop, setCrop] = useState({
+        unit: '%', // Valores relativos em porcentagem
+        x: 10, // Posição horizontal inicial do recorte
+        y: 10, // Posição vertical inicial do recorte
+        width: 19, // Largura inicial do recorte
+        height: 15, // Altura inicial do recorte
         aspect: 1900 / 1500,
     });
     const [completedCrop, setCompletedCrop] = useState(null);

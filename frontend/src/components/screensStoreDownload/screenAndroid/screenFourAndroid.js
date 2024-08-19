@@ -19,7 +19,7 @@ function ScreenFourStoreDownload({ primaryColor, logoTimeline, secondaryColor, t
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5 style={{ color: textColor}}>Receba notificações <br></br> em tempo real!</h5>
                 <div>

@@ -9,7 +9,7 @@ const ScreenOneIphone55= forwardRef(({ headerColor, logoTimeline, isLightMode, s
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '84px', height: '42px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5 style={{ color: textColor}}>Não perca nada do<br /> que irá rolar no evento!</h5>
                 <div>

@@ -12,7 +12,7 @@ const ScreenThreeIphone65 = React.forwardRef(({ logoTimeline, primaryColor, seco
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5 style={{ color: textColor}}>Acesse a programação <br></br> completa pelo app!</h5>
                 <div>

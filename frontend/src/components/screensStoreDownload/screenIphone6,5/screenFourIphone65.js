@@ -21,7 +21,7 @@ function ScreenFourIphone65({primaryColor, logoTimeline, secondaryColor, textCol
                 <img
                     src={logoTimeline}
                     className="logoTimelinesHeader"
-                    style={{ width: '100px', height: '58px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
+                    style={{ width: '110px', height: '68px', objectFit: 'cover', paddingBottom: '40px', paddingTop: '40px' }}
                 />
                 <h5 style={{ color: textColor}}>Receba notificações <br></br> em tempo real!</h5>
                 <div>

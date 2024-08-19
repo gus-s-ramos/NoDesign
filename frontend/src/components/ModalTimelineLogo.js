@@ -5,6 +5,11 @@ import 'react-image-crop/dist/ReactCrop.css';
 
 const ModalTimelineLogoSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     const [crop, setCrop] = useState({
+        unit: '%', // Valores relativos em porcentagem
+        x: 10, // Posição horizontal inicial do recorte
+        y: 10, // Posição vertical inicial do recorte
+        width: 25, // Largura inicial do recorte
+        height: 12, // Altura inicial do recorte
         aspect: 254 / 128,
     });
     const [completedCrop, setCompletedCrop] = useState(null);

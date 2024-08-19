@@ -48,7 +48,6 @@ function Layout() {
     <ScreenTwo splash={splash} />,
     <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode}  />,
     <ScreenThree storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
-    
   ];
 
   const screensContainerRef = useRef(null);
@@ -268,7 +267,7 @@ function Layout() {
       </div>
       <div
         ref={screensContainerRef}
-        //style={{ display: 'none' }}
+        style={{ display: 'none' }}
       >
 
         <div>
