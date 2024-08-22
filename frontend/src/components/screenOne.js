@@ -2,6 +2,7 @@ import React from 'react';
 import './screenOne.css';
 import Icon from '@mdi/react';
 import { mdiEmailOutline, mdiLockOutline } from '@mdi/js';
+import './screensStoreDownload/screenIphone6,5/screenIphone65.css'
 
 function ScreenOne({ loginFile, primaryColor, isLightMode }) {
     return (
@@ -17,13 +18,13 @@ function ScreenOne({ loginFile, primaryColor, isLightMode }) {
                                 <h5> Faça o login</h5>
                             </div>
                             <div>
-                                <div className="input-wrapper">
-                                    <Icon path={mdiEmailOutline} size={0.7} className="icon" />
-                                    <input className='inputMockup' type="text" placeholder="Email" />
+                                <div type="text" className="searchInputBig" style={{ marginBottom:"10px", color:"#979797"}}>
+                                    <Icon path={mdiEmailOutline} size={0.7} className="icon-signal" style={{marginRight:"5px"}} />
+                                    <p>Login</p>
                                 </div>
-                                <div className="input-wrapper">
-                                    <Icon path={mdiLockOutline} size={0.7} className="icon" />
-                                    <input className='inputMockup' type="password" placeholder="Digite a senha" />
+                                <div type="text" className="searchInputBig" style={{ marginBottom:"10px", color:"#979797"}}>
+                                    <Icon path={mdiLockOutline} size={0.7} className="icon-signal" style={{marginRight:"5px"}} />
+                                    <p>Senha</p>
                                 </div>
                             </div>
                             <div className="termos-privacidade">

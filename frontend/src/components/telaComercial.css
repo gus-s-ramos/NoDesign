@@ -1,0 +1,29 @@
+.layout-container {
+    display: flex;
+    justify-content: space-around;
+    /* Distribui espaço entre os elementos */
+    align-items: center;
+    /* Centraliza verticalmente os elementos */
+    width: 1920px;
+    height: 1080px;
+    padding: 20px;
+    /* Adiciona um espaço ao redor */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura e altura total */
+}
+
+.layout-container01 {
+    display: flex;
+    justify-content: space-around;
+    /* Distribui espaço entre os elementos */
+    align-items: center;
+    /* Centraliza verticalmente os elementos */
+    width: 1920px;
+    height: 1080px;
+    padding: 20px;
+    /* Adiciona um espaço ao redor */
+    box-sizing: border-box;
+    flex-direction: column;
+    /* Inclui padding e border na largura e altura total */
+}
+

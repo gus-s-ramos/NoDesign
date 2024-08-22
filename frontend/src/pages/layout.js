@@ -23,6 +23,7 @@ import ScreenTwoAndroid from '../components/screensStoreDownload/screenAndroid/s
 import ScreenThreeAndroid from '../components/screensStoreDownload/screenAndroid/screenThreeAndroid';
 import ScreenFourAndroid from '../components/screensStoreDownload/screenAndroid/screenFourAndroid';
 import LoadingScreen from './loadingScreen';
+import TelaComercial from '../components/telaComercial';
 
 
 
@@ -46,7 +47,7 @@ function Layout() {
   const screens = [
     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
     <ScreenTwo splash={splash} />,
-    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode}  />,
+    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
     <ScreenThree storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
   ];
 
@@ -202,6 +203,51 @@ function Layout() {
     setIsLoading(false);
   };
 
+  const downloadComercial = async () => {
+
+    const container = screensContainerRef.current;
+    if (!container) return;
+
+    try {
+
+      container.style.display = 'block';
+      const element = document.getElementById('tela-comercial-content'); // ID da div que contém a tela comercial
+      if (!element) {
+        console.error('Element with ID "tela-comercial-content" not found.');
+        return;
+      }
+
+      // Captura a tela comercial como uma imagem usando html2canvas
+      const canvas = await html2canvas(element, {
+        useCORS: true,
+        scale: 3, // Aumenta a escala para capturar mais detalhes
+
+      });
+
+      // Converte o canvas em um blob de imagem
+      const blob = await new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (blob) {
+            resolve(blob);
+          } else {
+            reject('Error generating the blob.');
+          }
+        }, 'image/png');
+      });
+
+      // Salva a imagem diretamente com file-saver
+      const imageName = 'tela-comercial.png'; // Nome do arquivo da imagem
+      saveAs(blob, imageName);
+
+    } catch (error) {
+      console.error('Error downloading comercial:', error);
+    }finally {
+      // Hide the container again
+      container.style.display = 'none';
+    }
+  };
+
+
   const downloadSettingsAsText = () => {
     const settings = `
       Nome App: ${text00}
@@ -218,7 +264,7 @@ function Layout() {
   return (
     <div>
       {isLoading && <LoadingScreen />}
-      
+
       <div className="containerLayout">
         <div className='divSliderContent'>
           <ScreenRepresentation
@@ -233,6 +279,7 @@ function Layout() {
             currentScreenIndex={currentScreenIndex}
             setCurrentScreenIndex={setCurrentScreenIndex}
             handleDownload={handleDownload}
+            downloadComercial={downloadComercial}
           />
         </div>
         <div className='divContent'>
@@ -277,7 +324,7 @@ function Layout() {
           <ScreenTwoIphone65 textColor={textColor} primaryColor={primaryColor} splash={splash} headerColor={headerColor} logoTimeline={logoTimeline} secondaryColor={secondaryColor} />
         </div>
         <div>
-          <ScreenThreeIphone65  textColor={textColor} primaryColor={primaryColor} storeIcon={storeIcon}
+          <ScreenThreeIphone65 textColor={textColor} primaryColor={primaryColor} storeIcon={storeIcon}
             secondaryColor={secondaryColor}
             logoTimeline={logoTimeline}
             bannerStoreIcon={bannerStoreIcon}
@@ -308,7 +355,7 @@ function Layout() {
         </div>
 
         <div>
-          <ScreenOneAndroid  textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
+          <ScreenOneAndroid textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
         <div>
           <ScreenTwoAndroid textColor={textColor} splash={splash} logoTimeline={logoTimeline} primaryColor={primaryColor} headerColor={headerColor} secondaryColor={secondaryColor} />
@@ -326,6 +373,16 @@ function Layout() {
           <ScreenFourAndroid textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} secondaryColor={secondaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} />
         </div>
 
+
+      </div>
+      <div style={{ display: 'none' }} 
+      ref={screensContainerRef}>
+        <TelaComercial loginFile={loginFile} primaryColor={primaryColor} textColor={textColor} storeIcon={storeIcon} isLightMode={isLightMode}
+          secondaryColor={secondaryColor}
+          logoTimeline={logoTimeline}
+          bannerStoreIcon={bannerStoreIcon}
+          text00={text00}
+          headerColor={headerColor} splash={splash} />
       </div>
     </div>
   );

@@ -6,15 +6,16 @@
     text-align: center;
 }
 
-.storePrintDownload h5{
+.storePrintDownload h5 {
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     margin-top: 15px;
     margin-bottom: 15px;
     text-align: center;
 }
-.storePrintDownload h7{
-font-size: 12px;
+
+.storePrintDownload h7 {
+    font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -160,11 +161,11 @@ font-size: 12px;
 }
 
 .searchBar {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
-.searchBar img{ 
+.searchBar img {
     width: 20px;
     height: 20px;
 }
@@ -180,6 +181,8 @@ font-size: 12px;
     flex: 1;
     padding: 10px 10px 10px 10px;
     align-items: center;
+    font-family: 'lato';
+    font-weight: 600;
 }
 
 
