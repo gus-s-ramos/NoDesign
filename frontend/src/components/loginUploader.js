@@ -12,6 +12,7 @@ const LoginUploader = ({ label, asset, setAsset }) => {
     setSelectedImage(URL.createObjectURL(selectedFile)); // Armazena temporariamente a imagem selecionada
     setModalOpen(true); // Abre o modal ao selecionar a imagem
   };
+  
   const closeModal = () => {
     setModalOpen(false);
     setSelectedImage(null); // Limpa a imagem selecionada ao fechar o modal sem salvar

@@ -97,6 +97,15 @@
 }
 
 
+.assinaturaImg{
+  cursor: pointer;
+  display: flex;
+  max-width: 100px;
+  min-width: 100px;
+  border-radius: 8px;
+  margin-bottom: -10px;
+}
+
 
 .assetUploaderContainer img {
   max-width: 30%;

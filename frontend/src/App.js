@@ -10,6 +10,7 @@ import Profile from "./pages/profile";
 import Menu from "./components/menu";
 import PassagemBastao from "./pages/passagemBastao";
 import AssinaturaModal from "./pages/assinaturaModal";
+import AssinaturasGrid from "./pages/assinaturasGrid";
 
 
 function App() {
@@ -43,6 +44,7 @@ function AppContent() {
             <Route path="/passagemBastao" element={<PassagemBastao />} />
             <Route path="/profile" element={<Profile/>} />
             <Route path="/assinaturaModal" element={<AssinaturaModal/>}/>
+            <Route path="/assinaturasGrid" element={<AssinaturasGrid />}/>
           </Routes>
 
         </div>
