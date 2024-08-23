@@ -5,11 +5,11 @@ import './assinaturaGrid.css';
 const AssinaturaCard = ({ assinatura, onClick }) => {
     return (
 
-        <div className='assinatura-card'>
+        <div className='assinatura-card' onClick={onClick}>
             <div>
                 <img src={`http://localhost:3001/${assinatura.imagem}`} alt={assinatura.nome} />
             </div>
-            <div></div>
+            <div className='divisoriaassinatura'></div>
             <div >
                 <h3 >{assinatura.nome}</h3>
                 <h3>{assinatura.cargo} | Yazo</h3>
