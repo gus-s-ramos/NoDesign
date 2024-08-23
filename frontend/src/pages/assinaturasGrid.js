@@ -1,4 +1,3 @@
-// src/components/AssinaturasGrid.js
 import React, { useState, useEffect } from 'react';
 import AssinaturaCard from './assinaturaCard';
 import AssinaturaModal from './assinaturaaModal';
@@ -7,7 +6,6 @@ import './assinaturaGrid.css';
 import './assinaturaModal.css';
 import Icon from '@mdi/react';
 import { mdiPlus } from '@mdi/js';
-
 
 const AssinaturasGrid = () => {
   const navigate = useNavigate();
@@ -18,7 +16,11 @@ const AssinaturasGrid = () => {
     // Fetch assinaturas from API
     const fetchAssinaturas = async () => {
       const response = await fetch('http://localhost:3001/api/assinaturas');
-      const data = await response.json();
+      let data = await response.json();
+
+      // Ordena as assinaturas para que a mais recente (maior ID) apareça primeiro
+      data = data.sort((a, b) => b.id - a.id);
+
       setAssinaturas(data);
     };
 
@@ -29,11 +31,18 @@ const AssinaturasGrid = () => {
     console.log('Assinatura selecionada:', assinatura);
     setSelectedAssinatura(assinatura);
   };
-  
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (updatedAssinatura) => {
     setSelectedAssinatura(null);
-
+    if (updatedAssinatura) {
+      // Atualiza a lista de assinaturas com a assinatura editada
+      setAssinaturas((prevAssinaturas) => {
+        const updatedList = prevAssinaturas.map((assinatura) =>
+          assinatura.id === updatedAssinatura.id ? updatedAssinatura : assinatura
+        );
+        return updatedList.sort((a, b) => b.id - a.id); // Ordena novamente após a edição
+      });
+    }
   };
 
   const handleAddSignature = () => {
@@ -42,7 +51,6 @@ const AssinaturasGrid = () => {
 
   return (
     <div>
-
       <div className="header-buttons">
         <h1>Assinaturas</h1>
         <button className="add-signature" onClick={handleAddSignature}>Adicionar assinatura</button>
@@ -65,6 +73,7 @@ const AssinaturasGrid = () => {
           <AssinaturaModal
             assinatura={selectedAssinatura}
             onClose={handleCloseModal}
+            onSave={(updatedAssinatura) => handleCloseModal(updatedAssinatura)}
           />
         )}
       </div>

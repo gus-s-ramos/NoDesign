@@ -1,0 +1,85 @@
+/* src/components/assinaturaCard.css */
+.assinatura-card {
+    background-color: #f9f9f92f;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    height: 125px;
+  }
+
+  .assinatura-card-plus {
+    background-color: #f9f9f92f;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+  }
+
+  .divisoriaassinatura {
+    width: 2px;
+    height: 100px;
+    background-color: #ffa00c;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+
+  .assinatura-card-plus button {
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.421);
+    padding: 12px 15px 12px 15px;
+  }
+  
+  .assinatura-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .assinatura-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .assinatura-info {
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  .card-hover-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .assinatura-card:hover .card-hover-buttons {
+    display: flex;
+  }
+  
+  .card-hover-buttons button {
+    padding: 8px 16px;
+    background-color: #830000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-hover-buttons button:hover {
+    background-color: #0056b3;
+  }
+  

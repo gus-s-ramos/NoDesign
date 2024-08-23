@@ -1,8 +1,8 @@
 // src/components/AssinaturaCard.js
 import React from 'react';
-import './assinaturaGrid.css';
+import './assinaturaCard.css';
 
-const AssinaturaCard = ({ assinatura, onClick }) => {
+const AssinaturaCard = ({ assinatura, onClick, onEditClick, onDeleteClick }) => {
     return (
 
         <div className='assinatura-card' onClick={onClick}>
@@ -11,23 +11,27 @@ const AssinaturaCard = ({ assinatura, onClick }) => {
             </div>
             <div className='divisoriaassinatura'></div>
             <div >
-                <h3 >{assinatura.nome}</h3>
+                <h3 >{assinatura.nome} {assinatura.sobrenome}</h3>
                 <h3>{assinatura.cargo} | Yazo</h3>
                 <p>
-                    <a href={`mailto:${assinatura.email}`}>
+                    <a>
                         {assinatura.email}
                     </a>
                 </p>
                 <p>
-                    <a href={`tel:${assinatura.telefone}`}>
+                    <a>
                         {assinatura.telefone}
                     </a>
                 </p>
                 <p>
-                    <a href="https://www.yazo.com.br">
+                    <a>
                         yazo.com.br
                     </a>
                 </p>
+            </div>
+            <div className="card-hover-buttons">
+                <button onClick={(e) => { e.stopPropagation(); onEditClick(assinatura); }}>Editar</button>
+                <button onClick={(e) => { e.stopPropagation(); onDeleteClick(assinatura.id); }}>Excluir</button>
             </div>
         </div>
     );

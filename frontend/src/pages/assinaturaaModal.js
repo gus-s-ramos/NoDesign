@@ -10,8 +10,7 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
   const [email, setEmail] = useState(assinatura.email);
   const [croppedImageUrl, setCroppedImageUrl] = useState(assinatura.cropped_image_url);
 
-  const handleSave = () => {
-    // Atualizando o objeto assinatura com os valores corretos
+  const handleSave = async () => {
     const updatedAssinatura = {
       ...assinatura,
       nome: nome,
@@ -21,10 +20,28 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
       email: email,
       cropped_image_url: croppedImageUrl,
     };
-
-    onSave(updatedAssinatura);  // Salvando a assinatura atualizada
-    onClose();  // Fechando o modal
+  
+    try {
+      const response = await fetch(`http://localhost:3001/api/assinaturas/${assinatura.id}`, {
+        method: 'PUT', // ou 'PATCH' dependendo da sua API
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedAssinatura),
+      });
+  
+      if (response.ok) {
+        const updatedData = await response.json();
+        onSave(updatedData); // Atualiza o estado no frontend
+        onClose();
+      } else {
+        console.error('Falha ao atualizar a assinatura.');
+      }
+    } catch (error) {
+      console.error('Erro ao salvar a assinatura:', error);
+    }
   };
+  
 
   return (
     <div className="modal">
