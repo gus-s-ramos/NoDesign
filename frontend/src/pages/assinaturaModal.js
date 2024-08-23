@@ -135,7 +135,7 @@ function AssinaturaModal() {
 
     return (
         <div className="signature-container">
-            <div className="campos-para-assinatura">
+            <div className="campos-para-criar-assinatura">
                 <h1>Criar assinatura de email</h1>
                 <div style={{ marginBottom: '15px' }}>
 
