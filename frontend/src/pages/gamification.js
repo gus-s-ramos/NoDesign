@@ -27,7 +27,23 @@ function Gamification() {
   // Função para enviar dados
   const handleSave = async () => {
     const formData = new FormData();
-    formData.append('logo_image_url', file); // Adiciona o arquivo da imagem
+    
+    // Se 'file' for uma URL, converta-a em Blob antes de adicionar ao FormData
+    if (typeof file === 'string') {
+        try {
+            const response = await fetch(file);
+            const blob = await response.blob();
+            formData.append('logo_image_url', blob, 'logo_image.png'); // Nome do arquivo opcional
+        } catch (error) {
+            console.error('Erro ao converter a imagem para Blob:', error);
+            return;
+        }
+    } else {
+        // Se 'file' já é um File ou Blob, adicione-o diretamente
+        formData.append('logo_image_url', file);
+    }
+    
+    // Adiciona os outros dados ao FormData
     formData.append('primary_color', textColor);
     formData.append('secondary_color', secundaryTextColor);
     formData.append('background_color', backgroundColor);
@@ -39,26 +55,27 @@ function Gamification() {
 
     // Adiciona as regras
     additionalInputs.forEach((input, index) => {
-      formData.append(`rules[${index}][name]`, input.text01);
-      formData.append(`rules[${index}][points]`, input.text);
+        formData.append(`rules[${index}][name]`, input.text01);
+        formData.append(`rules[${index}][points]`, input.text);
     });
 
     try {
-      const response = await fetch('http://localhost:3001/api/gamification-rules', {
-        method: 'POST',
-        body: formData
-      });
+        const response = await fetch('http://localhost:3001/api/gamification-rules', {
+            method: 'POST',
+            body: formData
+        });
 
-      if (!response.ok) {
-        throw new Error('Falha ao salvar os dados');
-      }
+        if (!response.ok) {
+            throw new Error('Falha ao salvar os dados');
+        }
 
-      const result = await response.json();
-      console.log('Dados salvos com sucesso', result);
+        const result = await response.json();
+        console.log('Dados salvos com sucesso', result);
     } catch (error) {
-      console.error('Erro ao salvar os dados:', error);
+        console.error('Erro ao salvar os dados:', error);
     }
-  };
+};
+
 
 
 

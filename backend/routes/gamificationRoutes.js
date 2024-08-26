@@ -6,13 +6,8 @@ const pool = new Pool(config);
 const upload = require('../server').upload; // Importa o multer configurado
 
 
-// Função para converter string vazia em null
-const parseIntegerOrNull = (value) => {
-    return value === '' ? null : parseInt(value, 10);
-};
-
 // Endpoint para criar uma nova regra de gamificação com upload de imagem
-router.post('/gamification-rules', upload.single('logo_image'), async (req, res) => {
+router.post('/gamification-rules', upload.single('logo_image_url'), async (req, res) => {
     const {
         primary_color,
         secondary_color,
@@ -24,7 +19,7 @@ router.post('/gamification-rules', upload.single('logo_image'), async (req, res)
         observation_text,
         rules
     } = req.body;
-    const logoImagePath = req.file ? req.file.path : null;
+    const logo_image_url = req.file ? req.file.path : null;
 
     try {
         const query = `
@@ -43,7 +38,7 @@ router.post('/gamification-rules', upload.single('logo_image'), async (req, res)
         `;
 
         const values = [
-            logoImagePath,
+            logo_image_url,
             primary_color,   // Converte string vazia para null
             secondary_color, // Converte string vazia para null
             background_color,// Converte string vazia para null

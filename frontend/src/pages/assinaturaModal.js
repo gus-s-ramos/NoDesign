@@ -12,8 +12,6 @@ Modal.setAppElement('#root');
 function AssinaturaModal() {
 
     const [splash, setSplash] = useState('/assets/user.webp');
-
-
     const inputFileRef = useRef(null);
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
