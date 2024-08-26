@@ -7,7 +7,9 @@ import {
   mdiAccountCircle,
   mdiBell,
   mdiChat,
-  mdiMagnify
+  mdiMagnify,
+  mdiArrowLeft,
+  mdiArrowRight,
 } from '@mdi/js';
 import './navbar.css';
 
@@ -18,6 +20,13 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleBackClick = () => {
+    window.history.back();
+  };
+  const handleForwardClick = () => {
+    window.history.forward();
+  };
+
   return (
     <div className="navbar">
       <div className="top-menu">
@@ -25,6 +34,13 @@ const Navbar = () => {
           <Link to="/">
             <img src="https://www.yazo.com.br/wp-content/uploads/2021/04/cropped-lett_color.png" alt="Logo" />
           </Link>
+
+        </div>
+        <div onClick={handleBackClick} style={{ cursor: 'pointer', display: 'flex', alignItems: 'flex-start', }}>
+          <Icon style={{ color: '#fff', borderRadius: '50%', padding: '5px', marginTop: '10px' }} path={mdiArrowLeft} size={0.8} />
+        </div>
+        <div onClick={handleForwardClick} style={{ cursor: 'pointer', display: 'flex', alignItems: 'flex-start', }}>
+          <Icon style={{ color: '#fff', borderRadius: '50%', padding: '5px', marginTop: '10px' }} path={mdiArrowRight} size={0.8} />
         </div>
         {/*
         <div className="search-bar">

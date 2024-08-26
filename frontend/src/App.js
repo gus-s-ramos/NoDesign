@@ -11,6 +11,7 @@ import Menu from "./components/menu";
 import PassagemBastao from "./pages/passagemBastao";
 import AssinaturaModal from "./pages/assinaturaModal";
 import AssinaturasGrid from "./pages/assinaturasGrid";
+import GamificationGrid from "./pages/gamificationGrid";
 
 
 function App() {
@@ -36,7 +37,7 @@ function AppContent() {
         
         <div className="content">
           <Routes>
-            <Route path="/gamification" element={<Gamification />} />
+            <Route path="/gamification" element={<GamificationGrid />} />
             <Route path="/report" element={<Report />} />
             <Route path="/layout" element={<Layout />} />
             <Route path="/signature" element={<Signature />} />
@@ -45,6 +46,8 @@ function AppContent() {
             <Route path="/profile" element={<Profile/>} />
             <Route path="/assinaturaModal" element={<AssinaturaModal/>}/>
             <Route path="/assinaturasGrid" element={<AssinaturasGrid />}/>
+            <Route path="/regragame" element={<Gamification />}/>
+            <Route path="/gamification" element={<Gamification/>}/>
           </Routes>
 
         </div>

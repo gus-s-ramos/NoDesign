@@ -6,7 +6,8 @@ import poweredby from "../assets/poweredby.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFloppyDisk, faPenToSquare, faTrashCan, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import ColorPicker from '../components/colorpicker';
-
+import Icon from '@mdi/react';
+import { mdiArrowLeft } from '@mdi/js';
 
 
 
@@ -22,10 +23,52 @@ function Gamification() {
   const [text11, setText11] = useState('Regra de Gamificação');
   const [text12, setText12] = useState('Observações');
 
+
+  // Função para enviar dados
+  const handleSave = async () => {
+    const formData = new FormData();
+    formData.append('logo_image_url', file); // Adiciona o arquivo da imagem
+    formData.append('primary_color', textColor);
+    formData.append('secondary_color', secundaryTextColor);
+    formData.append('background_color', backgroundColor);
+    formData.append('title', editedTitle || text11);
+    formData.append('description', text01);
+    formData.append('score_title', editedScoreTitle || text00);
+    formData.append('observation_title', editedObservationTitle || text12);
+    formData.append('observation_text', text10);
+
+    // Adiciona as regras
+    additionalInputs.forEach((input, index) => {
+      formData.append(`rules[${index}][name]`, input.text01);
+      formData.append(`rules[${index}][points]`, input.text);
+    });
+
+    try {
+      const response = await fetch('http://localhost:3001/api/gamification-rules', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error('Falha ao salvar os dados');
+      }
+
+      const result = await response.json();
+      console.log('Dados salvos com sucesso', result);
+    } catch (error) {
+      console.error('Erro ao salvar os dados:', error);
+    }
+  };
+
+
+
+
+
   function handleChange(e) {
     const selectedFile = e.target.files[0];
     setFile(URL.createObjectURL(selectedFile));
   }
+
 
   const [additionalInputs, setAdditionalInputs] = useState([
     { text01: '', text: '' },
@@ -33,34 +76,36 @@ function Gamification() {
     { text01: '', text: '' },
   ]);
 
+
+
   const moveInputUp = (index) => {
     if (index > 0) {
-        const newInputs = [...additionalInputs];
-        [newInputs[index - 1], newInputs[index]] = [newInputs[index], newInputs[index - 1]];
-        setAdditionalInputs(newInputs);
+      const newInputs = [...additionalInputs];
+      [newInputs[index - 1], newInputs[index]] = [newInputs[index], newInputs[index - 1]];
+      setAdditionalInputs(newInputs);
     }
-};
+  };
 
-const moveInputDown = (index) => {
+  const moveInputDown = (index) => {
     if (index < additionalInputs.length - 1) {
-        const newInputs = [...additionalInputs];
-        [newInputs[index + 1], newInputs[index]] = [newInputs[index], newInputs[index + 1]];
-        setAdditionalInputs(newInputs);
+      const newInputs = [...additionalInputs];
+      [newInputs[index + 1], newInputs[index]] = [newInputs[index], newInputs[index + 1]];
+      setAdditionalInputs(newInputs);
     }
-};
+  };
 
   const deleteInput = (index) => {
     const updatedInputs = additionalInputs.filter((_, i) => i !== index);
     setAdditionalInputs(updatedInputs);
   };
-  
-  
+
+
 
   const addAdditionalInputs = () => {
     setAdditionalInputs([...additionalInputs, { text01: '', text: '' }]);
   };
 
-  
+
 
 
   const handleDownloadClick = () => {
@@ -122,10 +167,12 @@ const moveInputDown = (index) => {
   };
 
 
-  return (
-    <div className="containerPai">
 
+  return (
+
+    <div className="containerPai">
       <div className="EditableContainer">
+
         <div className='TituloPagina'>
           <h1>Criar Regra Gamificação</h1>
         </div>
@@ -293,10 +340,17 @@ const moveInputDown = (index) => {
       </div>
       <div>
         <div className="previewContainer">
-          <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
+          <div>
+            <button className='PreviewDownload' onClick={handleDownloadClick}>BAIXAR REGRA</button>
+          </div>
+          <div style={{ display: 'flex' }}>
+            <button className='PreviewDownload' onClick={handleDownloadClick}>Cancelar</button>
+            <button className='PreviewDownload' onClick={handleSave}>Salvar</button>
+          </div>
           <div className="previews" style={{ backgroundColor, }}>
 
-            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "30px", marginTop: "30px"}}>
+
+            <div className="image-container" style={{ display: "flex", justifyContent: "center", marginBottom: "30px", marginTop: "30px" }}>
               <img src={file} className="preview-image01" />
             </div>
             <div>
@@ -315,10 +369,10 @@ const moveInputDown = (index) => {
               ) : (
                 <h2 style={{ color: secundaryTextColor }}>{text00}</h2>
               )}
-              
+
               {additionalInputs.map((input, index) => (
                 <div key={index} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                  <h4 style={{ color: textColor, marginRight: '30px'}}>{input.text01 || "NOME DA REGRA"}</h4>
+                  <h4 style={{ color: textColor, marginRight: '30px' }}>{input.text01 || "NOME DA REGRA"}</h4>
                   <span>&nbsp;</span>
                   <h4 style={{ color: secundaryTextColor }}>{input.text || "QNT PTS"}</h4>
                 </div>
