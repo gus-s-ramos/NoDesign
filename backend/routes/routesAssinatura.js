@@ -76,4 +76,23 @@ router.put('/:id', upload.single('imagem'), async (req, res) => {
     }
 });
 
+// Rota para deletar uma assinatura existente
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const query = 'DELETE FROM assinaturas WHERE id = $1 RETURNING *;';
+        const result = await pool.query(query, [id]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: 'Assinatura não encontrada' });
+        }
+
+        res.status(200).json({ message: 'Assinatura deletada com sucesso', deletedAssinatura: result.rows[0] });
+    } catch (error) {
+        console.error('Erro ao deletar assinatura:', error);
+        res.status(500).json({ error: 'Erro ao deletar assinatura' });
+    }
+});
+
 module.exports = router;

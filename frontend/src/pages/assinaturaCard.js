@@ -1,8 +1,10 @@
 // src/components/AssinaturaCard.js
 import React from 'react';
 import './assinaturaCard.css';
+import Icon from '@mdi/react';
+import { mdiDelete } from '@mdi/js';
 
-const AssinaturaCard = ({ assinatura, onClick, onEditClick, onDeleteClick }) => {
+const AssinaturaCard = ({ assinatura, onClick, onEditClick, onDelete }) => {
     return (
 
         <div className='assinatura-card' onClick={onClick}>
@@ -31,7 +33,9 @@ const AssinaturaCard = ({ assinatura, onClick, onEditClick, onDeleteClick }) => 
             </div>
             <div className="card-hover-buttons">
                 <button onClick={(e) => { e.stopPropagation(); onEditClick(assinatura); }}>Editar</button>
-                <button onClick={(e) => { e.stopPropagation(); onDeleteClick(assinatura.id); }}>Excluir</button>
+                <button className="delete-button" onClick={onDelete}>
+                    <Icon path={mdiDelete} size={1} style={{ color: '#ff0000' }} />
+                </button>
             </div>
         </div>
     );

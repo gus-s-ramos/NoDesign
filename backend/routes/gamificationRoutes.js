@@ -125,4 +125,27 @@ router.put('/gamification-rules/:id', upload.single('logo_image'), async (req, r
     }
 });
 
+// Rota para deletar uma regra de gamificação existente
+router.delete('/gamification-rules/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        // Primeiro, deletar os pontos associados a essa regra de gamificação
+        await pool.query('DELETE FROM rule_points WHERE gamification_rule_id = $1', [id]);
+
+        // Em seguida, deletar a regra de gamificação em si
+        const result = await pool.query('DELETE FROM gamification_rules WHERE id = $1 RETURNING *;', [id]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ error: 'Regra de gamificação não encontrada' });
+        }
+
+        res.status(200).json({ message: 'Regra de gamificação deletada com sucesso', deletedRule: result.rows[0] });
+        
+    } catch (error) {
+        console.error('Erro ao deletar regra de gamificação:', error);
+        res.status(500).json({ error: 'Erro ao deletar regra de gamificação' });
+    }
+});
+
 module.exports = router;

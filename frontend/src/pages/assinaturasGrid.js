@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import AssinaturaCard from './assinaturaCard';
-import AssinaturaModal from './assinaturaaModal';
+import AssinaturaModal from './assinaturaModal';
 import { useNavigate } from 'react-router-dom';
 import './assinaturaGrid.css';
 import './assinaturaModal.css';
 import Icon from '@mdi/react';
-import { mdiPlus } from '@mdi/js';
+import { mdiPlus, mdiDelete } from '@mdi/js';
 
 const AssinaturasGrid = () => {
   const navigate = useNavigate();
@@ -49,6 +49,22 @@ const AssinaturasGrid = () => {
     navigate('/assinaturaModal');
   };
 
+  const handleDeleteSignature = async (id) => {
+    const confirmDelete = window.confirm('Tem certeza que deseja deletar esta assinatura?');
+    if (confirmDelete) {
+      try {
+        await fetch(`http://localhost:3001/api/assinaturas/${id}`, {
+          method: 'DELETE',
+        });
+
+        // Atualiza a lista de assinaturas após a exclusão
+        setAssinaturas((prevAssinaturas) => prevAssinaturas.filter(assinatura => assinatura.id !== id));
+      } catch (error) {
+        console.error('Erro ao deletar a assinatura:', error);
+      }
+    }
+  };
+
   return (
     <div>
       <div className="header-buttons">
@@ -67,6 +83,7 @@ const AssinaturasGrid = () => {
             key={assinatura.id}
             assinatura={assinatura}
             onClick={() => handleCardClick(assinatura)}
+            onDelete={() => handleDeleteSignature(assinatura.id)} // Passando a função de deletar
           />
         ))}
         {selectedAssinatura && (
