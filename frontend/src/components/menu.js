@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
-import { mdiGamepadVariant, mdiChevronLeft,mdiChevronRight, mdiMonitorCellphone, mdiSignatureImage, mdiBellCheckOutline } from '@mdi/js';
+import { mdiGamepadVariant, mdiChevronLeft, mdiChevronRight, mdiMonitorCellphone, mdiSignatureImage, mdiBellCheckOutline } from '@mdi/js';
 import './menu.css';
 
 const Menu = () => {
@@ -10,13 +10,11 @@ const Menu = () => {
   const menuItems = [
     { to: '/gamification', icon: mdiGamepadVariant, name: 'Gamificação' },
     { to: '/layout', icon: mdiMonitorCellphone, name: 'Layout' },
-     { to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura'  },
-   // { to: '/passagemBastao', icon: mdiBellCheckOutline },
-    // { to: '/report', icon: mdiChartLine },
+    { to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura' },
   ];
 
   const getLinkClass = (path) => {
-    return location.pathname === path ? 'menu-item selected' : 'menu-item';
+    return location.pathname.startsWith(path) ? 'menu-item selected' : 'menu-item';
   };
 
   return (

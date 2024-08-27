@@ -69,7 +69,7 @@ const GamificationGrid = () => {
   };
 
   const handleAddRule = () => {
-    navigate('/regragame');
+    navigate('/gamification/regragame');
   };
 
   return (

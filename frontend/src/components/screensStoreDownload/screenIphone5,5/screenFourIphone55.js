@@ -38,7 +38,7 @@ function ScreenFourIphone55({primaryColor, logoTimeline, secondaryColor, textCol
                                 </div>
                                 <div className="labelmenu">
                                     <div className="labelmenu01">
-                                        <h7>Notificações</h7>
+                                        <h6>Notificações</h6>
                                     </div>
                                     <div className="labelmenu01"></div>
                                 </div>
@@ -48,7 +48,7 @@ function ScreenFourIphone55({primaryColor, logoTimeline, secondaryColor, textCol
                                             <Icon path={mdiAccessPoint} style={{ color: 'white' }} size={0.5} className="icon-signal" />
                                         </div>
                                         <div className='app-details'>
-                                            <h7>Não se atrase</h7>
+                                            <h6>Não se atrase</h6>
                                             <p>A palestra sobre o futuro da nação irá começar em breve.</p>
                                             <p>agora</p>
                                         </div>

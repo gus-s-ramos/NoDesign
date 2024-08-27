@@ -46,7 +46,7 @@ function AppContent() {
             <Route path="/profile" element={<Profile/>} />
             <Route path="/assinaturaModal" element={<AssinaturaModal/>}/>
             <Route path="/assinaturasGrid" element={<AssinaturasGrid />}/>
-            <Route path="/regragame" element={<Gamification />}/>
+            <Route path="/gamification/regragame" element={<Gamification />}/>
             <Route path="/gamification" element={<Gamification/>}/>
           </Routes>
 

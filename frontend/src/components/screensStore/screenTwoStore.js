@@ -33,7 +33,7 @@ function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor, textColor})
                                 <div className="labelmenu">
                                     <div className="labelmenu01">
                                         <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
-                                        <h7>Área de networking</h7>
+                                        <h6>Área de networking</h6>
                                     </div>
                                     <div className="labelmenu01">
 

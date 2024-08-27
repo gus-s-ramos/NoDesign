@@ -32,18 +32,7 @@ const AssinaturasGrid = () => {
     setSelectedAssinatura(assinatura);
   };
 
-  const handleCloseModal = (updatedAssinatura) => {
-    setSelectedAssinatura(null);
-    if (updatedAssinatura) {
-      // Atualiza a lista de assinaturas com a assinatura editada
-      setAssinaturas((prevAssinaturas) => {
-        const updatedList = prevAssinaturas.map((assinatura) =>
-          assinatura.id === updatedAssinatura.id ? updatedAssinatura : assinatura
-        );
-        return updatedList.sort((a, b) => b.id - a.id); // Ordena novamente após a edição
-      });
-    }
-  };
+
 
   const handleAddSignature = () => {
     navigate('/assinaturaModal');
@@ -86,13 +75,7 @@ const AssinaturasGrid = () => {
             onDelete={() => handleDeleteSignature(assinatura.id)} // Passando a função de deletar
           />
         ))}
-        {selectedAssinatura && (
-          <AssinaturaModal
-            assinatura={selectedAssinatura}
-            onClose={handleCloseModal}
-            onSave={(updatedAssinatura) => handleCloseModal(updatedAssinatura)}
-          />
-        )}
+        
       </div>
     </div>
   );

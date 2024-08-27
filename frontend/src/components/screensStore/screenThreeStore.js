@@ -33,7 +33,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                                 <div className="labelmenu">
                                     <div className="labelmenu01">
                                         <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
-                                        <h7>Agenda - 11 Jan</h7>
+                                        <h6>Agenda - 11 Jan</h6>
                                     </div>
                                     <div className="labelmenu01">
                                         <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
@@ -63,7 +63,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                                 <div className='scheduleLabel'>
                                     <div className='scheduleLabel01'>
                                         <div>
-                                            <h8>Palestra sobre o futuro da nação</h8>
+                                            <h6>Palestra sobre o futuro da nação</h6>
                                         </div>
                                         <div className='textschedule'>
                                             <Icon path={mdiClockOutline} size={0.5} color="grey" className="icon-signal" />
@@ -92,7 +92,7 @@ const ScreenThreeStore = React.forwardRef(({ headerColor, logoTimeline, secondar
                                 <div className='scheduleLabel'>
                                     <div className='scheduleLabel01'>
                                         <div>
-                                            <h8>Liderança transformadora: Como inspirar e motivar equipes</h8>
+                                            <h6>Liderança transformadora: Como inspirar e motivar equipes</h6>
                                         </div>
                                         <div className='textschedule'>
                                             <Icon path={mdiClockOutline} size={0.5} color="grey" className="icon-signal" />
