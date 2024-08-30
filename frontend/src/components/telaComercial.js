@@ -7,11 +7,11 @@ import './telaComercial.css'
 
 const TelaComercial = ({ loginFile, primaryColor, splash, headerColor, logoTimeline, secondaryColor, text00, bannerStoreIcon, storeIcon, textColor, isLightMode }) => {
     return (
-        <div id='tela-comercial-content' className="layout-container01"  style={{ backgroundColor: '#e8e8e8' }}>
+        <div id='tela-comercial-content' className="layout-container01">
             <div>
                 <img src={logoTimeline} alt="Logo Timeline" className="logo-image" />
             </div>
-            <div className="layout-container"> 
+            <div className="layout-container">
                 <div className="screen">
                     <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />
                 </div>

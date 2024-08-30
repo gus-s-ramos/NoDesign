@@ -204,26 +204,27 @@ function Layout() {
   };
 
   const downloadComercial = async () => {
-
     const container = screensContainerRef.current;
     if (!container) return;
-
+  
     try {
-
       container.style.display = 'block';
       const element = document.getElementById('tela-comercial-content'); // ID da div que contém a tela comercial
       if (!element) {
         console.error('Element with ID "tela-comercial-content" not found.');
         return;
       }
-
+  
+      // Definindo o background do elemento como transparente antes da captura
+      element.style.background = 'transparent';
+  
       // Captura a tela comercial como uma imagem usando html2canvas
       const canvas = await html2canvas(element, {
         useCORS: true,
         scale: 3, // Aumenta a escala para capturar mais detalhes
-
+        backgroundColor: null, // Define o fundo como transparente
       });
-
+  
       // Converte o canvas em um blob de imagem
       const blob = await new Promise((resolve, reject) => {
         canvas.toBlob((blob) => {
@@ -234,19 +235,19 @@ function Layout() {
           }
         }, 'image/png');
       });
-
+  
       // Salva a imagem diretamente com file-saver
       const imageName = 'tela-comercial.png'; // Nome do arquivo da imagem
       saveAs(blob, imageName);
-
+  
     } catch (error) {
       console.error('Error downloading comercial:', error);
-    }finally {
-      // Hide the container again
+    } finally {
+      // Esconde o container novamente
       container.style.display = 'none';
     }
   };
-
+  
 
   const downloadSettingsAsText = () => {
     const settings = `
