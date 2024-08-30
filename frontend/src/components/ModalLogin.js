@@ -3,13 +3,13 @@ import './Modal.css'; // Arquivo CSS para estilização do modal
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
+const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc, onResetImage }) => {
     const [crop, setCrop] = useState({
-        unit: '%', // Valores relativos em porcentagem
-        x: 10, // Posição horizontal inicial do recorte
-        y: 10, // Posição vertical inicial do recorte
-        width: 19, // Largura inicial do recorte
-        height: 15, // Altura inicial do recorte
+        unit: '%', 
+        x: 10, 
+        y: 10, 
+        width: 19, 
+        height: 15, 
         aspect: 1900 / 1500,
     });
     const [completedCrop, setCompletedCrop] = useState(null);
@@ -20,9 +20,27 @@ const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
     const handleSave = async () => {
         if (completedCrop && imgRef.current) {
             const croppedImageUrl = await getCroppedImg(imgRef.current, completedCrop);
-            onSave(croppedImageUrl); // Passa a imagem de volta para o componente pai
+            onSave(croppedImageUrl);
         }
-        onClose(); // Fecha o modal após salvar
+        handleClose();
+    };
+
+    const handleCancel = () => {
+        handleClose();
+        onResetImage(); // Reseta a seleção de imagem no componente pai
+    };
+
+    const handleClose = () => {
+        onClose();
+        setCompletedCrop(null);
+        setCrop({
+            unit: '%',
+            x: 10,
+            y: 10,
+            width: 19,
+            height: 15,
+            aspect: 1900 / 1500,
+        });
     };
 
     const getCroppedImg = (image, crop) => {
@@ -54,16 +72,16 @@ const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                 blob.name = 'cropped.jpg';
                 const fileUrl = window.URL.createObjectURL(blob);
                 resolve(fileUrl);
-            }, 'image/jpeg');
+            }, 'image/png');
         });
     };
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-overlay">
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="header-modal">
                     <h2>Cortar a imagem</h2>
-                    <button className="close-button" onClick={onClose}>×</button>
+                    <button className="close-button" onClick={handleClose}>×</button>
                 </div>
                 <div className='linebar'></div>
                 <div className="modal-content01">
@@ -78,7 +96,7 @@ const ModalLoginImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                 </div>
                 <div className="modal-buttons">
                     <button className="modal-button" onClick={handleSave}>Salvar</button>
-                    <button className="modal-button-cancel" onClick={onClose}>Cancelar</button>
+                    <button className="modal-button-cancel" onClick={handleCancel}>Cancelar</button>
                 </div>
             </div>
         </div>

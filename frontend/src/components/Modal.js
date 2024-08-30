@@ -3,8 +3,13 @@ import './Modal.css'; // Arquivo CSS para estilização do modal
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
+const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc, onResetImage }) => {
     const [crop, setCrop] = useState({
+        unit: '%', 
+        x: 10, 
+        y: 10, 
+        width: 19, 
+        height: 15, 
         aspect: 375 / 777,
     });
     const [completedCrop, setCompletedCrop] = useState(null);
@@ -17,8 +22,28 @@ const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
             const croppedImageUrl = await getCroppedImg(imgRef.current, completedCrop);
             onSave(croppedImageUrl); // Passa a imagem de volta para o componente pai
         }
-        onClose(); // Fecha o modal após salvar
+        handleClose(); // Fecha o modal após salvar
     };
+
+    const handleCancel = () => {
+        handleClose();
+        onResetImage(); // Reseta a seleção de imagem no componente pai
+    };
+
+    const handleClose = () => {
+        onClose();
+        setCompletedCrop(null);
+        setCrop({
+            unit: '%',
+            x: 10,
+            y: 10,
+            width: 19,
+            height: 15,
+            aspect: 375 / 777,
+        });
+    };
+
+
 
     const getCroppedImg = (image, crop) => {
         const canvas = document.createElement('canvas');
@@ -58,7 +83,7 @@ const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="header-modal">
                     <h2>Cortar a imagem</h2>
-                    <button className="close-button" onClick={onClose}>×</button>
+                    <button className="close-button" onClick={handleCancel}>×</button>
                 </div>
                 <div className='linebar'></div>
                 <div className="modal-content01">
@@ -73,7 +98,7 @@ const ModalImageSelector = ({ isOpen, onClose, onSave, imageSrc }) => {
                 </div>
                 <div className="modal-buttons">
                     <button className="modal-button" onClick={handleSave}>Salvar</button>
-                    <button className="modal-button-cancel" onClick={onClose}>Cancelar</button>
+                    <button className="modal-button-cancel" onClick={handleCancel}>Cancelar</button>
                 </div>
             </div>
         </div>

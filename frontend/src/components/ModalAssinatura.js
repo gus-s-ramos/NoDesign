@@ -59,7 +59,7 @@ const ModalAssinatura = ({ isOpen, onClose, onSave, imageSrc }) => {
     };
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-overlay" >
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <div className="header-modal">
                     <h2>Cortar a imagem</h2>

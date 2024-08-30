@@ -14,16 +14,24 @@ const IconeLojaUploader = ({ label, asset, setAsset }) => {
     setModalOpen(true); // Abre o modal ao selecionar a imagem
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-    setSelectedImage(null); // Limpa a imagem selecionada ao fechar o modal sem salvar
+  const handleResetImage = () => {
+    setSelectedImage(null);
+    if (inputFileRef.current) {
+      inputFileRef.current.value = ''; // Reseta o input de arquivo
+    }
   };
 
   const handleSaveImage = (imageSrc) => {
-    setAsset(imageSrc); // Salva a imagem no estado principal (asset) após confirmar no modal
+    setAsset(imageSrc); // Salva a imagem no estado principal (asset)
     setModalOpen(false); // Fecha o modal após salvar
-    setSelectedImage(null); // Limpa a imagem selecionada
+    handleResetImage(); // Limpa a imagem selecionada e reseta o input de arquivo
   };
+
+  const handleCloseModal = () => {
+    setModalOpen(false); // Fecha o modal
+    handleResetImage(); // Reseta a imagem e o input de arquivo
+  };
+
 
 
 
@@ -46,7 +54,12 @@ const IconeLojaUploader = ({ label, asset, setAsset }) => {
           accept="image/*"
           style={{ display: 'none' }}
         />
-        <ModalStoreIconSelector isOpen={isModalOpen} onClose={closeModal} onSave={handleSaveImage} imageSrc={selectedImage} />
+        <ModalStoreIconSelector 
+        onResetImage={handleResetImage} 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        onSave={handleSaveImage} 
+        imageSrc={selectedImage}  />
 
       </div>
     </div>
