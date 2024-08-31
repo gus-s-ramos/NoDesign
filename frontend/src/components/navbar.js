@@ -10,11 +10,19 @@ import {
   mdiMagnify,
   mdiArrowLeft,
   mdiArrowRight,
+  mdiWeatherSunny,
+  mdiWeatherNight,
 } from '@mdi/js';
 import './navbar.css';
 
 const Navbar = () => {
+  const [lightMode, setLightMode] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleModeChange = (event) => {
+    setLightMode(event.target.checked);
+    document.body.className = event.target.checked ?  'dark-mode':'light-mode';
+  };
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -26,6 +34,7 @@ const Navbar = () => {
   const handleForwardClick = () => {
     window.history.forward();
   };
+  
 
   return (
     <div className="navbar">
@@ -37,29 +46,35 @@ const Navbar = () => {
 
         </div>
         <div onClick={handleBackClick} style={{ cursor: 'pointer', display: 'flex', alignItems: 'flex-start', }}>
-          <Icon style={{ color: '#fff', borderRadius: '50%', padding: '5px', marginTop: '10px' }} path={mdiArrowLeft} size={0.8} />
+          <Icon style={{  borderRadius: '50%', padding: '5px' }} path={mdiArrowLeft} size={0.8} />
         </div>
         <div onClick={handleForwardClick} style={{ cursor: 'pointer', display: 'flex', alignItems: 'flex-start', }}>
-          <Icon style={{ color: '#fff', borderRadius: '50%', padding: '5px', marginTop: '10px' }} path={mdiArrowRight} size={0.8} />
+          <Icon style={{ borderRadius: '50%', padding: '5px' }} path={mdiArrowRight} size={0.8} />
         </div>
-        {/*
+
         <div className="search-bar">
-          <input type="text" placeholder="Search..." />
+          {/*<input type="text" placeholder="Search..." />
           <button type="submit">
             <Icon path={mdiMagnify} size={1} className="icon-white" />
-          </button>
+  </button>*/}
         </div>
         <div className="notifications">
-          <button aria-label="Notifications">
+          {/*<button aria-label="Notifications">
             <Icon color='white' path={mdiBell} size={1} className="icon-white" />
           </button>
           <button aria-label="Chat">
             <Icon color='white' path={mdiChat} size={1} className="icon-white" />
-          </button>
+          </button>*/}
+          <label className="switch">
+            <Icon path={mdiWeatherSunny} size={0.6} />
+            <input type="checkbox" checked={lightMode} onChange={handleModeChange} />
+            <span className="slider round"></span>
+            <Icon path={mdiWeatherNight} size={0.6} />
+          </label>
         </div>
-  
+
         <div className="user-profile">
-          <div className="dropdown">
+          {/*<div className="dropdown">
             <button onClick={handleDropdownToggle} aria-haspopup="true" aria-expanded={isDropdownOpen}>
               <Icon color='white' path={mdiArrowDownDropCircleOutline} size={1} className="icon-white" />
             </button>
@@ -83,9 +98,9 @@ const Navbar = () => {
           <Link to="/profile">
             <img className="user-photo" src="https://i.imgur.com/7J9JdOh.png" alt="User" />
           </Link>
-
+            */}
         </div>
-        */}
+
       </div>
     </div>
   );

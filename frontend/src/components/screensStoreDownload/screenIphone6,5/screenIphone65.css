@@ -133,6 +133,10 @@
     color: black;
 }
 
+.screenStore h6{
+    color: #000000;
+}
+
 .searchBar {
     display: flex;
     align-items: center;

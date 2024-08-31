@@ -22,27 +22,27 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
                                 <h6 className='hoursize'>9:41</h6>
                                 <div className="notchtimeline"></div>
                                 <div className="statusIcons">
-                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
+                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" style={{ color: 'black' }}/>
+                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" style={{ color: 'black' }}/>
                                 </div>
 
                             </div>
                             <div className="labelmenu">
                                 <div className="labelmenu01">
-                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                     <h6>Agenda - 11 Jan</h6>
                                 </div>
                                 <div className="labelmenu01">
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
+                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className="searchBar">
                                     <div type="text" className="searchInputBig">
-                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" />
+                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" style={{ color: 'black' }}/>
                                         <p>Pesquisar</p>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
                                     />
                                 </div>
                                 <div>
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
 
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ const ScreenThreeStoreDownload = React.forwardRef(({ primaryColor, textColor, lo
                                     />
                                 </div>
                                 <div>
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
 
                                 </div>
                             </div>

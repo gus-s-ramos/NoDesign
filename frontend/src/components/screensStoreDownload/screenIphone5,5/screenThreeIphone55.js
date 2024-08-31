@@ -22,27 +22,27 @@ const ScreenThreeIphone55 = React.forwardRef(({ primaryColor, headerColor, logoT
                                 <h6 className='hoursize'>9:41</h6>
                                 <div className="notchtimeline"></div>
                                 <div className="statusIcons">
-                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" style={{ color: 'black' }} />
+                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" style={{ color: 'black' }}/>
+                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" style={{ color: 'black' }}/>
                                 </div>
 
                             </div>
                             <div className="labelmenu">
                                 <div className="labelmenu01">
-                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                     <h6>Agenda - 11 Jan</h6>
                                 </div>
                                 <div className="labelmenu01">
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
+                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                 </div>
                             </div>
 
                             <div>
                                 <div className="searchBar">
                                     <div type="text" className="searchInputBig">
-                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" />
+                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" style={{ color: 'black' }}/>
                                         <p>Pesquisar</p>
                                     </div>
                                 </div>
@@ -66,11 +66,11 @@ const ScreenThreeIphone55 = React.forwardRef(({ primaryColor, headerColor, logoT
                                         <h6>Palestra sobre o futuro da nação</h6>
                                     </div>
                                     <div className='textschedule'>
-                                        <Icon path={mdiClockOutline} size={0.5} color="grey" className="icon-signal" />
+                                        <Icon path={mdiClockOutline} size={0.5} color="grey" className="icon-signal" style={{ color: 'black' }}/>
                                         <p>11:00 - 12:00</p>
                                     </div>
                                     <div className='textschedule'>
-                                        <Icon path={mdiMapMarker} size={0.5} color="grey" className="icon-signal" />
+                                        <Icon path={mdiMapMarker} size={0.5} color="grey" className="icon-signal" style={{ color: 'black' }}/>
                                         <p>Trilha do conhecimento</p>
                                     </div>
                                     <img
@@ -80,7 +80,7 @@ const ScreenThreeIphone55 = React.forwardRef(({ primaryColor, headerColor, logoT
                                     />
                                 </div>
                                 <div>
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
 
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ const ScreenThreeIphone55 = React.forwardRef(({ primaryColor, headerColor, logoT
                                     />
                                 </div>
                                 <div>
-                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiHeartOutline} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
 
                                 </div>
                             </div>

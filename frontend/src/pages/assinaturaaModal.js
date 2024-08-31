@@ -20,7 +20,7 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
       email: email,
       cropped_image_url: croppedImageUrl,
     };
-  
+
     try {
       const response = await fetch(`http://localhost:3001/api/assinaturas/${assinatura.id}`, {
         method: 'PUT', // ou 'PATCH' dependendo da sua API
@@ -29,7 +29,7 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
         },
         body: JSON.stringify(updatedAssinatura),
       });
-  
+
       if (response.ok) {
         const updatedData = await response.json();
         onSave(updatedData); // Atualiza o estado no frontend
@@ -41,7 +41,7 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
       console.error('Erro ao salvar a assinatura:', error);
     }
   };
-  
+
 
   return (
     <div className="modal">
@@ -49,10 +49,10 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
         <h2>Editar Assinatura</h2>
         <div className="campos-para-assinatura">
           <div>
-            <img 
-              src={`http://localhost:3001/${assinatura.imagem}`} 
-              alt="Assinatura" 
-              onClick={() => document.getElementById('imageUpload').click()} 
+            <img
+              src={`http://localhost:3001/${assinatura.imagem}`}
+              alt="Assinatura"
+              onClick={() => document.getElementById('imageUpload').click()}
             />
             <input
               type="file"
@@ -62,30 +62,34 @@ const AssinaturaModal = ({ assinatura, onClose, onSave }) => {
             />
           </div>
           <div>
-            <input 
-              type="text" 
-              value={nome} 
-              onChange={(e) => setNome(e.target.value)} 
-            />
-            <input 
-              type="text" 
-              value={sobrenome} 
-              onChange={(e) => setSobrenome(e.target.value)} 
-            />
-            <input 
-              type="text" 
-              value={cargo} 
-              onChange={(e) => setCargo(e.target.value)} 
-            />
-            <input 
-              type="text" 
-              value={telefone} 
-              onChange={(e) => setTelefone(e.target.value)} 
-            />
-            <input 
-              type="text" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
+            <div >
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+              <input
+                type="text"
+                value={sobrenome}
+                onChange={(e) => setSobrenome(e.target.value)}
+              />
+            </div>
+            <div className='inputAssinatura'>
+              <input
+                type="text"
+                value={cargo}
+                onChange={(e) => setCargo(e.target.value)}
+              />
+              <input
+                type="text"
+                value={telefone}
+                onChange={(e) => setTelefone(e.target.value)}
+              />
+            </div>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
         </div>

@@ -150,11 +150,11 @@ function AssinaturaModal() {
 
                 </div>
                 <h1>Dados Pessoais</h1>
-                <div>
+                <div style={{display:'flex'}}>
                     <input type="text" placeholder={nome} onChange={(e) => setNome(e.target.value)} />
                     <input type="text" placeholder={sobrenome} onChange={(e) => setSobrenome(e.target.value)} />
                 </div>
-                <div>
+                <div style={{display:'flex'}}>
                     <input type="text" placeholder={cargo} onChange={(e) => setCargo(e.target.value)} />
                     <input type="text" placeholder={telefone} onChange={(e) => setTelefone(e.target.value)} />
                 </div>

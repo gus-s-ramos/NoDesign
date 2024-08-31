@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@mdi/react';
-import { mdiGamepadVariant, mdiChevronLeft, mdiChevronRight, mdiMonitorCellphone, mdiSignatureImage, mdiBellCheckOutline } from '@mdi/js';
+import { mdiGamepadVariant, mdiChevronRight, mdiMonitorCellphone, mdiSignatureImage, mdiBellCheckOutline, mdiMenu } from '@mdi/js';
 import './menu.css';
 
 const Menu = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const location = useLocation();
   const menuItems = [
-    { to: '/gamification', icon: mdiGamepadVariant, name: 'Gamificação' },
+    { to: '/gamification', icon: mdiGamepadVariant, name: 'Regra Game' },
     { to: '/layout', icon: mdiMonitorCellphone, name: 'Layout' },
     { to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura' },
   ];
@@ -20,7 +20,7 @@ const Menu = () => {
   return (
     <div className={`menu ${isExpanded ? 'expanded' : 'collapsed'}`}>
       <button className="toggle-button" onClick={() => setIsExpanded(!isExpanded)}>
-        <Icon path={isExpanded ? mdiChevronLeft : mdiChevronRight} size={1} />
+        <Icon path={isExpanded ? mdiMenu : mdiChevronRight} size={1} />
       </button>
       <ul>
         {menuItems.map((item, index) => (

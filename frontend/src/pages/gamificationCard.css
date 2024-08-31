@@ -1,6 +1,6 @@
 /* src/components/gamificationCard.css */
 .gamification-card {
-  background-color: #f9f9f92f;
+  background-color: #BCBCBC;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -12,7 +12,7 @@
 }
 
 .gamification-card-plus {
-  background-color: #f9f9f92f;
+  background-color: #bcbcbc;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;

@@ -3,29 +3,32 @@
 .menu {
   max-width: 50vw;
   max-height: 10vh;
-  background: linear-gradient(135deg, #000000, #000000);
   height: 90vh; /* Para ocupar toda a altura da página */
   padding-top: 10px;
-  padding-left: 10px;
-  
+  margin-left: 10px;
+  font-family: 'Lato', sans-serif; /* Adiciona a fonte Lato */
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+
 }
 .menu.collapsed {
   width: 60px; /* largura para o menu comprimido */
+  display: flex;
 }
 
 .menu .toggle-button {
   margin: 10px;
   cursor: pointer;
+  border: none;
+  color: #2f2f2f;
+  background-color: transparent;
 }
 
 .menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.menu li {
-  padding: 10px;
 }
 
 .menu-item {
@@ -37,22 +40,30 @@
 .menu-item a {
   display: inline-block;
   width: 100%;
-  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
   padding: 5px 5px 5px 5px;
 }
 
+.light-mode .menu-item a{
+  color: #2f2f2f;
+}
+
+.dark-mode .menu-item a{
+  color: #ffffff;
+}
+
 .menu-item svg{
   margin-right: 10px;
+  
 }
 
 .menu-item.selected a {
   background-color: rgb(134, 2, 2);
-  border-radius: 8px;
+  border-radius: 0px 25px 25px 0px;
   color: rgb(255, 255, 255);
-  padding: 10px 10px 10px 10px;
+  padding: 12px 0px 12px 12px;
 }
 
 .menu-item.selected svg {

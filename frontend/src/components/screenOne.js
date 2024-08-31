@@ -19,11 +19,11 @@ function ScreenOne({ loginFile, primaryColor, isLightMode }) {
                             </div>
                             <div>
                                 <div type="text" className="searchInputBig" style={{ marginBottom:"10px", color:"#979797"}}>
-                                    <Icon path={mdiEmailOutline} size={0.7} className="icon-signal" style={{marginRight:"5px"}} />
+                                    <Icon path={mdiEmailOutline} size={0.7} className="icon-signal" style={{marginRight:"5px", color:"#00000070"}} />
                                     <p>Login</p>
                                 </div>
                                 <div type="text" className="searchInputBig" style={{ marginBottom:"10px", color:"#979797"}}>
-                                    <Icon path={mdiLockOutline} size={0.7} className="icon-signal" style={{marginRight:"5px"}} />
+                                    <Icon path={mdiLockOutline} size={0.7} className="icon-signal" style={{marginRight:"5px", color:"#00000070"}} />
                                     <p>Senha</p>
                                 </div>
                             </div>

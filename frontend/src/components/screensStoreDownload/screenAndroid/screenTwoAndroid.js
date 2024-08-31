@@ -22,20 +22,20 @@ function ScreenTwoStoreDownload({ primaryColor, secondaryColor, logoTimeline, te
                                 <h6 className='hoursize'>9:41</h6>
                                 <div className="notchtimeline"></div>
                                 <div className="statusIcons">
-                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
+                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" style={{ color: 'black' }}/>
+                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" style={{ color: 'black' }}/>
                                 </div>
 
                             </div>
                             <div className="labelmenu">
                                 <div className="labelmenu01">
-                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiChevronLeft} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                     <h6>Área de networking</h6>
                                 </div>
                                 <div className="labelmenu01">
 
-                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" />
+                                    <Icon path={mdiTuneVertical} size={0.5} className="icon-signal" style={{ color: 'black' }}/>
                                 </div>
                             </div>
                             <div className='networkingButton'>
@@ -46,7 +46,7 @@ function ScreenTwoStoreDownload({ primaryColor, secondaryColor, logoTimeline, te
                             <div>
                                 <div className="searchBar">
                                     <div type="text" className="searchInputBig">
-                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" />
+                                        <Icon path={mdiMagnify} size={0.7} className="icon-signal" style={{ color: 'black' }}/>
                                         <p>Pesquisar</p>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ function ScreenTwoStoreDownload({ primaryColor, secondaryColor, logoTimeline, te
                                         </div>
                                     </div>
                                     <div>
-                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" />
+                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" style={{ color: 'black' }}/>
                                     </div>
                                 </div>
                                 <div className="userLabel">
@@ -120,7 +120,7 @@ function ScreenTwoStoreDownload({ primaryColor, secondaryColor, logoTimeline, te
                                         </div>
                                     </div>
                                     <div>
-                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" />
+                                        <Icon path={mdiDotsVertical} size={0.7} className="icon-signal" style={{ color: 'black' }}/>
                                     </div>
                                 </div>
                                 <div className="userLabel">

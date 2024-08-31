@@ -16,9 +16,9 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                                 <h6 className='hoursize'>9:41</h6>
                                 <div className="notchtimeline"></div>
                                 <div className="statusIcons">
-                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" style={{color: '#fff'}}  />
+                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" style={{color: '#fff'}} />
+                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" style={{color: '#fff'}} />
                                 </div>
 
                             </div>
@@ -99,7 +99,7 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                                             <p className='timelineName1'>2 min</p>
                                         </div>
                                     </div>
-                                    <Icon path={mdiDotsVertical} size={0.6} className="icon-options" />
+                                    <Icon path={mdiDotsVertical} size={0.8} color={'grey'} className="icon-options" />
                                 </div>
                                 <div className='post-description'>
                                     <p>Teste de uma breve descrição para ser inserida dentro do aplicativo</p>

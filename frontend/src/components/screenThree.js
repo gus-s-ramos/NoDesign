@@ -22,17 +22,17 @@ function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimel
                                 <h6 className='hoursize'>9:41</h6>
                                 <div className="notchtimeline"></div>
                                 <div className="statusIcons">
-                                    <Icon path={mdiSignal} size={0.5} className="icon-signal" />
-                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" />
-                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" />
+                                    <Icon path={mdiSignal} size={0.5} className="icon-signal"  style={{ color: 'black' }}/>
+                                    <Icon path={mdiWifi} size={0.5} className="icon-wifi" style={{ color: 'black' }}/>
+                                    <Icon path={mdiBattery} size={0.5} className="icon-battery" style={{ color: 'black' }}/>
                                 </div>
 
                             </div>
                             <div className="menuHeader">
-                                <Icon path={mdiArrowLeft} size={0.7} className="icon-return" />
+                                <Icon path={mdiArrowLeft} size={0.7} className="icon-return" style={{ color: 'black' }} />
                                 <div>
-                                    <Icon path={mdiMagnify} size={0.7} className="icon-search" />
-                                    <Icon path={mdiDotsVertical} size={0.7} className="icon-options" />
+                                    <Icon path={mdiMagnify} size={0.7} className="icon-search" style={{ color: 'black' }} />
+                                    <Icon path={mdiDotsVertical} size={0.7} className="icon-options" style={{ color: 'black' }} />
                                 </div>
                             </div>
                             <div className="app-info">
@@ -45,22 +45,22 @@ function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimel
                             <div className="app-stats">
                                 <div className="app-reviews">
                                     <div className='app-stats-star'>
-                                        <p>19 MB</p>
-                                        <Icon path={mdiDownloadBoxOutline} size={0.8} />
+                                        <p style={{ color: 'black' }}>19 MB</p>
+                                        <Icon path={mdiDownloadBoxOutline} size={0.8} style={{ color: 'black' }} />
                                     </div>
                                 </div>
                                 <div className="app-download">
                                     <div className='app-stats-star'>
                                     </div>
-                                    <h4>Mais de 1 mil</h4>
-                                    <p>Downloads</p>
+                                    <h4 style={{ color: 'black' }}>Mais de 1 mil</h4>
+                                    <p style={{ color: 'black' }}>Downloads</p>
 
                                 </div>
                                 <div className="app-rating">
                                     <div className='app-stats-star'>
-                                        <p>anos</p>
-                                        <p>Classificação 12</p>
-                                        <Icon path={mdiAccountCircle} size={0.8} className="icon-download" />
+                                        <p style={{ color: 'black' }}>anos</p>
+                                        <p style={{ color: 'black' }}>Classificação 12</p>
+                                        <Icon path={mdiAccountCircle} size={0.8} style={{ color: 'black' }} className="icon-download" />
 
                                     </div>
 
@@ -89,20 +89,20 @@ function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimel
                             <div className='descriptionStore'>
                                 <div>
                                     <h3 className='title-store' >Sobre este app</h3>
-                                    <h5> Tenha acesso á uma rede social exclusiva para interagir com a comunidade</h5>
+                                    <h5 style={{ color: 'black' }}> Tenha acesso á uma rede social exclusiva para interagir com a comunidade</h5>
                                     <button className='buttonTag'>Eventos</button>
                                 </div>
                                 <div>
-                                    <Icon path={mdiArrowRight} size={0.8} className="icon-download" />
+                                    <Icon path={mdiArrowRight} size={0.8} className="icon-download" style={{ color: 'black' }} />
                                 </div>
                             </div>
                             <div className='descriptionStore'>
                                 <div>
                                     <h3 className='title-store' >Segurança dos dados</h3>
-                                    <h5> Sua segurança começa com o entendimento de como os desenvolvedores coletam e compartilham seus dados. As práticas de segurança e privacidade de dados podem variar de acordo com o uso, a regiaão e a</h5>
+                                    <h5 style={{ color: 'black' }}> Sua segurança começa com o entendimento de como os desenvolvedores coletam e compartilham seus dados. As práticas de segurança e privacidade de dados podem variar de acordo com o uso, a regiaão e a</h5>
                                 </div>
                                 <div>
-                                    <Icon path={mdiArrowRight} size={0.8} className="icon-download" />
+                                    <Icon path={mdiArrowRight} size={0.8} className="icon-download" style={{ color: 'black' }} />
                                 </div>
                             </div>
                         </div>
