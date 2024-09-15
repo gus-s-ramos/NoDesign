@@ -24,11 +24,12 @@ import ScreenThreeAndroid from '../components/screensStoreDownload/screenAndroid
 import ScreenFourAndroid from '../components/screensStoreDownload/screenAndroid/screenFourAndroid';
 import LoadingScreen from './loadingScreen';
 import TelaComercial from '../components/telaComercial';
+import PreviaLayout from './previaLayoutScreen';
 
 
 
 function Layout() {
-  const [splash, setSplash] = useState('https://placehold.co/375x777');
+  const [splash, setSplash] = useState('https://placehold.co/360x777');
   const [loginFile, setLoginFile] = useState('https://placehold.co/1900x1500');
   const [logoTimeline, setLogoTimeline] = useState('https://placehold.co/254x128');
   const [storeIcon, setStoreIcon] = useState('https://placehold.co/128x128');
@@ -52,6 +53,7 @@ function Layout() {
   ];
 
   const screensContainerRef = useRef(null);
+  const screensContainerReff = useRef(null);
 
   const downloadImagesAsZip = async (zip) => {
 
@@ -140,6 +142,7 @@ function Layout() {
     ];
 
     const container = screensContainerRef.current;
+    const containerr = screensContainerReff.current;
 
     if (!container) return;
 
@@ -204,11 +207,11 @@ function Layout() {
   };
 
   const downloadComercial = async () => {
-    const container = screensContainerRef.current;
-    if (!container) return;
+    const containerr = screensContainerReff.current;
+    if (!containerr) return;
   
     try {
-      container.style.display = 'block';
+      containerr.style.display = 'block';
       const element = document.getElementById('tela-comercial-content'); // ID da div que contém a tela comercial
       if (!element) {
         console.error('Element with ID "tela-comercial-content" not found.');
@@ -244,7 +247,7 @@ function Layout() {
       console.error('Error downloading comercial:', error);
     } finally {
       // Esconde o container novamente
-      container.style.display = 'none';
+      containerr.style.display = 'none';
     }
   };
   
@@ -377,13 +380,19 @@ function Layout() {
 
       </div>
       <div style={{ display: 'none' }} 
-      ref={screensContainerRef}>
+      ref={screensContainerReff}>
         <TelaComercial loginFile={loginFile} primaryColor={primaryColor} textColor={textColor} storeIcon={storeIcon} isLightMode={isLightMode}
           secondaryColor={secondaryColor}
           logoTimeline={logoTimeline}
           bannerStoreIcon={bannerStoreIcon}
           text00={text00}
           headerColor={headerColor} splash={splash} />
+      </div>
+      <div 
+      style={{ display: 'none' }} 
+      >
+        <PreviaLayout splash={splash} storeIcon={storeIcon} bannerStoreIcon={bannerStoreIcon} text00={text00} textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor}/>
+
       </div>
     </div>
   );

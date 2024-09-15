@@ -35,7 +35,7 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                             </div>
                             <div className='timeline-share'>
                                 <div>
-                                    <img src="/assets/foto01.jpeg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px' }}
+                                    <img src="/assets/foto01.jpeg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px', marginRight: '8px' }}
                                     />
                                 </div>
                                 <div className="app-details">
@@ -45,7 +45,7 @@ function ScreenFour({ headerColor, logoTimeline, isLightMode }) {
                             <div className='timeline-content' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                 <div className="app-post" style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
                                     <div className='post-title' style={{ backgroundColor: isLightMode ? '#ffffff' : '#333333', color: isLightMode ? '#000000' : '#ffffff', }}>
-                                        <img src="/assets/foto02.jpeg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px' }}
+                                        <img src="/assets/foto02.jpeg" alt="App Icon" style={{ width: '30px', height: '30px', objectFit: 'cover', borderRadius: '6px', marginRight: '8px'  }}
                                         />
                                         <div className="app-details">
                                             <h6 className='timelineName'>Emanuel Batista</h6>

@@ -1,26 +1,23 @@
+// src/components/AssinaturasGrid.js
 import React, { useState, useEffect } from 'react';
 import AssinaturaCard from './assinaturaCard';
 import AssinaturaModal from './assinaturaModal';
 import { useNavigate } from 'react-router-dom';
 import './assinaturaGrid.css';
-import './assinaturaModal.css';
 import Icon from '@mdi/react';
-import { mdiPlus, mdiDelete } from '@mdi/js';
+import { mdiPlus } from '@mdi/js';
 
 const AssinaturasGrid = () => {
   const navigate = useNavigate();
   const [assinaturas, setAssinaturas] = useState([]);
   const [selectedAssinatura, setSelectedAssinatura] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    // Fetch assinaturas from API
     const fetchAssinaturas = async () => {
       const response = await fetch('http://localhost:3001/api/assinaturas');
-      let data = await response.json();
-
-      // Ordena as assinaturas para que a mais recente (maior ID) apareça primeiro
-      data = data.sort((a, b) => b.id - a.id);
-
+      const data = await response.json();
+      data.sort((a, b) => b.id - a.id);
       setAssinaturas(data);
     };
 
@@ -28,11 +25,9 @@ const AssinaturasGrid = () => {
   }, []);
 
   const handleCardClick = (assinatura) => {
-    console.log('Assinatura selecionada:', assinatura);
     setSelectedAssinatura(assinatura);
+    setModalOpen(true);
   };
-
-
 
   const handleAddSignature = () => {
     navigate('/assinaturaModal');
@@ -45,13 +40,21 @@ const AssinaturasGrid = () => {
         await fetch(`http://localhost:3001/api/assinaturas/${id}`, {
           method: 'DELETE',
         });
-
-        // Atualiza a lista de assinaturas após a exclusão
-        setAssinaturas((prevAssinaturas) => prevAssinaturas.filter(assinatura => assinatura.id !== id));
+        setAssinaturas(prevAssinaturas => prevAssinaturas.filter(assinatura => assinatura.id !== id));
       } catch (error) {
         console.error('Erro ao deletar a assinatura:', error);
       }
     }
+  };
+
+  const handleEdit = (assinatura) => {
+    setSelectedAssinatura(assinatura);
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+    setSelectedAssinatura(null);
   };
 
   return (
@@ -72,11 +75,26 @@ const AssinaturasGrid = () => {
             key={assinatura.id}
             assinatura={assinatura}
             onClick={() => handleCardClick(assinatura)}
-            onDelete={() => handleDeleteSignature(assinatura.id)} // Passando a função de deletar
+            onEdit={handleEdit}
+            onDelete={() => handleDeleteSignature(assinatura.id)}
           />
         ))}
-        
       </div>
+
+      {modalOpen && (
+        <AssinaturaModal
+          assinatura={selectedAssinatura}
+          onClose={handleModalClose}
+          onSave={(updatedAssinatura) => {
+            setAssinaturas(prevAssinaturas => 
+              prevAssinaturas.map(assinatura => 
+                assinatura.id === updatedAssinatura.id ? updatedAssinatura : assinatura
+              )
+            );
+            handleModalClose();
+          }}
+        />
+      )}
     </div>
   );
 };

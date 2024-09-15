@@ -9,9 +9,10 @@ import Login from "./pages/login";
 import Profile from "./pages/profile";
 import Menu from "./components/menu";
 import PassagemBastao from "./pages/passagemBastao";
-import AssinaturaModal from "./pages/assinaturaModal";
-import AssinaturasGrid from "./pages/assinaturasGrid";
+import AssinaturaModal from "./pages/Assinatura/assinaturaModal";
+import AssinaturasGrid from "./pages/Assinatura/assinaturasGrid";
 import GamificationGrid from "./pages/gamificationGrid";
+import PreviaLayout from "./pages/previaLayoutScreen";
 
 
 function App() {
@@ -48,6 +49,7 @@ function AppContent() {
             <Route path="/assinaturasGrid" element={<AssinaturasGrid />}/>
             <Route path="/gamification/regragame" element={<Gamification />}/>
             <Route path="/gamification" element={<Gamification/>}/>
+            <Route path="/telaPreviaLayout" element={<PreviaLayout/>}/>
           </Routes>
 
         </div>
