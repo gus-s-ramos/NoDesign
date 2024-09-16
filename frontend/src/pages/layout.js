@@ -432,7 +432,7 @@ function Layout() {
           headerColor={headerColor} splash={splash} />
       </div>
       <div 
-      //style={{ display: 'none' }} ref={screensLayoutRef}
+      style={{ display: 'none' }} ref={screensLayoutRef}
       >
         <PreviaLayout splash={splash} storeIcon={storeIcon} bannerStoreIcon={bannerStoreIcon} text00={text00} textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor}/>
 
