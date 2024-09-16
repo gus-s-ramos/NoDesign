@@ -25,6 +25,14 @@ html {
   color: #ffffff;
 }
 
+.light-mode.select svg {
+  color: #ffffff;
+}
+
+.dark-mode.select svg {
+  color: #2f2f2f;
+}
+
 .light-mode svg {
   color: #2f2f2f;
 }
