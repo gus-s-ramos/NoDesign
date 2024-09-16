@@ -21,10 +21,10 @@ const PreviaLayout = ({
     secondaryColor
 }) => {
     return (
-        <div className="containerPreviaLayout">
+        <div id='tela-layout' className="containerPreviaLayout">
             <div className='TituloPrevia'>
                 <p>APP NO AR</p>
-                <div className='linhaGuiaTitulo'></div>
+                <div className='linhaGuiaTitulo' style={{backgroundColor:primaryColor }}></div>
             </div>
             <div className='PreviaGrid'>
                 <div className='PreviaGrid01'>
@@ -47,7 +47,7 @@ const PreviaLayout = ({
                     </div>
 
                     <div className="app-name">
-                        <p>Nome do aplicativo: <strong>Evento Yazo</strong></p>
+                        <p>Nome do aplicativo: <strong> {text00} </strong></p>
                         <div className='iconAppPreview'>
                             <img src={storeIcon} alt="App Icon" className="app-icon" />
                             <p>Ícone</p>

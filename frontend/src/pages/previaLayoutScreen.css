@@ -1,126 +1,132 @@
 .containerPreviaLayout {
-    font-family: Arial, sans-serif;
-    padding: 70px;
-    background-color: #fff;
-    width: 1080px;
-  }
+  font-family: Arial, sans-serif;
+  padding: 70px;
+  background-color: #ffffff;
+  width: 1080px;
+}
 
-  .container h1{
-    color: #000;
-  }
-  
-  .header {
-    margin-bottom: 20px;
-  }
-  
-  .header h1 {
-    color: #821938;
-  }
-  
-  .store-approval {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-  }
-  
-  .store {
-    text-align: center;
-  }
-  
-  .store h2 {
-    margin-top: 10px;
-    color: #333;
-  }
-  
-  .app-details {
-    margin-bottom: 20px;
-  }
-  
-  .app-name {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .icon-color {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon-color img {
-    width: 50px;
-    margin-right: 10px;
-  }
-  
-  .screenshots {
-    margin-bottom: 20px;
-  }
-  
-  .screenshots-grid {
-    display: flex;
-    max-height: 540px;
-    gap: 10px;
-    margin-right: 15px;
-    border-radius: 16px;
-  }
+.containerPreviaLayout h1 {
+  color: #000;
+}
 
-  .screen-wrapper {
-    width: 200px;  /* Defina o tamanho desejado */
-    height: auto;  /* Mantém a proporção */
-    margin-bottom: 20px; /* Espaçamento entre as screens */
-  }
+.containerPreviaLayout p{
+  color: #000;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #821938;
+}
+
+.store-approval {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.store {
+  text-align: center;
+}
+
+.store h2 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.app-details {
+  margin-bottom: 20px;
+}
+
+.app-name {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-color {
+  display: flex;
+  align-items: center;
+}
+
+.icon-color img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.screenshots {
+  margin-bottom: 20px;
+}
+
+.screenshots-grid {
+  display: flex;
+  max-height: 540px;
+  gap: 10px;
+  margin-right: 15px;
+  border-radius: 16px;
+}
+
+.screen-wrapper {
+  width: 200px;
+  /* Defina o tamanho desejado */
+  height: auto;
+  /* Mantém a proporção */
+  margin-bottom: 20px;
+  /* Espaçamento entre as screens */
+}
+
+.screenshots-grid img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.important-info {
+  margin: 40px 150px 30px 0px;
+}
+
+.important-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.app-icon {
+  width: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.screenPrintStore {
+  display: flex;
+  transform: scale(0.5);
+  max-height: 460px;
+  transform-origin: top left;
+  border-radius: 8px;
+}
+
+.iconAppPreview {
+  display: flex;
+  align-items: center;
+}
+
+.linhaGuiaTitulo {
+  width: 90%;
+  height: 2px;
   
-  .screenshots-grid img {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .important-info {
-    margin: 40px 150px 30px 0px;
-  }
-  
-  .important-info p {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .app-icon{
-    width: 60px;
-    border-radius: 8px;
-    margin-right: 10px;
-  }
+}
 
-  .screenPrintStore{
-    display: flex;
-    transform: scale(0.5);
-    max-height: 460px;
-    transform-origin: top left;
-    border-radius: 8px;
-  }
+.TituloPrevia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .iconAppPreview{
-    display: flex;
-    align-items: center;
-  }
+.PreviaGrid {
+  margin: 40px 70px 0px 70px;
+}
 
-  .linhaGuiaTitulo{
-    width: 90%;
-    height: 2px;
-    background-color: #821938;
-  }
-
-  .TituloPrevia{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .PreviaGrid{ 
-    margin: 40px 70px 0px 70px;
-  }
-
-  .PreviaGrid01{
-    margin: 40px 150px 30px 0px;
-  }
+.PreviaGrid01 {
+  margin: 40px 150px 30px 0px;
+}

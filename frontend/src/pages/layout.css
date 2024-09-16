@@ -284,9 +284,7 @@
 }
 
 
-.buttonDiv {
-  margin-bottom: 20px;
-}
+
 
 .screensContainer {
   display: flex;
@@ -334,6 +332,24 @@
 }
 
 .buttonDownloadAssets {
+  background-color: #ffffff;
+  color: #821938;
+  border: 1px solid #821938;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.buttonDownloadComercial {
+  background-color: #ffffff;
+  color: #821938;
+  border: 1px solid #821938;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.buttonDownloadLayout {
   background-color: #ffffff;
   color: #821938;
   border: 1px solid #821938;

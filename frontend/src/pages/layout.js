@@ -54,6 +54,7 @@ function Layout() {
 
   const screensContainerRef = useRef(null);
   const screensContainerReff = useRef(null);
+  const screensLayoutRef = useRef(null);
 
   const downloadImagesAsZip = async (zip) => {
 
@@ -142,7 +143,6 @@ function Layout() {
     ];
 
     const container = screensContainerRef.current;
-    const containerr = screensContainerReff.current;
 
     if (!container) return;
 
@@ -251,6 +251,48 @@ function Layout() {
     }
   };
   
+  const downloadLayout = async () => {
+    const containerrr = screensLayoutRef.current;
+    if (!containerrr) return;
+  
+    try {
+      containerrr.style.display = 'block';
+      const element = document.getElementById('tela-layout'); // ID da div que contém a tela comercial
+      if (!element) {
+        console.error('Element with ID "tela-layout" not found.');
+        return;
+      }
+  
+      // Captura a tela comercial como uma imagem usando html2canvas
+      const canvas = await html2canvas(element, {
+        useCORS: true,
+        scale: 3, // Aumenta a escala para capturar mais detalhes
+        backgroundColor: null, // Define o fundo como transparente
+      });
+  
+      // Converte o canvas em um blob de imagem
+      const blob = await new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (blob) {
+            resolve(blob);
+          } else {
+            reject('Error generating the blob.');
+          }
+        }, 'image/png');
+      });
+  
+      // Salva a imagem diretamente com file-saver
+      const imageName = 'tela-layout.png'; // Nome do arquivo da imagem
+      saveAs(blob, imageName);
+  
+    } catch (error) {
+      console.error('Error downloading comercial:', error);
+    } finally {
+      // Esconde o container novamente
+      containerrr.style.display = 'none';
+    }
+  };
+  
 
   const downloadSettingsAsText = () => {
     const settings = `
@@ -284,6 +326,7 @@ function Layout() {
             setCurrentScreenIndex={setCurrentScreenIndex}
             handleDownload={handleDownload}
             downloadComercial={downloadComercial}
+            downloadLayout={downloadLayout}
           />
         </div>
         <div className='divContent'>
@@ -389,7 +432,7 @@ function Layout() {
           headerColor={headerColor} splash={splash} />
       </div>
       <div 
-      style={{ display: 'none' }} 
+      //style={{ display: 'none' }} ref={screensLayoutRef}
       >
         <PreviaLayout splash={splash} storeIcon={storeIcon} bannerStoreIcon={bannerStoreIcon} text00={text00} textColor={textColor} loginFile={loginFile} headerColor={headerColor} primaryColor={primaryColor} isLightMode={isLightMode} logoTimeline={logoTimeline} secondaryColor={secondaryColor}/>
 
