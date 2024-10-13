@@ -1,8 +1,8 @@
 import React from 'react';
-import ScreenOne from '../components/screenOne';
-import ScreenTwo from '../components/screenTwo';
-import ScreenThree from '../components/screenThree';
-import ScreenFour from '../components/screenFour';
+import TelaLogin from './telaLogin';
+import TelaSplash from './telaSplash';
+import TelaLojaApp from './telaLojaApp';
+import TelaTimeline from './TelaTimeline';
 import './telaComercial.css'
 
 const TelaComercial = ({ loginFile, primaryColor, splash, headerColor, logoTimeline, secondaryColor, text00, bannerStoreIcon, storeIcon, textColor, isLightMode }) => {
@@ -13,16 +13,16 @@ const TelaComercial = ({ loginFile, primaryColor, splash, headerColor, logoTimel
             </div>
             <div className="layout-container">
                 <div className="screen">
-                    <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />
+                    <TelaLogin loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />
                 </div>
                 <div className="screen">
-                    <ScreenTwo splash={splash} />
+                    <TelaSplash splash={splash} />
                 </div>
                 <div className="screen">
-                    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />
+                    <TelaTimeline headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />
                 </div>
                 <div className="screen">
-                    <ScreenThree storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />
+                    <TelaLojaApp storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />
                 </div>
             </div>
         </div>

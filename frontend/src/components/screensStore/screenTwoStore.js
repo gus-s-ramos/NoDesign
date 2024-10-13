@@ -159,10 +159,6 @@ function ScreenTwoStore({ secondaryColor, logoTimeline, headerColor, textColor})
                                             <Icon path={mdiDotsVertical} size={0.5} className="icon-signal" />
                                         </div>
                                     </div>
-                                    
-
-
-
                                 </div>
                             </div>
                         </div>

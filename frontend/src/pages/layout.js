@@ -3,10 +3,10 @@ import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import html2canvas from 'html2canvas';
 import './layout.css';
-import ScreenOne from '../components/screenOne';
-import ScreenTwo from '../components/screenTwo';
-import ScreenThree from '../components/screenThree';
-import ScreenFour from '../components/screenFour';
+import TelaLogin from '../components/telaLogin';
+import TelaSplash from '../components/telaSplash';
+import TelaLojaApp from '../components/telaLojaApp';
+import TelaTimeline from '../components/TelaTimeline';
 import ScreenPreview from '../components/screenPreview';
 import ScreenInfo from '../components/screenInfo';
 import ScreenRepresentation from '../components/screenRepresentation';
@@ -46,10 +46,10 @@ function Layout() {
 
 
   const screens = [
-    <ScreenOne loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
-    <ScreenTwo splash={splash} />,
-    <ScreenFour headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
-    <ScreenThree storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
+    <TelaLogin loginFile={loginFile} primaryColor={primaryColor} isLightMode={isLightMode} />,
+    <TelaSplash splash={splash} />,
+    <TelaTimeline headerColor={headerColor} logoTimeline={logoTimeline} isLightMode={isLightMode} />,
+    <TelaLojaApp storeIcon={storeIcon} textColor={textColor} secondaryColor={secondaryColor} logoTimeline={logoTimeline} bannerStoreIcon={bannerStoreIcon} text00={text00} headerColor={headerColor} />,
   ];
 
   const screensContainerRef = useRef(null);

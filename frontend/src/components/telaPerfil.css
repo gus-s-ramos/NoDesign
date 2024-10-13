@@ -1,0 +1,162 @@
+.menuNotch {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px 15px 0px 0px;
+    align-items: center;
+    font-size: 12px;
+    color: #f3f3f3;
+}
+
+.reactionPubli {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 10px 0px;
+}
+
+.reactionPubliIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linetimeline {
+    border-top: 1px solid rgba(204, 204, 204, 0.39);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.menuHeaderProfile {
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0px 0px 0px 0px;
+    align-items: center;
+    border: none; 
+    
+}
+
+.buttonStyle{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon-Cog{
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.bannerBackgroud {
+    display: flex;
+    margin: 8px 8px 8px 8px;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: flex-end;
+    height: 75px;
+}
+
+.profilePicture{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 8px;
+    margin-bottom: -45px;
+    border: 3px solid #fff;
+}
+
+.profileContent{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonProfile{
+    border: none;
+    padding: 5px 70px 5px 70px;
+    border-radius: 8px;
+}
+.timeline-share p {
+    font-size: 10px;
+}
+
+.logoTimelinesHeader {
+    width: 100px;
+    height: auto;
+}
+
+.screenfour {
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    min-height: 580px;
+    border-radius: 16px;
+    background-color: #f3f3f3;
+}
+
+.screenfour p {
+    font-size: 9px;
+    font-family: 'lato';
+    font-weight: 600;
+    margin: 0px;
+    color: #000000b4;
+}
+
+.screenfour h6 {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    font-weight: 600;
+}
+
+.app-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding-top: 10px;
+}
+
+.post-title {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.post-description {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.post-description p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+
+.timeline-content {
+    max-width: 260px;
+    min-width: 260px;
+    max-height: 580px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.notchtimeline {
+    width: 80px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50px;
+    position: relative;
+}

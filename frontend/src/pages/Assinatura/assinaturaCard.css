@@ -10,6 +10,10 @@
     height: 125px;
   }
 
+  .assinatura-card p {
+    margin: 5px;
+  }
+
   .assinatura-card-plus {
     background-color: #f9f9f92f;
     border-radius: 8px;

@@ -2,7 +2,7 @@ import React from 'react';
 import './screenTwo.css';
 
 
-function ScreenTwo({ splash }) {
+function TelaSplash({ splash }) {
     return (
         <div className="screen-one">
             <div className="mockup">
@@ -16,4 +16,4 @@ function ScreenTwo({ splash }) {
     );
 }
 
-export default ScreenTwo;
+export default TelaSplash;

@@ -13,6 +13,7 @@ import AssinaturaModal from "./pages/Assinatura/assinaturaModal";
 import AssinaturasGrid from "./pages/Assinatura/assinaturasGrid";
 import GamificationGrid from "./pages/gamificationGrid";
 import PreviaLayout from "./pages/previaLayoutScreen";
+import Relatorio from "./pages/Relatorio/relatorioCreate";
 
 
 function App() {
@@ -50,6 +51,7 @@ function AppContent() {
             <Route path="/gamification/regragame" element={<Gamification />}/>
             <Route path="/gamification" element={<Gamification/>}/>
             <Route path="/telaPreviaLayout" element={<PreviaLayout/>}/>
+            <Route path="/relatorio" element={<Relatorio/>}/>
           </Routes>
 
         </div>

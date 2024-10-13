@@ -9,7 +9,7 @@ import ScreenFourStore from './screensStore/screenFourStore';
 
 
 
-function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimeline, textColor }) {
+function TelaLojaApp({ headerColor, storeIcon, text00, secondaryColor, logoTimeline, textColor }) {
     
 
     return (
@@ -113,4 +113,4 @@ function ScreenThree({ headerColor, storeIcon, text00, secondaryColor, logoTimel
     );
 }
 
-export default ScreenThree;
+export default TelaLojaApp;

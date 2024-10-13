@@ -1,0 +1,110 @@
+.storePrint03 h5 {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.storePrint03 h6 {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+
+
+.storePrint03 p {
+    font-size: 10px;
+    font-family: 'lato';
+    font-weight: 600;
+    margin: 0px;
+    margin-left: 10px;
+    color: #a7a7a7;
+}
+
+.storePrint03{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    overflow: hidden;
+    max-width: 354px;
+    max-height: 676px;
+    min-height: 676px;
+    min-width: 354px;
+}
+
+
+.scheduleLabel {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.scheduleLabel01 {
+    background-color: white;
+    display: flex;
+    flex-direction: column
+}
+
+.scheduleHour{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 10px;
+    border-radius: 10px;
+}
+
+
+
+.textschedule {
+    display: flex;
+    margin-bottom: 5px;
+
+}
+
+.line {
+    border-top: 1px solid rgb(204, 204, 204);
+    margin-left: 40px;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+
+.buttonschedule {
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 12px 12px 12px;
+    font-size: 8px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin:0px 10px 10px 10px;
+}
+
+.buttonschedule01 {
+    background-color: #e3e3e3;
+    border: none;
+    border-radius: 7px;
+    padding: 6px 12px 6px 12px;
+    font-size: 8px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin:0px 10px 10px 10px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.largeText {
+  font-size: 12px; /* Tamanho da fonte para "11" */
+  font-weight: bold;
+  color: #fff;
+}
+
+.smallText {
+  font-size: 8px;
+  color: #fff;
+}

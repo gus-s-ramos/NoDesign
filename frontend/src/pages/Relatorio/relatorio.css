@@ -1,0 +1,22 @@
+.containerLayout {
+    display: flex;
+    height: 91vh;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: space-between;
+    background-color: #ffffff20;
+
+}
+
+.divContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.divScreenContent{
+    display: flex;
+    transform: scale(0.5);
+    
+}

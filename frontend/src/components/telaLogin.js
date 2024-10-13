@@ -4,7 +4,7 @@ import Icon from '@mdi/react';
 import { mdiEmailOutline, mdiLockOutline } from '@mdi/js';
 import './screensStoreDownload/screenIphone6,5/screenIphone65.css'
 
-function ScreenOne({ loginFile, primaryColor, isLightMode }) {
+function TelaLogin({ loginFile, primaryColor, isLightMode }) {
     return (
         <div className="screen-one">
             <div className="mockup">
@@ -46,4 +46,4 @@ function ScreenOne({ loginFile, primaryColor, isLightMode }) {
     );
 }
 
-export default ScreenOne;
+export default TelaLogin;

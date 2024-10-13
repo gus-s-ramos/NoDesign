@@ -11,6 +11,7 @@ const Menu = () => {
     { to: '/gamification', icon: mdiGamepadVariant, name: 'Regra Game' },
     { to: '/layout', icon: mdiMonitorCellphone, name: 'Layout' },
     { to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura' },
+    {/*{ to: '/relatorio', icon: mdiSignatureImage, name: 'Relatorio'*/}
   ];
 
   const getLinkClass = (path) => {

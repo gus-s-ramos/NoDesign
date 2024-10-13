@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
 
         <div className="user-profile">
-          {/*<div className="dropdown">
+          <div className="dropdown">
             <button onClick={handleDropdownToggle} aria-haspopup="true" aria-expanded={isDropdownOpen}>
               <Icon color='white' path={mdiArrowDownDropCircleOutline} size={1} className="icon-white" />
             </button>
@@ -98,7 +98,7 @@ const Navbar = () => {
           <Link to="/profile">
             <img className="user-photo" src="https://i.imgur.com/7J9JdOh.png" alt="User" />
           </Link>
-            */}
+            
         </div>
 
       </div>
