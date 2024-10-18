@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
-
-
+import ModalProfile from '../components/ModalProfile';
+import '../pages/Assinatura/assinaturaModal.css';
 import './login.css';
 
-function Login() {
+function Login(onSave) {
   const [redirectToHome, setRedirectToHome] = useState(false);
   const [tab, setTab] = useState('login');
   const [email, setEmail] = useState('');
@@ -16,7 +16,27 @@ function Login() {
   const [profileImage, setProfileImage] = useState(null); // Estado para a imagem de perfil
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  
+  const [splash, setSplash] = useState('https://via.placeholder.com/150');
+  const inputFileRef = useRef(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setSelectedImage(URL.createObjectURL(selectedFile));
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null);
+  };
+
+  const handleSaveImage = (imageSrc) => {
+    setSplash(imageSrc);
+    setModalOpen(false);
+    setSelectedImage(null);
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -29,42 +49,33 @@ function Login() {
       setLoading(false);
       setRedirectToHome(true);
     } catch (error) {
-      console.error('Erro de login:', error.response.data);
+      console.error('Erro de login:', error.response?.data || error.message);
       setError('Erro ao fazer login. Verifique suas credenciais.');
       setLoading(false);
     }
   };
 
-  const handleCreateAccount = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
+  const handleCreateAccount = async () => {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('password', password);
+
 
     try {
-      const response = await axios.post('http://localhost:3001/usuarios', { name, email, password, phone });
-      console.log(response.data);
-      setLoading(false);
-      setRedirectToHome(true);
+      const res = await axios.post('http://localhost:3001/api/users', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      console.log('Assinatura salva com sucesso:', res.data);
+      onSave(res.data); // Callback após salvar a assinatura
     } catch (error) {
-      console.error('Erro ao criar conta:', error.response.data);
-      setError('Erro ao criar conta. Verifique suas informações.');
-      setLoading(false);
-    }if (password !== passwordConfirmation) {
-      setError('As senhas não coincidem.');
-      setLoading(false);
-      return;
+      console.error('Erro ao salvar assinatura:', error);
     }
-    
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => setProfileImage(reader.result);
-      reader.readAsDataURL(file);
-    }
-  };
 
   return (
     <div className="login-container">
@@ -92,38 +103,29 @@ function Login() {
               </div>
             </form>
           ) : (
-            <form className="loginForm" onSubmit={handleCreateAccount}>
+            <form className="loginForm" >
               <div className="profile-image-container">
-                <label htmlFor="profileImage" className="image-label">
-                  <input type="file" id="profileImage" accept="image/*" onChange={handleImageChange} style={{ display: 'none' }} />
-                  <div className="image-preview" style={{ backgroundImage: `url(${profileImage || 'https://via.placeholder.com/150'})` }}></div>
-                </label>
+                
               </div>
               <div>
                 <label htmlFor='name'>Nome</label>
-                <input type="text" id='name' placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} required />
+                <input type="text" placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} required />
               </div>
               <div>
                 <label htmlFor='email'>E-mail</label>
-                <input type="email" id='email' placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div>
                 <label htmlFor='phone'>Telefone</label>
-                <input type="tel" id='phone' placeholder="Telefone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+                <input type="tel" placeholder="Telefone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
               </div>
               <div>
-                <label htmlFor='senha'>Senha</label>
-                <input type="senha" id='senha' placeholder="Senha" value={password} onChange={(e) => setPhone(e.target.value)} required />
-              </div>
-              <div>
-                <label htmlFor='senha'>Confirmação de senha</label>
-                <input type="senha" id='senha' placeholder="Senha" value={password} onChange={(e) => setPhone(e.target.value)} required />
+                <label htmlFor='password'>Senha</label>
+                <input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
 
               <div>
-                <button type="submit" disabled={loading}>{loading ? 'Criando...' : 'Cancelar'}</button>
-                <button type="submit" disabled={loading}>{loading ? 'Criando...' : 'Criar Conta'}</button>
-
+                <button onClick={handleCreateAccount}>{loading ? 'Criando...' : 'Criar Conta'}</button>
               </div>
             </form>
           )}
