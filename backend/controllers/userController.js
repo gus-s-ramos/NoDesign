@@ -1,21 +1,19 @@
 // controllers/userController.js
-const pool = require('../config/config');
+const pool = require('../db');
 const bcrypt = require('bcrypt');
-
-console.log('Pool:', pool);
+const multer = require('multer');
+const upload = multer(); // Inicializa o multer sem armazenamento de arquivos
 
 // Função para criar um usuário
 const createUser = async (req, res) => {
     console.log('Chamada da função createUser');
+    console.log('Dados recebidos:', req.body); // Isso mostrará o que está sendo recebido
 
+
+    // O multer irá parsear o form-data e colocar os dados em req.body
     const { name, email, password, phone } = req.body;
 
-
-
-    // Validação simples
-    if (!name || !email || !password || !phone) {
-        return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
-    }
+    console.log('Dados recebidos:', { name, email, password, phone });
 
     try {
         // Verificar se o usuário já existe
@@ -25,13 +23,13 @@ const createUser = async (req, res) => {
         if (existingUser.rows.length > 0) {
             return res.status(400).json({ message: 'Usuário já existe com esse email.' });
         }
-        console.log('Oi passei aqui');
+
         // Criptografar a senha
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Inserir no banco de dados
-        const query = 'INSERT INTO users (name, email, phone, password) VALUES ($1, $2, $3, $4) RETURNING *';
-        const values = [name, email, phone, hashedPassword]; // Use a senha criptografada
+        const query = 'INSERT INTO users (name, email, password, phone ) VALUES ($1, $2, $3, $4) RETURNING *';
+        const values = [name, email, hashedPassword,  phone];
 
         const result = await pool.query(query, values);
 
@@ -40,8 +38,8 @@ const createUser = async (req, res) => {
 
         res.status(201).json({ message: 'Usuário criado com sucesso!', usuario: userWithoutPassword });
     } catch (error) {
-        console.error('Erro ao criar usuário:', error); // Log do erro detalhado
-        res.status(500).json({ message: 'Erro ao criar usuário.', error: error.message }); // Mensagem de erro detalhada
+        console.error('Erro ao criar usuário:', error);
+        res.status(500).json({ message: 'Erro ao criar usuário.', error: error.message });
     }
 };
 

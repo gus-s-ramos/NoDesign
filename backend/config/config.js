@@ -1,9 +1,11 @@
-// config/config.js
-
+// config.js
 module.exports = {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'NoDesing',
-    password: '1310',
-    port: 5432
+    db: {
+        user: 'postgres',
+        host: 'localhost',
+        database: 'NoDesing',
+        password: '1310',
+        port: 5432
+    },
+    // Outras configurações podem ser adicionadas aqui
 };

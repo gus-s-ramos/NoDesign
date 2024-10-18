@@ -1,18 +1,10 @@
-// server.js
-const pool = require('../config/config');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const path = require('path');
-const config = require('./config/config');
+const pool = require('./db'); // Importa o pool de conexões
 const app = express();
-
-
-
-pool.connect()
-    .then(() => console.log('Conectado ao banco de dados.'))
-    .catch(err => console.error('Erro ao conectar ao banco de dados:', err));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -42,7 +34,6 @@ app.use('/api/assinaturas', routesAssinatura);
 
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/users', userRoutes);
-
 
 const PORT = 3001;
 app.listen(PORT, () => {

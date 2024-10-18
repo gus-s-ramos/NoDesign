@@ -14,6 +14,7 @@ import AssinaturasGrid from "./pages/Assinatura/assinaturasGrid";
 import GamificationGrid from "./pages/gamificationGrid";
 import PreviaLayout from "./pages/previaLayoutScreen";
 import Relatorio from "./pages/Relatorio/relatorioCreate";
+import CreateAccount from "./pages/createAccount";
 
 
 function App() {
@@ -44,6 +45,7 @@ function AppContent() {
             <Route path="/layout" element={<Layout />} />
             <Route path="/signature" element={<Signature />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/createAccount" element={<CreateAccount/>} />
             <Route path="/passagemBastao" element={<PassagemBastao />} />
             <Route path="/profile" element={<Profile/>} />
             <Route path="/assinaturaModal" element={<AssinaturaModal/>}/>

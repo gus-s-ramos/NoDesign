@@ -1,13 +1,11 @@
-// routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
-const upload = require('../server').upload;
-const bcrypt = require('bcrypt');
+const userController = require('../controllers/userController');
 const multer = require('multer');
-const userController = require('../controllers/userController'); // Importe o controller corretamente
+const upload = multer(); // Inicializa o multer
 
 
-// Rota para criar um usuário
-router.post('/', userController.createUser);
+// Rota para criar usuário com form-data
+router.post('/', upload.none(), userController.createUser);
 
 module.exports = router;
