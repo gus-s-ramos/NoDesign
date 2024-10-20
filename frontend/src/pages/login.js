@@ -44,7 +44,7 @@ function Login(onSave) {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password });
+      const response = await axios.post('http://localhost:3001/api/users/login', { email, password });
       console.log(response.data);
       setLoading(false);
       setRedirectToHome(true);
@@ -62,17 +62,21 @@ function Login(onSave) {
     formData.append('phone', phone);
     formData.append('password', password);
 
+    const response = await fetch(splash); // Supondo que 'splash' seja uma URL válida
+    const blob = await response.blob();
+    formData.append('profile_image', blob, 'profile_image.png'); // Adicionando o blob ao form
 
     try {
-      const res = await axios.post('http://localhost:3001/api/users', formData, {
+
+      const res = await axios.post('http://localhost:3001/api/users/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      console.log('Assinatura salva com sucesso:', res.data);
-      onSave(res.data); // Callback após salvar a assinatura
+      console.log('Usuário criado com sucesso:', res.data);
+      onSave(res.data); // Callback após salvar o usuário
     } catch (error) {
-      console.error('Erro ao salvar assinatura:', error);
+      console.error('Erro ao criar usuário:', error);
     }
   };
 
@@ -105,7 +109,19 @@ function Login(onSave) {
           ) : (
             <form className="loginForm" >
               <div className="profile-image-container">
-                
+                <div style={{ marginBottom: '15px' }}>
+                  <img src={splash} onClick={() => inputFileRef.current.click()} className="assinaturaImg" alt="Assinatura" />
+                  <input
+                    ref={inputFileRef}
+                    type="file"
+                    name="profile_image"
+                    onChange={handleChange}
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                  />
+                  <ModalProfile isOpen={isModalOpen} onClose={closeModal} onSave={handleSaveImage} imageSrc={selectedImage} />
+                </div>
+
               </div>
               <div>
                 <label htmlFor='name'>Nome</label>

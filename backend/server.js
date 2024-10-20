@@ -5,25 +5,52 @@ const multer = require('multer');
 const path = require('path');
 const pool = require('./db'); // Importa o pool de conexões
 const app = express();
+const fs = require('fs');
+const uploadDir = 'uploads';
+const jwt = require('jsonwebtoken');
+
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 
+if (!fs.existsSync(uploadDir)){
+    fs.mkdirSync(uploadDir);
+}
+
+const authenticateToken = (req, res, next) => {
+    const token = req.headers['authorization']; // Token vem no cabeçalho "Authorization"
+    
+    if (!token) {
+        return res.status(401).json({ message: 'Acesso negado. Nenhum token fornecido.' });
+    }
+
+    try {
+        // Verificar o token
+        const decoded = jwt.verify(token, 'secret_key'); // Decodificar o token
+        req.user = decoded; // Anexar os dados do usuário ao objeto req
+        next(); // Prosseguir para a próxima função
+    } catch (error) {
+        res.status(400).json({ message: 'Token inválido.' });
+    }
+};
+
 // Configuração do Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/');
+        cb(null, 'uploads/'); // Diretório onde as imagens serão salvas
     },
     filename: (req, file, cb) => {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+        cb(null, uniqueSuffix + path.extname(file.originalname)); // Nome único para o arquivo
     }
 });
 
 const upload = multer({ storage });
 module.exports.upload = upload; // Exporta a configuração do Multer
+
+
 
 // Importar e usar as rotas
 const gamificationRoutes = require('./routes/gamificationRoutes');
@@ -43,5 +70,6 @@ app.listen(PORT, () => {
 module.exports = {
     app,
     pool,
-    upload
+    upload,
+    authenticateToken
 };

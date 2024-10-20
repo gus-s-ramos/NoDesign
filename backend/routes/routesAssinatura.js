@@ -4,6 +4,7 @@ const { Pool } = require('pg');
 const config = require('../config/config');
 const pool = new Pool(config);
 const upload = require('../server').upload; // Importa o upload configurado
+const {authenticateToken} = require('../server');
 
 // Rota para salvar a assinatura
 router.post('/', upload.single('imagem'), async (req, res) => {
