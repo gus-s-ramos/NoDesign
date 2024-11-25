@@ -1,0 +1,99 @@
+.template-selection-modal {
+  position: relative;
+  background-color: #8C1D41;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+.titles {
+  margin-right: 200px;
+  margin-left: 100px;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.background-mockup {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+}
+
+
+
+.yazo-logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.mockup-gallery {
+  display: flex;
+  gap: 30px;
+  left: 80px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  transform: rotate(45deg) translate(14px, 14px);
+  position: relative;
+  z-index: 1;
+  /* Ficar acima do fundo */
+}
+
+.mockup-gallery::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  margin-top: 20px;
+  /* Controle a "margem" na escala desejada */
+
+}
+
+
+.mockup-gallery-container {
+  position: relative;
+}
+
+/* Fundo com blur */
+.mockup-gallery-background {
+  position: absolute;
+  top: -66px;
+  left: -90px;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  filter: blur(20px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.titleScreen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.screen {
+  margin-bottom: 20px;
+}

@@ -8,10 +8,10 @@ const Menu = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const location = useLocation();
   const menuItems = [
-    { to: '/gamification', icon: mdiGamepadVariant, name: 'Regra Game' },
+    //{ to: '/gamification', icon: mdiGamepadVariant, name: 'Regra Game' },
     { to: '/layout', icon: mdiMonitorCellphone, name: 'Layout' },
-    { to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura' },
-    {/*{ to: '/relatorio', icon: mdiSignatureImage, name: 'Relatorio'*/}
+    //{ to: '/assinaturasGrid', icon: mdiSignatureImage, name: 'Assinatura' },
+    // to: '/relatorio', icon: mdiSignatureImage, name: 'Relatorio'
   ];
 
   const getLinkClass = (path) => {

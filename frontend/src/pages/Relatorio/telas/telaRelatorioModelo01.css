@@ -1,0 +1,49 @@
+.tela-relatorio-modelo01 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1920px;
+    height: 1080px;
+    background-color: #ffffff;
+}
+
+.header {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.editable-text {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #821938;
+    outline: none;
+    color: #000;
+}
+
+.contentTela01 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.mockup-container {
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.mockup-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
