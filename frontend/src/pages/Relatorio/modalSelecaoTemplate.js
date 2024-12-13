@@ -7,7 +7,7 @@ function ModalSelecaoTemplate({ isOpen, onClose, onSelectModel, allScreens }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Escolha um Modelo de Tela</h2>
+        <h1>Escolha um Modelo de Tela</h1>
         <div className="model-list">
           {models.map((model) => (
             <div

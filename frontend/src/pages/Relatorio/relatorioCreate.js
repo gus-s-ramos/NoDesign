@@ -34,6 +34,9 @@ function RelatorioCreate() {
             name: 'Tela de Loja App',
             component: (props) => <TelaLojaApp {...props} />,
         },
+        {
+            id: 'Tela'
+        }
 
     ];
 
